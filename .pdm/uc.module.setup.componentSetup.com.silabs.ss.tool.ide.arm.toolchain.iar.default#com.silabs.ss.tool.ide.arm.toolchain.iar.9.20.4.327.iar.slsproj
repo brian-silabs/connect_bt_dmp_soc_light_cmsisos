@@ -387,6 +387,77 @@
           <file name="em_wdog.h" linked="false" uri="studio:/sdk/platform/emlib/inc/em_wdog.h"/>
         </folder>
       </folder>
+      <folder name="radio">
+        <folder name="rail_lib">
+          <folder name="plugin">
+            <folder name="fem_util">
+              <file name="sl_fem_util.c" linked="false" uri="studio:/sdk/platform/radio/rail_lib/plugin/fem_util/sl_fem_util.c"/>
+              <file name="sl_fem_util.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/plugin/fem_util/sl_fem_util.h"/>
+            </folder>
+            <folder name="pa-conversions">
+              <folder name="efr32xg28">
+                <file name="sl_rail_util_pa_curves_14dbm_868M.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/plugin/pa-conversions/efr32xg28/sl_rail_util_pa_curves_14dbm_868M.h"/>
+                <file name="sl_rail_util_pa_curves_14dbm_915M.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/plugin/pa-conversions/efr32xg28/sl_rail_util_pa_curves_14dbm_915M.h"/>
+                <file name="sl_rail_util_pa_curves_20dbm_868M.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/plugin/pa-conversions/efr32xg28/sl_rail_util_pa_curves_20dbm_868M.h"/>
+                <file name="sl_rail_util_pa_curves_20dbm_915M.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/plugin/pa-conversions/efr32xg28/sl_rail_util_pa_curves_20dbm_915M.h"/>
+              </folder>
+              <file name="pa_conversions_efr32.c" linked="false" uri="studio:/sdk/platform/radio/rail_lib/plugin/pa-conversions/pa_conversions_efr32.c"/>
+              <file name="pa_curves_efr32.c" linked="false" uri="studio:/sdk/platform/radio/rail_lib/plugin/pa-conversions/pa_curves_efr32.c"/>
+              <file name="pa_conversions_efr32.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/plugin/pa-conversions/pa_conversions_efr32.h"/>
+              <file name="pa_curve_types_efr32.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/plugin/pa-conversions/pa_curve_types_efr32.h"/>
+              <file name="pa_curves_efr32.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/plugin/pa-conversions/pa_curves_efr32.h"/>
+            </folder>
+            <folder name="rail_util_power_manager_init">
+              <file name="sl_rail_util_power_manager_init.c" linked="false" uri="studio:/sdk/platform/radio/rail_lib/plugin/rail_util_power_manager_init/sl_rail_util_power_manager_init.c"/>
+              <file name="sl_rail_util_power_manager_init.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/plugin/rail_util_power_manager_init/sl_rail_util_power_manager_init.h"/>
+            </folder>
+            <folder name="rail_util_pti">
+              <file name="sl_rail_util_pti.c" linked="false" uri="studio:/sdk/platform/radio/rail_lib/plugin/rail_util_pti/sl_rail_util_pti.c"/>
+              <file name="sl_rail_util_pti.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/plugin/rail_util_pti/sl_rail_util_pti.h"/>
+            </folder>
+            <folder name="rail_util_rf_path_switch">
+              <file name="sl_rail_util_rf_path_switch.c" linked="false" uri="studio:/sdk/platform/radio/rail_lib/plugin/rail_util_rf_path_switch/sl_rail_util_rf_path_switch.c"/>
+              <file name="sl_rail_util_rf_path_switch.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/plugin/rail_util_rf_path_switch/sl_rail_util_rf_path_switch.h"/>
+            </folder>
+          </folder>
+          <folder name="common">
+            <file name="rail.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/common/rail.h"/>
+            <file name="rail_mfm.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/common/rail_mfm.h"/>
+            <file name="rail_assert_error_codes.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/common/rail_assert_error_codes.h"/>
+            <file name="rail_types.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/common/rail_types.h"/>
+            <file name="rail_features.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/common/rail_features.h"/>
+          </folder>
+          <folder name="protocol">
+            <folder name="ble">
+              <file name="rail_ble.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/protocol/ble/rail_ble.h"/>
+            </folder>
+            <folder name="ieee802154">
+              <file name="rail_ieee802154.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/protocol/ieee802154/rail_ieee802154.h"/>
+            </folder>
+            <folder name="wmbus">
+              <file name="rail_wmbus.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/protocol/wmbus/rail_wmbus.h"/>
+            </folder>
+            <folder name="zwave">
+              <file name="rail_zwave.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/protocol/zwave/rail_zwave.h"/>
+            </folder>
+            <folder name="sidewalk">
+              <file name="rail_sidewalk.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/protocol/sidewalk/rail_sidewalk.h"/>
+            </folder>
+          </folder>
+          <folder name="chip">
+            <folder name="efr32">
+              <folder name="efr32xg2x">
+                <file name="rail_chip_specific.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/chip/efr32/efr32xg2x/rail_chip_specific.h"/>
+              </folder>
+            </folder>
+          </folder>
+          <folder name="autogen">
+            <folder name="librail_release">
+              <file name="librail_multiprotocol_efr32xg28_iar_release.a" linked="false" uri="studio:/sdk/platform/radio/rail_lib/autogen/librail_release/librail_multiprotocol_efr32xg28_iar_release.a"/>
+            </folder>
+          </folder>
+        </folder>
+      </folder>
       <folder name="driver">
         <folder name="leddrv">
           <folder name="src">
@@ -524,69 +595,6 @@
         </folder>
         <folder name="inc">
           <file name="peripheral_sysrtc.h" linked="false" uri="studio:/sdk/platform/peripheral/inc/peripheral_sysrtc.h"/>
-        </folder>
-      </folder>
-      <folder name="radio">
-        <folder name="rail_lib">
-          <folder name="common">
-            <file name="rail.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/common/rail.h"/>
-            <file name="rail_mfm.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/common/rail_mfm.h"/>
-            <file name="rail_assert_error_codes.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/common/rail_assert_error_codes.h"/>
-            <file name="rail_types.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/common/rail_types.h"/>
-            <file name="rail_features.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/common/rail_features.h"/>
-          </folder>
-          <folder name="protocol">
-            <folder name="ble">
-              <file name="rail_ble.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/protocol/ble/rail_ble.h"/>
-            </folder>
-            <folder name="ieee802154">
-              <file name="rail_ieee802154.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/protocol/ieee802154/rail_ieee802154.h"/>
-            </folder>
-            <folder name="wmbus">
-              <file name="rail_wmbus.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/protocol/wmbus/rail_wmbus.h"/>
-            </folder>
-            <folder name="zwave">
-              <file name="rail_zwave.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/protocol/zwave/rail_zwave.h"/>
-            </folder>
-            <folder name="sidewalk">
-              <file name="rail_sidewalk.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/protocol/sidewalk/rail_sidewalk.h"/>
-            </folder>
-          </folder>
-          <folder name="chip">
-            <folder name="efr32">
-              <folder name="efr32xg2x">
-                <file name="rail_chip_specific.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/chip/efr32/efr32xg2x/rail_chip_specific.h"/>
-              </folder>
-            </folder>
-          </folder>
-          <folder name="autogen">
-            <folder name="librail_release">
-              <file name="librail_multiprotocol_efr32xg28_iar_release.a" linked="false" uri="studio:/sdk/platform/radio/rail_lib/autogen/librail_release/librail_multiprotocol_efr32xg28_iar_release.a"/>
-            </folder>
-          </folder>
-          <folder name="plugin">
-            <folder name="pa-conversions">
-              <folder name="efr32xg28">
-                <file name="sl_rail_util_pa_curves_14dbm_868M.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/plugin/pa-conversions/efr32xg28/sl_rail_util_pa_curves_14dbm_868M.h"/>
-                <file name="sl_rail_util_pa_curves_14dbm_915M.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/plugin/pa-conversions/efr32xg28/sl_rail_util_pa_curves_14dbm_915M.h"/>
-                <file name="sl_rail_util_pa_curves_20dbm_868M.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/plugin/pa-conversions/efr32xg28/sl_rail_util_pa_curves_20dbm_868M.h"/>
-                <file name="sl_rail_util_pa_curves_20dbm_915M.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/plugin/pa-conversions/efr32xg28/sl_rail_util_pa_curves_20dbm_915M.h"/>
-              </folder>
-              <file name="pa_conversions_efr32.c" linked="false" uri="studio:/sdk/platform/radio/rail_lib/plugin/pa-conversions/pa_conversions_efr32.c"/>
-              <file name="pa_curves_efr32.c" linked="false" uri="studio:/sdk/platform/radio/rail_lib/plugin/pa-conversions/pa_curves_efr32.c"/>
-              <file name="pa_conversions_efr32.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/plugin/pa-conversions/pa_conversions_efr32.h"/>
-              <file name="pa_curve_types_efr32.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/plugin/pa-conversions/pa_curve_types_efr32.h"/>
-              <file name="pa_curves_efr32.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/plugin/pa-conversions/pa_curves_efr32.h"/>
-            </folder>
-            <folder name="rail_util_power_manager_init">
-              <file name="sl_rail_util_power_manager_init.c" linked="false" uri="studio:/sdk/platform/radio/rail_lib/plugin/rail_util_power_manager_init/sl_rail_util_power_manager_init.c"/>
-              <file name="sl_rail_util_power_manager_init.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/plugin/rail_util_power_manager_init/sl_rail_util_power_manager_init.h"/>
-            </folder>
-            <folder name="rail_util_pti">
-              <file name="sl_rail_util_pti.c" linked="false" uri="studio:/sdk/platform/radio/rail_lib/plugin/rail_util_pti/sl_rail_util_pti.c"/>
-              <file name="sl_rail_util_pti.h" linked="false" uri="studio:/sdk/platform/radio/rail_lib/plugin/rail_util_pti/sl_rail_util_pti.h"/>
-            </folder>
-          </folder>
         </folder>
       </folder>
     </folder>
@@ -1027,6 +1035,7 @@
   <includePath uri="studio:/project/gecko_sdk_4.3.2/platform/emdrv/dmadrv/inc"/>
   <includePath uri="studio:/project/gecko_sdk_4.3.2/platform/emdrv/common/inc"/>
   <includePath uri="studio:/project/gecko_sdk_4.3.2/platform/emlib/inc"/>
+  <includePath uri="studio:/project/gecko_sdk_4.3.2/platform/radio/rail_lib/plugin/fem_util"/>
   <includePath uri="studio:/project/gecko_sdk_4.3.2/util/third_party/freertos/cmsis/Include"/>
   <includePath uri="studio:/project/gecko_sdk_4.3.2/util/third_party/freertos/kernel/include"/>
   <includePath uri="studio:/project/gecko_sdk_4.3.2/util/third_party/freertos/kernel/portable/IAR/ARM_CM33_NTZ/non_secure"/>
@@ -1059,6 +1068,7 @@
   <includePath uri="studio:/project/gecko_sdk_4.3.2/platform/radio/rail_lib/plugin/pa-conversions/efr32xg28"/>
   <includePath uri="studio:/project/gecko_sdk_4.3.2/platform/radio/rail_lib/plugin/rail_util_power_manager_init"/>
   <includePath uri="studio:/project/gecko_sdk_4.3.2/platform/radio/rail_lib/plugin/rail_util_pti"/>
+  <includePath uri="studio:/project/gecko_sdk_4.3.2/platform/radio/rail_lib/plugin/rail_util_rf_path_switch"/>
   <includePath uri="studio:/project/gecko_sdk_4.3.2/platform/security/sl_component/se_manager/inc"/>
   <includePath uri="studio:/project/gecko_sdk_4.3.2/platform/security/sl_component/se_manager/src"/>
   <includePath uri="studio:/project/gecko_sdk_4.3.2/util/silicon_labs/silabs_core/memory_manager"/>

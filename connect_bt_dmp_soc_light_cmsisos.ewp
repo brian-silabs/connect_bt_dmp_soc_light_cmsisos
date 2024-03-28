@@ -395,6 +395,7 @@
                     <state>$PROJ_DIR$\gecko_sdk_4.3.2\platform\emdrv\dmadrv\inc</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.2\platform\emdrv\common\inc</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.2\platform\emlib\inc</state>
+                    <state>$PROJ_DIR$\gecko_sdk_4.3.2\platform\radio\rail_lib\plugin\fem_util</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.2\util\third_party\freertos\cmsis\Include</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.2\util\third_party\freertos\kernel\include</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.2\util\third_party\freertos\kernel\portable\IAR\ARM_CM33_NTZ\non_secure</state>
@@ -427,6 +428,7 @@
                     <state>$PROJ_DIR$\gecko_sdk_4.3.2\platform\radio\rail_lib\plugin\pa-conversions\efr32xg28</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.2\platform\radio\rail_lib\plugin\rail_util_power_manager_init</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.2\platform\radio\rail_lib\plugin\rail_util_pti</state>
+                    <state>$PROJ_DIR$\gecko_sdk_4.3.2\platform\radio\rail_lib\plugin\rail_util_rf_path_switch</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.2\platform\security\sl_component\se_manager\inc</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.2\platform\security\sl_component\se_manager\src</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.2\util\silicon_labs\silabs_core\memory_manager</state>
@@ -751,6 +753,7 @@
                     <state>$PROJ_DIR$\gecko_sdk_4.3.2\platform\emdrv\dmadrv\inc</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.2\platform\emdrv\common\inc</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.2\platform\emlib\inc</state>
+                    <state>$PROJ_DIR$\gecko_sdk_4.3.2\platform\radio\rail_lib\plugin\fem_util</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.2\util\third_party\freertos\cmsis\Include</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.2\util\third_party\freertos\kernel\include</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.2\util\third_party\freertos\kernel\portable\IAR\ARM_CM33_NTZ\non_secure</state>
@@ -783,6 +786,7 @@
                     <state>$PROJ_DIR$\gecko_sdk_4.3.2\platform\radio\rail_lib\plugin\pa-conversions\efr32xg28</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.2\platform\radio\rail_lib\plugin\rail_util_power_manager_init</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.2\platform\radio\rail_lib\plugin\rail_util_pti</state>
+                    <state>$PROJ_DIR$\gecko_sdk_4.3.2\platform\radio\rail_lib\plugin\rail_util_rf_path_switch</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.2\platform\security\sl_component\se_manager\inc</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.2\platform\security\sl_component\se_manager\src</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.2\util\silicon_labs\silabs_core\memory_manager</state>

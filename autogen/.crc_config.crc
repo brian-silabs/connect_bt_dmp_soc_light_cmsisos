@@ -36,6 +36,7 @@ sl_device_init_dcdc_config.h=1498363383
 sl_device_init_emu_config.h=622680131
 sl_device_init_hfxo_config.h=1255225254
 sl_device_init_lfxo_config.h=1370961952
+sl_fem_util_config.h=1966322631
 sl_hfxo_manager_config.h=1606678224
 sl_iostream_eusart_inst0_config.h=-509107365
 sl_iostream_eusart_vcom_config.h=1991661915

@@ -35,6 +35,7 @@
     <file name="sl_simple_led_led0_config.h" generated="true" linked="false"/>
     <file name="dmadrv_config.h" generated="true" linked="false"/>
     <file name="sl_rail_util_pti_config.h" generated="true" linked="false"/>
+    <file name="sl_rail_util_rf_path_switch_config.h" generated="true" linked="false"/>
     <file name="sl_bluetooth_advertiser_config.h" generated="true" linked="false"/>
     <file name="cmsis-rtos-ipc-config.h" generated="true" linked="false"/>
     <file name="sl_device_init_emu_config.h" generated="true" linked="false"/>
@@ -44,6 +45,7 @@
     <file name="sl_rail_util_pa_config.h" generated="true" linked="false"/>
     <file name="mac-queue-config.h" generated="true" linked="false"/>
     <file name="poll-config.h" generated="true" linked="false"/>
+    <file name="sl_fem_util_config.h" generated="true" linked="false"/>
     <file name="emlib_core_debug_config.h" generated="true" linked="false"/>
     <file name="sl_mbedtls_config.h" generated="true" linked="false"/>
     <file name="sl_mbedtls_device_config.h" generated="true" linked="false"/>

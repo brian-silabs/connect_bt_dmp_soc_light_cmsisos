@@ -56,6 +56,7 @@ component:
 - {id: connect_stack_counters}
 - {id: device_init}
 - {id: device_init_lfxo}
+- {id: fem_util}
 - {id: freertos}
 - instance: [inst0]
   id: iostream_eusart
@@ -68,6 +69,7 @@ component:
 - {id: printf}
 - {id: radio_config_simple_connect_singlephy}
 - {id: rail_util_pti}
+- {id: rail_util_rf_path_switch}
 - {id: restrictions_profile_connect}
 - {id: restrictions_profile_long_range}
 - instance: [led0]
