@@ -1,6 +1,10 @@
 /***************************************************************************//**
- * @file
- * @brief Device initialization for clocks.
+ * @brief RAIL Configuration
+ * @details
+ *   WARNING: Auto-Generated Radio Config Header  -  DO NOT EDIT
+ *   Radio Configurator Version: 2302.6.1
+ *   RAIL Adapter Version: 2.4.32
+ *   RAIL Compatibility: 2.x
  *******************************************************************************
  * # License
  * <b>Copyright 2019 Silicon Laboratories Inc. www.silabs.com</b>
@@ -27,34 +31,20 @@
  * 3. This notice may not be removed or altered from any source distribution.
  *
  ******************************************************************************/
-#include "sl_device_init_clocks.h"
 
-#include "em_cmu.h"
+#ifndef __RAIL_CONFIG_H__
+#define __RAIL_CONFIG_H__
 
-sl_status_t sl_device_init_clocks(void)
-{
-  CMU_CLOCK_SELECT_SET(SYSCLK, HFXO);
-#if defined(_CMU_EM01GRPACLKCTRL_MASK)
-  CMU_CLOCK_SELECT_SET(EM01GRPACLK, HFXO);
-#endif
-#if defined(_CMU_EM01GRPBCLKCTRL_MASK)
-  CMU_CLOCK_SELECT_SET(EM01GRPBCLK, HFXO);
-#endif
-#if defined(_CMU_EM01GRPCCLKCTRL_MASK)
-  CMU_CLOCK_SELECT_SET(EM01GRPCCLK, HFXO);
-#endif
-  CMU_CLOCK_SELECT_SET(EM23GRPACLK, LFXO);
-  CMU_CLOCK_SELECT_SET(EM4GRPACLK, LFXO);
-#if defined(RTCC_PRESENT)
-  CMU_CLOCK_SELECT_SET(RTCC, LFXO);
-#endif
-#if defined(SYSRTC_PRESENT)
-  CMU_CLOCK_SELECT_SET(SYSRTC, LFXO);
-#endif
-  CMU_CLOCK_SELECT_SET(WDOG0, LFXO);
-#if WDOG_COUNT > 1
-  CMU_CLOCK_SELECT_SET(WDOG1, LFXO);
-#endif
+#include <stdint.h>
+#include "rail_types.h"
 
-  return SL_STATUS_OK;
-}
+#define PROTOCOL_ACCELERATION_BUFFER protocolAccelerationBuffer
+extern uint32_t protocolAccelerationBuffer[];
+
+#define RADIO_CONFIG_XTAL_FREQUENCY 39000000UL
+
+#define RAIL0_CHANNEL_GROUP_1_PHY_STUDIO_CONNECT_863MHZ_2GFSK_100KBPS
+#define RAIL0_CHANNEL_GROUP_1_PROFILE_CONNECT
+extern const RAIL_ChannelConfig_t *channelConfigs[];
+
+#endif // __RAIL_CONFIG_H__

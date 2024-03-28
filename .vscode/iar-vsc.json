@@ -4,7 +4,9 @@
   },
   "workspaces": {
     "${workspaceFolder}\\connect_bt_dmp_soc_light_cmsisos.eww": {
-      "configs": {},
+      "configs": {
+        "${workspaceFolder}\\connect_bt_dmp_soc_light_cmsisos.ewp": "Default"
+      },
       "selected": {
         "path": "${workspaceFolder}\\connect_bt_dmp_soc_light_cmsisos.ewp"
       }
