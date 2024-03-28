@@ -39,12 +39,10 @@ sdk: {id: gecko_sdk, version: 4.3.2}
 toolchain_settings:
 - {value: debug, option: optimize}
 component:
-- {id: EFR32ZG28B312F1024IM68}
+- {id: EFR32FG28B322F1024IM68}
 - {id: app_assert}
 - {id: app_log}
 - {id: bluetooth_on_demand_start}
-- {id: brd4002a}
-- {id: brd4400c}
 - instance: [example]
   id: cli
 - {id: connect_aes_security}
@@ -58,10 +56,13 @@ component:
 - {id: connect_stack_counters}
 - {id: device_init}
 - {id: freertos}
+- instance: [inst0]
+  id: iostream_eusart
 - {id: iostream_recommended_stream}
 - {id: iostream_retarget_stdio}
 - {id: legacy_hal}
 - {id: mpu}
+- {id: mx25_flash_shutdown_usart}
 - {id: nvm3_lib}
 - {id: printf}
 - {id: radio_config_simple_connect_singlephy}

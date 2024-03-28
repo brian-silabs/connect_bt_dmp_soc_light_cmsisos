@@ -6,9 +6,9 @@
     <properties key="universalConfig.generationDirectory" value=""/>
     <properties key="universalConfig.toolchainCompatibility" value="iar gcc"/>
     <properties key="universalConfig.incrementalOverwriteConfigs" value="false"/>
-    <properties key="projectCommon.boardIds" value="brd4400c:0.0.0.A00 brd4002a:0.0.0.A03"/>
+    <properties key="projectCommon.boardIds" value="com.silabs.board.none:0.0.0"/>
     <properties key="projectCommon.kitId" value=""/>
-    <properties key="projectCommon.partId" value="mcu.arm.efr32.zg28.efr32zg28b312f1024im68"/>
+    <properties key="projectCommon.partId" value="mcu.arm.efr32.fg28.efr32fg28b322f1024im68"/>
     <properties key="projectCommon.toolchainId" value="com.silabs.ss.tool.ide.arm.toolchain.iar:9.20.4.327"/>
     <properties key="universalConfig.projectTypeIds" value="com.silabs.framework.project.ewp com.silabs.ss.framework.ide.project.core.cdtMbsProjectType"/>
     <properties key="projectCommon.importModeId" value="COPY"/>

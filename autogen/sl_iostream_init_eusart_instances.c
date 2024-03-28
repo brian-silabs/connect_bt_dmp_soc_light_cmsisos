@@ -3,10 +3,8 @@
 #include "sl_iostream_uart.h"
 #include "sl_iostream_eusart.h"
 
-#include "sl_cos.h"
-
 // Include instance config 
- #include "sl_iostream_eusart_vcom_config.h"
+ #include "sl_iostream_eusart_inst0_config.h"
 
 // MACROs for generating name and IRQ handler function  
 #define SL_IOSTREAM_EUSART_CONCAT_PASTER(first, second, third)        first ##  second ## third
@@ -46,108 +44,83 @@ static sl_power_manager_em_transition_event_handle_t events_handle;
 #endif // SL_CATALOG_POWER_MANAGER_PRESENT
 
 
-sl_status_t sl_iostream_eusart_init_vcom(void);
+sl_status_t sl_iostream_eusart_init_inst0(void);
 
 
 // Instance(s) handle and context variable 
-static sl_iostream_uart_t sl_iostream_vcom;
-sl_iostream_t *sl_iostream_vcom_handle = &sl_iostream_vcom.stream;
-sl_iostream_uart_t *sl_iostream_uart_vcom_handle = &sl_iostream_vcom;
-static sl_iostream_eusart_context_t  context_vcom;
-static uint8_t  rx_buffer_vcom[SL_IOSTREAM_EUSART_VCOM_RX_BUFFER_SIZE];
-sl_iostream_instance_info_t sl_iostream_instance_vcom_info = {
-  .handle = &sl_iostream_vcom.stream,
-  .name = "vcom",
+static sl_iostream_uart_t sl_iostream_inst0;
+sl_iostream_t *sl_iostream_inst0_handle = &sl_iostream_inst0.stream;
+sl_iostream_uart_t *sl_iostream_uart_inst0_handle = &sl_iostream_inst0;
+static sl_iostream_eusart_context_t  context_inst0;
+static uint8_t  rx_buffer_inst0[SL_IOSTREAM_EUSART_INST0_RX_BUFFER_SIZE];
+sl_iostream_instance_info_t sl_iostream_instance_inst0_info = {
+  .handle = &sl_iostream_inst0.stream,
+  .name = "inst0",
   .type = SL_IOSTREAM_TYPE_UART,
-  .periph_id = SL_IOSTREAM_EUSART_VCOM_PERIPHERAL_NO,
-  .init = sl_iostream_eusart_init_vcom,
+  .periph_id = SL_IOSTREAM_EUSART_INST0_PERIPHERAL_NO,
+  .init = sl_iostream_eusart_init_inst0,
 };
 
 
 
-sl_status_t sl_iostream_eusart_init_vcom(void)
+sl_status_t sl_iostream_eusart_init_inst0(void)
 {
   sl_status_t status;
-#if (SL_IOSTREAM_EUSART_VCOM_ENABLE_HIGH_FREQUENCY == 0)
-  EUSART_UartInit_TypeDef init_vcom = EUSART_UART_INIT_DEFAULT_LF;
+#if (SL_IOSTREAM_EUSART_INST0_ENABLE_HIGH_FREQUENCY == 0)
+  EUSART_UartInit_TypeDef init_inst0 = EUSART_UART_INIT_DEFAULT_LF;
 #else
-  EUSART_UartInit_TypeDef init_vcom = EUSART_UART_INIT_DEFAULT_HF;
+  EUSART_UartInit_TypeDef init_inst0 = EUSART_UART_INIT_DEFAULT_HF;
 #endif
-  init_vcom.baudrate = SL_IOSTREAM_EUSART_VCOM_BAUDRATE;
-  init_vcom.parity = SL_IOSTREAM_EUSART_VCOM_PARITY;
-  init_vcom.stopbits = SL_IOSTREAM_EUSART_VCOM_STOP_BITS;
+  init_inst0.baudrate = SL_IOSTREAM_EUSART_INST0_BAUDRATE;
+  init_inst0.parity = SL_IOSTREAM_EUSART_INST0_PARITY;
+  init_inst0.stopbits = SL_IOSTREAM_EUSART_INST0_STOP_BITS;
 
-  sl_iostream_eusart_config_t config_vcom = { 
-    .eusart = SL_IOSTREAM_EUSART_VCOM_PERIPHERAL,
-    .enable_high_frequency = SL_IOSTREAM_EUSART_VCOM_ENABLE_HIGH_FREQUENCY,
-    .clock = SL_IOSTREAM_EUSART_CLOCK_REF(SL_IOSTREAM_EUSART_VCOM_PERIPHERAL_NO),
+  sl_iostream_eusart_config_t config_inst0 = { 
+    .eusart = SL_IOSTREAM_EUSART_INST0_PERIPHERAL,
+    .enable_high_frequency = SL_IOSTREAM_EUSART_INST0_ENABLE_HIGH_FREQUENCY,
+    .clock = SL_IOSTREAM_EUSART_CLOCK_REF(SL_IOSTREAM_EUSART_INST0_PERIPHERAL_NO),
 #if defined(EUSART_COUNT) && (EUSART_COUNT > 1)
-    .port_index = SL_IOSTREAM_EUSART_VCOM_PERIPHERAL_NO,
+    .port_index = SL_IOSTREAM_EUSART_INST0_PERIPHERAL_NO,
 #endif
-    .tx_port = SL_IOSTREAM_EUSART_VCOM_TX_PORT,
-    .tx_pin = SL_IOSTREAM_EUSART_VCOM_TX_PIN,
-    .rx_port = SL_IOSTREAM_EUSART_VCOM_RX_PORT,
-    .rx_pin = SL_IOSTREAM_EUSART_VCOM_RX_PIN,
-#if defined(SL_IOSTREAM_EUSART_VCOM_CTS_PORT)
-    .cts_port = SL_IOSTREAM_EUSART_VCOM_CTS_PORT,
-    .cts_pin = SL_IOSTREAM_EUSART_VCOM_CTS_PIN,
+    .tx_port = SL_IOSTREAM_EUSART_INST0_TX_PORT,
+    .tx_pin = SL_IOSTREAM_EUSART_INST0_TX_PIN,
+    .rx_port = SL_IOSTREAM_EUSART_INST0_RX_PORT,
+    .rx_pin = SL_IOSTREAM_EUSART_INST0_RX_PIN,
+#if defined(SL_IOSTREAM_EUSART_INST0_CTS_PORT)
+    .cts_port = SL_IOSTREAM_EUSART_INST0_CTS_PORT,
+    .cts_pin = SL_IOSTREAM_EUSART_INST0_CTS_PIN,
 #endif
-#if defined(SL_IOSTREAM_EUSART_VCOM_RTS_PORT)
-    .rts_port = SL_IOSTREAM_EUSART_VCOM_RTS_PORT,
-    .rts_pin = SL_IOSTREAM_EUSART_VCOM_RTS_PIN,
+#if defined(SL_IOSTREAM_EUSART_INST0_RTS_PORT)
+    .rts_port = SL_IOSTREAM_EUSART_INST0_RTS_PORT,
+    .rts_pin = SL_IOSTREAM_EUSART_INST0_RTS_PIN,
 #endif
   };
-  config_vcom.flow_control = SL_IOSTREAM_EUSART_VCOM_FLOW_CONTROL_TYPE != uartFlowControlSoftware ? SL_IOSTREAM_EUSART_VCOM_FLOW_CONTROL_TYPE : eusartHwFlowControlNone;
-#if defined(LDMAXBAR_CH_REQSEL_SIGSEL_EUART0RXFL) && (SL_IOSTREAM_EUSART_VCOM_PERIPHERAL_NO == 0)
-  sl_iostream_dma_config_t dma_config_vcom = {.src = (uint8_t *)&SL_IOSTREAM_EUSART_VCOM_PERIPHERAL->RXDATA,
+  config_inst0.flow_control = SL_IOSTREAM_EUSART_INST0_FLOW_CONTROL_TYPE != uartFlowControlSoftware ? SL_IOSTREAM_EUSART_INST0_FLOW_CONTROL_TYPE : eusartHwFlowControlNone;
+#if defined(LDMAXBAR_CH_REQSEL_SIGSEL_EUART0RXFL) && (SL_IOSTREAM_EUSART_INST0_PERIPHERAL_NO == 0)
+  sl_iostream_dma_config_t dma_config_inst0 = {.src = (uint8_t *)&SL_IOSTREAM_EUSART_INST0_PERIPHERAL->RXDATA,
                                                         .peripheral_signal = SL_IOSTREAM_EUART_RX_DMA_SIGNAL};
 #else
-  sl_iostream_dma_config_t dma_config_vcom = {.src = (uint8_t *)&SL_IOSTREAM_EUSART_VCOM_PERIPHERAL->RXDATA,
-                                                        .peripheral_signal = SL_IOSTREAM_EUSART_RX_DMA_SIGNAL(SL_IOSTREAM_EUSART_VCOM_PERIPHERAL_NO)};
+  sl_iostream_dma_config_t dma_config_inst0 = {.src = (uint8_t *)&SL_IOSTREAM_EUSART_INST0_PERIPHERAL->RXDATA,
+                                                        .peripheral_signal = SL_IOSTREAM_EUSART_RX_DMA_SIGNAL(SL_IOSTREAM_EUSART_INST0_PERIPHERAL_NO)};
 #endif 
-  sl_iostream_uart_config_t uart_config_vcom = {
-    .dma_cfg = dma_config_vcom,
-    .rx_buffer = rx_buffer_vcom,
-    .rx_buffer_length = SL_IOSTREAM_EUSART_VCOM_RX_BUFFER_SIZE,
-    .tx_irq_number = SL_IOSTREAM_EUSART_TX_IRQ_NUMBER(SL_IOSTREAM_EUSART_VCOM_PERIPHERAL_NO),
-    .rx_irq_number = SL_IOSTREAM_EUSART_RX_IRQ_NUMBER(SL_IOSTREAM_EUSART_VCOM_PERIPHERAL_NO),
-    .lf_to_crlf = SL_IOSTREAM_EUSART_VCOM_CONVERT_BY_DEFAULT_LF_TO_CRLF,
-    .rx_when_sleeping = SL_IOSTREAM_EUSART_VCOM_RESTRICT_ENERGY_MODE_TO_ALLOW_RECEPTION,
+  sl_iostream_uart_config_t uart_config_inst0 = {
+    .dma_cfg = dma_config_inst0,
+    .rx_buffer = rx_buffer_inst0,
+    .rx_buffer_length = SL_IOSTREAM_EUSART_INST0_RX_BUFFER_SIZE,
+    .tx_irq_number = SL_IOSTREAM_EUSART_TX_IRQ_NUMBER(SL_IOSTREAM_EUSART_INST0_PERIPHERAL_NO),
+    .rx_irq_number = SL_IOSTREAM_EUSART_RX_IRQ_NUMBER(SL_IOSTREAM_EUSART_INST0_PERIPHERAL_NO),
+    .lf_to_crlf = SL_IOSTREAM_EUSART_INST0_CONVERT_BY_DEFAULT_LF_TO_CRLF,
+    .rx_when_sleeping = SL_IOSTREAM_EUSART_INST0_RESTRICT_ENERGY_MODE_TO_ALLOW_RECEPTION,
   };
-  uart_config_vcom.sw_flow_control = SL_IOSTREAM_EUSART_VCOM_FLOW_CONTROL_TYPE == uartFlowControlSoftware;
+  uart_config_inst0.sw_flow_control = SL_IOSTREAM_EUSART_INST0_FLOW_CONTROL_TYPE == uartFlowControlSoftware;
   // Instantiate eusart instance 
-  status = sl_iostream_eusart_init(&sl_iostream_vcom,
-                                  &uart_config_vcom,
-                                  &init_vcom,
-                                  &config_vcom,
-                                  &context_vcom);
+  status = sl_iostream_eusart_init(&sl_iostream_inst0,
+                                  &uart_config_inst0,
+                                  &init_inst0,
+                                  &config_inst0,
+                                  &context_inst0);
   EFM_ASSERT(status == SL_STATUS_OK);
 
-  
-  // Send VCOM config to WSTK
-  uint8_t flow_control = COS_CONFIG_FLOWCONTROL_NONE;
-  if (!uart_config_vcom.sw_flow_control) {
-    switch (SL_IOSTREAM_EUSART_VCOM_FLOW_CONTROL_TYPE)
-    {
-      case eusartHwFlowControlNone:
-        flow_control = COS_CONFIG_FLOWCONTROL_NONE;
-        break;
-      case eusartHwFlowControlCts:
-        flow_control = COS_CONFIG_FLOWCONTROL_CTS;
-        break;
-      case eusartHwFlowControlRts:
-        flow_control = COS_CONFIG_FLOWCONTROL_RTS;
-        break;
-      case eusartHwFlowControlCtsAndRts:
-        flow_control = COS_CONFIG_FLOWCONTROL_CTS_RTS;
-        break;
-      default:
-        // Invalid flow control type
-        EFM_ASSERT(0);
-        break;
-    }
-  }
-  sl_cos_config_vcom((uint32_t) SL_IOSTREAM_EUSART_VCOM_BAUDRATE, flow_control);
   
 
   return status;
@@ -163,27 +136,27 @@ void sl_iostream_eusart_init_instances(void)
   #endif
   // Instantiate eusart instance(s) 
   
-  sl_iostream_eusart_init_vcom();
+  sl_iostream_eusart_init_inst0();
   
 }
 
 
-void SL_IOSTREAM_EUSART_TX_IRQ_HANDLER(SL_IOSTREAM_EUSART_VCOM_PERIPHERAL_NO)(void)
+void SL_IOSTREAM_EUSART_TX_IRQ_HANDLER(SL_IOSTREAM_EUSART_INST0_PERIPHERAL_NO)(void)
 {
-  sl_iostream_eusart_irq_handler(&sl_iostream_vcom);
+  sl_iostream_eusart_irq_handler(&sl_iostream_inst0);
 }
 
-void SL_IOSTREAM_EUSART_RX_IRQ_HANDLER(SL_IOSTREAM_EUSART_VCOM_PERIPHERAL_NO)(void)
+void SL_IOSTREAM_EUSART_RX_IRQ_HANDLER(SL_IOSTREAM_EUSART_INST0_PERIPHERAL_NO)(void)
 {
-  sl_iostream_eusart_irq_handler(&sl_iostream_vcom);
+  sl_iostream_eusart_irq_handler(&sl_iostream_inst0);
 }
 
 #if defined(SL_CATALOG_POWER_MANAGER_PRESENT)
 #if !defined(SL_CATALOG_KERNEL_PRESENT)
  
-sl_power_manager_on_isr_exit_t sl_iostream_eusart_vcom_sleep_on_isr_exit(void)
+sl_power_manager_on_isr_exit_t sl_iostream_eusart_inst0_sleep_on_isr_exit(void)
 {
-  return sl_iostream_uart_sleep_on_isr_exit(&sl_iostream_vcom);
+  return sl_iostream_uart_sleep_on_isr_exit(&sl_iostream_inst0);
 }
 
 #endif // SL_CATALOG_KERNEL_PRESENT
@@ -194,8 +167,8 @@ static void events_handler(sl_power_manager_em_t from,
   if (to < SL_POWER_MANAGER_EM3){
     // Only prepare for wakeup from EM2 or less, since EUSART doesn't run in EM3
     
-    if (sl_iostream_uart_vcom_handle->stream.context != NULL) {
-      sl_iostream_uart_prepare_for_sleep(sl_iostream_uart_vcom_handle);
+    if (sl_iostream_uart_inst0_handle->stream.context != NULL) {
+      sl_iostream_uart_prepare_for_sleep(sl_iostream_uart_inst0_handle);
     }
     
   }

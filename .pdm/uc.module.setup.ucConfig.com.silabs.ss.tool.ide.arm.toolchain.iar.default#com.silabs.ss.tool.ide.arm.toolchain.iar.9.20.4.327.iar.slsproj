@@ -3,7 +3,6 @@
   <folder name="config">
     <folder name="rail">
       <file name="profile_connect.restriction" generated="true" linked="false"/>
-      <file name="radio_settings.radioconf" generated="true" linked="false"/>
       <file name="profile_long_range.restriction" generated="true" linked="false"/>
     </folder>
     <folder name="btconf">
@@ -19,13 +18,11 @@
     <file name="sl_bluetooth_config.h" generated="true" linked="false"/>
     <file name="sl_legacy_hal_wdog_config.h" generated="true" linked="false"/>
     <file name="sl_hfxo_manager_config.h" generated="true" linked="false"/>
-    <file name="sl_iostream_eusart_vcom_config.h" generated="true" linked="false"/>
-    <file name="sl_board_control_config.h" generated="true" linked="false"/>
+    <file name="sl_iostream_eusart_inst0_config.h" generated="true" linked="false"/>
     <file name="app_log_config.h" generated="true" linked="false"/>
     <file name="sl_cli_config.h" generated="true" linked="false"/>
     <file name="stack-common-config.h" generated="true" linked="false"/>
     <file name="sl_bluetooth_connection_config.h" generated="true" linked="false"/>
-    <file name="sl_debug_swo_config.h" generated="true" linked="false"/>
     <file name="sl_token_manager_config.h" generated="true" linked="false"/>
     <file name="sl_custom_token_header.h" generated="true" linked="false"/>
     <file name="sl_custom_manufacturing_token_header.h" generated="true" linked="false"/>
@@ -33,12 +30,10 @@
     <file name="sl_sleeptimer_config.h" generated="true" linked="false"/>
     <file name="sl_power_manager_config.h" generated="true" linked="false"/>
     <file name="sl_cli_config_example.h" generated="true" linked="false"/>
-    <file name="sl_device_init_lfxo_config.h" generated="true" linked="false"/>
     <file name="sl_memory_config.h" generated="true" linked="false"/>
     <file name="sl_simple_led_led0_config.h" generated="true" linked="false"/>
     <file name="dmadrv_config.h" generated="true" linked="false"/>
     <file name="sl_rail_util_pti_config.h" generated="true" linked="false"/>
-    <file name="sl_rail_util_rf_path_switch_config.h" generated="true" linked="false"/>
     <file name="sl_bluetooth_advertiser_config.h" generated="true" linked="false"/>
     <file name="cmsis-rtos-ipc-config.h" generated="true" linked="false"/>
     <file name="sl_device_init_emu_config.h" generated="true" linked="false"/>
