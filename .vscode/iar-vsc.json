@@ -1,0 +1,16 @@
+{
+  "workspace": {
+    "path": "${workspaceFolder}\\connect_bt_dmp_soc_light_cmsisos.eww"
+  },
+  "workspaces": {
+    "${workspaceFolder}\\connect_bt_dmp_soc_light_cmsisos.eww": {
+      "configs": {},
+      "selected": {
+        "path": "${workspaceFolder}\\connect_bt_dmp_soc_light_cmsisos.ewp"
+      }
+    }
+  },
+  "workbench": {
+    "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.2"
+  }
+}

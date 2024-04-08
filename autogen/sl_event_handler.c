@@ -33,7 +33,6 @@
 #include "sl_power_manager.h"
 #include "sl_cos.h"
 #include "sl_rail_util_power_manager_init.h"
-#include "sl_rail_util_rf_path_switch.h"
 
 void sl_platform_init(void)
 {
@@ -87,7 +86,6 @@ void sl_stack_init(void)
   sl_bt_rtos_init();
   emberAfPluginCmsisRtosIpcInit();
   sl_rail_util_power_manager_init();
-  sl_rail_util_rf_path_switch_init();
 }
 
 void sl_internal_app_init(void)

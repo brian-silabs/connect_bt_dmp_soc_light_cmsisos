@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ASCII"?>
 <model:MDescriptors xmlns:model="http://www.silabs.com/ss/Studio.ecore">
   <descriptors name="connect_bt_dmp_soc_light_cmsisos">
-    <properties key="projectCommon.sdkId" value="com.silabs.sdk.stack.super:4.3.2._1925643223"/>
+    <properties key="projectCommon.sdkId" value="com.silabs.sdk.stack.super:4.3.1._1925643218"/>
     <properties key="universalConfig.relativeWorkspacePath" value="..\connect_bt_dmp_soc_light_cmsisos.slcw"/>
     <properties key="universalConfig.generationDirectory" value=""/>
     <properties key="universalConfig.toolchainCompatibility" value="iar gcc"/>
@@ -12,5 +12,6 @@
     <properties key="projectCommon.toolchainId" value="com.silabs.ss.tool.ide.arm.toolchain.iar:9.20.4.327"/>
     <properties key="universalConfig.projectTypeIds" value="com.silabs.framework.project.ewp com.silabs.ss.framework.ide.project.core.cdtMbsProjectType"/>
     <properties key="projectCommon.importModeId" value="COPY"/>
+    <properties key="universalConfig.previousSdkId" value="com.silabs.sdk.stack.super:4.3.1._1925643218"/>
   </descriptors>
 </model:MDescriptors>

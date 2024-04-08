@@ -2,8 +2,8 @@
  * @brief RAIL Configuration
  * @details
  *   WARNING: Auto-Generated Radio Config  -  DO NOT EDIT
- *   Radio Configurator Version: 2302.6.1
- *   RAIL Adapter Version: 2.4.32
+ *   Radio Configurator Version: 2302.5.1
+ *   RAIL Adapter Version: 2.4.31
  *   RAIL Compatibility: 2.x
  *******************************************************************************
  * # License
@@ -331,9 +331,9 @@ const uint32_t Protocol_Configuration_modemConfigBase[] = {
   0x32010150UL, 0x00510062UL,
   0x02020168UL, 0x00060000UL,
   /*    016C */ 0x00062000UL,
-  0x02010174UL, 0x0C100169UL,
+  0x02010174UL, 0x01900169UL,
   0x12010178UL, 0x001C0000UL,
-  0x32010178UL, 0xCFE00440UL,
+  0x32010178UL, 0x1FE00440UL,
   0x12010180UL, 0x00000779UL,
   0x32010180UL, 0x00000006UL,
   0x02020188UL, 0x00000090UL,
