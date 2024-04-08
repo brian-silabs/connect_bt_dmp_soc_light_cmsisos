@@ -3,7 +3,6 @@
   <folder name="autogen">
     <file name="sl_bluetooth.c" builtin="true" generated="true"/>
     <file name="sl_bluetooth.h" builtin="true" generated="true"/>
-    <file name="sl_board_default_init.c" builtin="true" generated="true"/>
     <file name="sl_cli_command_table.c" builtin="true" generated="true"/>
     <file name="sl_cli_command_table.html" builtin="true" generated="true"/>
     <file name="sl_cli_handles.h" builtin="true" generated="true"/>

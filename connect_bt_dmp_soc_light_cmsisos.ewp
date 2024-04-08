@@ -79,7 +79,7 @@
                 </option>
                 <option>
                     <name>OGChipSelectEditMenu</name>
-                    <state>EFR32ZG28B312F1024IM68	SiliconLaboratories EFR32ZG28B312F1024IM68</state>
+                    <state>EFR32FG28B322F1024IM68	SiliconLaboratories EFR32FG28B322F1024IM68</state>
                 </option>
                 <option>
                     <name>GenLowLevelInterface</name>
@@ -139,7 +139,7 @@
                 </option>
                 <option>
                     <name>GFPUDeviceSlave</name>
-                    <state>EFR32ZG28B312F1024IM68	SiliconLaboratories EFR32ZG28B312F1024IM68</state>
+                    <state>EFR32FG28B322F1024IM68	SiliconLaboratories EFR32FG28B322F1024IM68</state>
                 </option>
                 <option>
                     <name>FPU2</name>
@@ -221,14 +221,7 @@
                 <debug>1</debug>
                 <option>
                     <name>CCDefines</name>
-                    <state>EFR32ZG28B312F1024IM68=1</state>
-                    <state>HARDWARE_BOARD_DEFAULT_RF_BAND_868=1</state>
-                    <state>HARDWARE_BOARD_SUPPORTS_3_RF_BANDS=1</state>
-                    <state>HARDWARE_BOARD_SUPPORTS_RF_BAND_2400=1</state>
-                    <state>HARDWARE_BOARD_SUPPORTS_RF_BAND_868=1</state>
-                    <state>HARDWARE_BOARD_SUPPORTS_RF_BAND_915=1</state>
-                    <state>SL_BOARD_NAME="BRD4400C"</state>
-                    <state>SL_BOARD_REV="A00"</state>
+                    <state>EFR32FG28B322F1024IM68=1</state>
                     <state>configNUM_SDK_THREAD_LOCAL_STORAGE_POINTERS=2</state>
                     <state>SL_COMPONENT_CATALOG_PRESENT=1</state>
                     <state>CMSISRTOS=1</state>
@@ -378,18 +371,16 @@
                     <state>$PROJ_DIR$\config\btconf</state>
                     <state>$PROJ_DIR$\autogen</state>
                     <state>$PROJ_DIR$\.</state>
-                    <state>$PROJ_DIR$\gecko_sdk_4.3.1\platform\Device\SiliconLabs\EFR32ZG28\Include</state>
+                    <state>$PROJ_DIR$\gecko_sdk_4.3.1\platform\Device\SiliconLabs\EFR32FG28\Include</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.1\app\common\util\app_assert</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.1\app\common\util\app_log</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.1\platform\common\inc</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.1\protocol\bluetooth\inc</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.1\protocol\bluetooth\bgstack\ll\inc</state>
-                    <state>$PROJ_DIR$\gecko_sdk_4.3.1\hardware\board\inc</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.1\platform\service\cli\inc</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.1\platform\service\cli\src</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.1\platform\CMSIS\Core\Include</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.1\platform\CMSIS\RTOS2\Include</state>
-                    <state>$PROJ_DIR$\gecko_sdk_4.3.1\hardware\driver\configuration_over_swo\inc</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.1\protocol\flex\app-framework-common</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.1\protocol\flex\cmsis-stack-ipc</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.1\protocol\flex\csp</state>
@@ -400,7 +391,6 @@
                     <state>$PROJ_DIR$\gecko_sdk_4.3.1\protocol\flex\stack</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.1\protocol\flex\stack\include</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.1\protocol\flex\stack\core</state>
-                    <state>$PROJ_DIR$\gecko_sdk_4.3.1\platform\driver\debug\inc</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.1\platform\service\device_init\inc</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.1\platform\emdrv\dmadrv\inc</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.1\platform\emdrv\common\inc</state>
@@ -620,14 +610,7 @@
                 </option>
                 <option>
                     <name>ADefines</name>
-                    <state>EFR32ZG28B312F1024IM68=1</state>
-                    <state>HARDWARE_BOARD_DEFAULT_RF_BAND_868=1</state>
-                    <state>HARDWARE_BOARD_SUPPORTS_3_RF_BANDS=1</state>
-                    <state>HARDWARE_BOARD_SUPPORTS_RF_BAND_2400=1</state>
-                    <state>HARDWARE_BOARD_SUPPORTS_RF_BAND_868=1</state>
-                    <state>HARDWARE_BOARD_SUPPORTS_RF_BAND_915=1</state>
-                    <state>SL_BOARD_NAME="BRD4400C"</state>
-                    <state>SL_BOARD_REV="A00"</state>
+                    <state>EFR32FG28B322F1024IM68=1</state>
                     <state>configNUM_SDK_THREAD_LOCAL_STORAGE_POINTERS=2</state>
                     <state>SL_COMPONENT_CATALOG_PRESENT=1</state>
                     <state>CMSISRTOS=1</state>
@@ -744,18 +727,16 @@
                     <state>$PROJ_DIR$\config\btconf</state>
                     <state>$PROJ_DIR$\autogen</state>
                     <state>$PROJ_DIR$\.</state>
-                    <state>$PROJ_DIR$\gecko_sdk_4.3.1\platform\Device\SiliconLabs\EFR32ZG28\Include</state>
+                    <state>$PROJ_DIR$\gecko_sdk_4.3.1\platform\Device\SiliconLabs\EFR32FG28\Include</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.1\app\common\util\app_assert</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.1\app\common\util\app_log</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.1\platform\common\inc</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.1\protocol\bluetooth\inc</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.1\protocol\bluetooth\bgstack\ll\inc</state>
-                    <state>$PROJ_DIR$\gecko_sdk_4.3.1\hardware\board\inc</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.1\platform\service\cli\inc</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.1\platform\service\cli\src</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.1\platform\CMSIS\Core\Include</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.1\platform\CMSIS\RTOS2\Include</state>
-                    <state>$PROJ_DIR$\gecko_sdk_4.3.1\hardware\driver\configuration_over_swo\inc</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.1\protocol\flex\app-framework-common</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.1\protocol\flex\cmsis-stack-ipc</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.1\protocol\flex\csp</state>
@@ -766,7 +747,6 @@
                     <state>$PROJ_DIR$\gecko_sdk_4.3.1\protocol\flex\stack</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.1\protocol\flex\stack\include</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.1\protocol\flex\stack\core</state>
-                    <state>$PROJ_DIR$\gecko_sdk_4.3.1\platform\driver\debug\inc</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.1\platform\service\device_init\inc</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.1\platform\emdrv\dmadrv\inc</state>
                     <state>$PROJ_DIR$\gecko_sdk_4.3.1\platform\emdrv\common\inc</state>

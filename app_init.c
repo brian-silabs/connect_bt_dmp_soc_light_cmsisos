@@ -40,6 +40,7 @@
 #include "psa/crypto.h"
 
 #include "sl_bt_api.h"
+#include "em_gpio.h"
 
 // -----------------------------------------------------------------------------
 //                              Macros and Typedefs
@@ -73,6 +74,7 @@ void app_init(void)
   // Put your application init code here!                                    //
   // This is called once during start-up.                                    //
   /////////////////////////////////////////////////////////////////////////////
+  GPIO_PinModeSet(gpioPortB, 0, gpioModePushPull, 1);
   sl_bt_system_start_bluetooth();
 }
 
