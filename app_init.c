@@ -39,6 +39,8 @@
 // Ensure that psa is initialized corretly
 #include "psa/crypto.h"
 
+#include "sl_bt_api.h"
+
 // -----------------------------------------------------------------------------
 //                              Macros and Typedefs
 // -----------------------------------------------------------------------------
@@ -71,6 +73,7 @@ void app_init(void)
   // Put your application init code here!                                    //
   // This is called once during start-up.                                    //
   /////////////////////////////////////////////////////////////////////////////
+  sl_bt_system_start_bluetooth();
 }
 
 /******************************************************************************
