@@ -88,20 +88,44 @@
 // <<< sl:start pin_tool >>>
 // <eusart signal=TX,RX,(CTS),(RTS)> SL_IOSTREAM_EUSART_INST0
 // $[EUSART_SL_IOSTREAM_EUSART_INST0]
+#ifndef SL_IOSTREAM_EUSART_INST0_PERIPHERAL     
 #define SL_IOSTREAM_EUSART_INST0_PERIPHERAL      EUSART0
+#endif
+#ifndef SL_IOSTREAM_EUSART_INST0_PERIPHERAL_NO  
 #define SL_IOSTREAM_EUSART_INST0_PERIPHERAL_NO   0
+#endif
 
+// EUSART0 TX on PA08
+#ifndef SL_IOSTREAM_EUSART_INST0_TX_PORT        
 #define SL_IOSTREAM_EUSART_INST0_TX_PORT         gpioPortA
+#endif
+#ifndef SL_IOSTREAM_EUSART_INST0_TX_PIN         
 #define SL_IOSTREAM_EUSART_INST0_TX_PIN          8
+#endif
 
+// EUSART0 RX on PA09
+#ifndef SL_IOSTREAM_EUSART_INST0_RX_PORT        
 #define SL_IOSTREAM_EUSART_INST0_RX_PORT         gpioPortA
+#endif
+#ifndef SL_IOSTREAM_EUSART_INST0_RX_PIN         
 #define SL_IOSTREAM_EUSART_INST0_RX_PIN          9
+#endif
 
+// EUSART0 CTS on PA10
+#ifndef SL_IOSTREAM_EUSART_INST0_CTS_PORT       
 #define SL_IOSTREAM_EUSART_INST0_CTS_PORT        gpioPortA
+#endif
+#ifndef SL_IOSTREAM_EUSART_INST0_CTS_PIN        
 #define SL_IOSTREAM_EUSART_INST0_CTS_PIN         10
+#endif
 
+// EUSART0 RTS on PA00
+#ifndef SL_IOSTREAM_EUSART_INST0_RTS_PORT       
 #define SL_IOSTREAM_EUSART_INST0_RTS_PORT        gpioPortA
+#endif
+#ifndef SL_IOSTREAM_EUSART_INST0_RTS_PIN        
 #define SL_IOSTREAM_EUSART_INST0_RTS_PIN         0
+#endif
 // [EUSART_SL_IOSTREAM_EUSART_INST0]$
 // <<< sl:end pin_tool >>>
 

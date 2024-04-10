@@ -1,2 +1,5 @@
 IAR\ ARM\ -\ Default/
 *.o
+settings/
+Default/
+ewarm-iar/

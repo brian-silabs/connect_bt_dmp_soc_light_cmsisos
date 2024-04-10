@@ -9,6 +9,7 @@
       <file name="gatt_configuration.btconf" generated="true" linked="false"/>
     </folder>
     <file name="sl_mx25_flash_shutdown_usart_config.h" generated="true" linked="false"/>
+    <file name="parent-support-config.h" generated="true" linked="false"/>
     <file name="debug_print_config.h" generated="true" linked="false"/>
     <file name="nvm3_default_config.h" generated="true" linked="false"/>
     <file name="psa_crypto_config.h" generated="true" linked="false"/>
