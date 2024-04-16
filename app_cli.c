@@ -54,6 +54,12 @@
 extern volatile EmberMessageOptions tx_options;
 /// Connect security key id
 extern psa_key_id_t security_key_id;
+/// Indicates when light toggle action is required
+extern bool light_toggle_required;
+/// Destination of the currently processed sink node, defaults to Coordinator
+extern EmberNodeId light_node_id;
+/// In the starting state, the switch tries to connect to a network
+extern light_switch_state_machine_t state;
 // -----------------------------------------------------------------------------
 //                                Global Variables
 // -----------------------------------------------------------------------------
@@ -201,4 +207,16 @@ void cli_unset_security_key(sl_cli_command_arg_t *arguments)
   security_key_id = 0;
   app_log_info("Security key unset successful\n");
   #endif
+}
+
+/******************************************************************************
+ * CLI - Light toggle command
+ *****************************************************************************/
+void cli_toggle_light(sl_cli_command_arg_t *arguments)
+{
+  uint16_t destinationShortId = sl_cli_get_argument_uint16(arguments, 0);
+  if (state == S_OPERATE) {
+    light_node_id = destinationShortId;
+    light_toggle_required = true;
+  }
 }

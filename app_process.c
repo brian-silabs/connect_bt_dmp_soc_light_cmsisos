@@ -54,6 +54,14 @@
 // -----------------------------------------------------------------------------
 
 /**************************************************************************//**
+ * Send "light toggle" command to the Light node
+ *
+ * @param None
+ * @returns None
+ *****************************************************************************/
+static void toggle_light(void);
+
+/**************************************************************************//**
  * Handle the network joining related tasks
  *
  * @param None
@@ -101,6 +109,10 @@ volatile EmberMessageOptions tx_options = EMBER_OPTIONS_ACK_REQUESTED;
 psa_key_id_t security_key_id = 0;
 ///This structure contains all the flags used in the state machine
 light_application_flags_t state_machine_flags = { false };
+/// Indicates when light toggle action is required
+bool light_toggle_required = false;
+/// Destination of the currently processed sink node, defaults to Coordinator
+EmberNodeId light_node_id = EMBER_COORDINATOR_ADDRESS;
 // -----------------------------------------------------------------------------
 //                                Static Variables
 // -----------------------------------------------------------------------------
@@ -242,6 +254,11 @@ void state_machine_handler(void)
         //process the incoming message
         process_message();
       }
+      if (light_toggle_required) {
+        light_toggle_required = false;
+        //send "toggle light" command to the Light node
+        toggle_light();
+      }
       if (state_machine_flags.leave_request) {
         state_machine_flags.leave_request = false;
         state = S_STANDBY;
@@ -334,9 +351,9 @@ static void handle_network_join(void)
   parameters.radioTxPower = LIGHT_SWITCH_TX_POWER;
   parameters.radioChannel = sl_get_channel();
   parameters.panId = sl_get_pan_id();
-  status = emberJoinNetwork(EMBER_STAR_SLEEPY_END_DEVICE, &parameters);
+  status = emberJoinNetwork(EMBER_STAR_END_DEVICE, &parameters);
   if (status == EMBER_SUCCESS) {
-    app_log_info("join sleepy to the network on channel: %d, PAN ID: 0x%04X \n", parameters.radioChannel, parameters.panId);
+    app_log_info("join to the network on channel: %d, PAN ID: 0x%04X \n", parameters.radioChannel, parameters.panId);
   } else {
     app_log_error("Error during join, error code:0x%02X\n", status);
   }
@@ -380,5 +397,30 @@ static void process_message(void)
                  (sl_get_light_state() == DEMO_LIGHT_ON)
                  ? "on"
                  : "off");
+  }
+}
+
+/**************************************************************************//**
+ * Send "light toggle" command to the Light node
+ *****************************************************************************/
+static void toggle_light(void)
+{
+  uint8_t buffer[LIGHT_SWITCH_MAXIMUM_DATA_LENGTH] = { 0 };
+
+  uint64_t uid = SYSTEM_GetUnique();
+
+  memcpy(&buffer[1], &uid, sizeof(uid));
+
+  // The first bit indicate the toggle requirement
+  buffer[LIGHT_SWITCH_MESSAGE_CONTROL_BYTE] = 0x01;
+  EmberStatus status = emberMessageSend(light_node_id,
+                                        LIGHT_SWITCH_ENDPOINT, // endpoint
+                                        0, // messageTag
+                                        LIGHT_SWITCH_MAXIMUM_DATA_LENGTH,
+                                        buffer,
+                                        tx_options);
+
+  if (status == EMBER_SUCCESS) {
+    app_log_info("TX: Data to 0x%04X:\n", light_node_id);
   }
 }

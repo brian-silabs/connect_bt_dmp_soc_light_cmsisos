@@ -42,6 +42,8 @@
 #define UNLIMETED_CONNECTION_TIME         (0xFF)
 /// 100ms timer for the state machine
 #define STATE_MACHINE_TIMER_MS            (100)
+/// Length of the RF data
+#define LIGHT_SWITCH_MAXIMUM_DATA_LENGTH  (9)
 
 // -----------------------------------------------------------------------------
 //                                Global Variables

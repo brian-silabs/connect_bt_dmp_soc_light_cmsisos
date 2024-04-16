@@ -139,6 +139,7 @@ void cli_set_channel(sl_cli_command_arg_t *arguments);
 void cli_set_tx_option(sl_cli_command_arg_t *arguments);
 void cli_set_security_key(sl_cli_command_arg_t *arguments);
 void cli_unset_security_key(sl_cli_command_arg_t *arguments);
+void cli_toggle_light(sl_cli_command_arg_t *arguments);
 
 // Command structs. Names are in the format : cli_cmd_{command group name}_{command name}
 // In order to support hyphen in command and group name, every occurence of it while
@@ -245,6 +246,11 @@ static const sl_cli_command_info_t cli_cmd__unset_key = \
                   "",
                  {SL_CLI_ARG_END, });
 
+static const sl_cli_command_info_t cli_cmd__toggle_light = \
+  SL_CLI_COMMAND(cli_toggle_light,
+                 "Toggle the light on the Light node",
+                  "2 byte short ID of destination",
+                  {SL_CLI_ARG_UINT16, SL_CLI_ARG_END, });
 
 // Create group command tables and structs if cli_groups given
 // in template. Group name is suffixed with _group_table for tables
@@ -268,6 +274,7 @@ const sl_cli_command_entry_t sl_cli_default_command_table[] = {
   { "set_tx_options", &cli_cmd__set_tx_options, false },
   { "set_key", &cli_cmd__set_key, false },
   { "unset_key", &cli_cmd__unset_key, false },
+  { "toggle_light", &cli_cmd__toggle_light, false },
   { NULL, NULL, false },
 };
 
