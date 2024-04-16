@@ -39,8 +39,31 @@
 // Ensure that psa is initialized corretly
 #include "psa/crypto.h"
 
+#include "aes-wrapper.h"
+
 #include "sl_bt_api.h"
 #include "em_gpio.h"
+
+Status ccmStatus = 0x00;
+
+// Current security key : default init with GP group key default
+uint8_t key[]= {
+    0x70, 0xAD, 0x7D, 0x16, 0xDD, 0xDF, 0x0C, 0x04,
+    0x3B, 0x08, 0x5F, 0x7D, 0x33, 0x53, 0x2B, 0x44,
+};
+
+uint8_t originalData[127] = {
+    0xff,0x48,0x1,0x0,0x0,0x0,0x0,0x0,0x2,0x0,0x17,0x88,
+    0x1,0x0,0x80,0x73,0x9e,0x0,0x11,0x3b,0x72,0x0,0x97,
+    0xb0,0x6f,0xd3,0xda,0x1c,0xe,0x30,0x6d,0x91,0xc4,
+    //0x50,0x45,0xfe,0x79// expected MIC
+};
+
+uint8_t initVector[16] = {
+    0x00,  0x93,  0x00,  0x00,  0x00,  0x01,  0xff,  0xff,
+    0xff,  0xff,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00
+};
+
 
 // -----------------------------------------------------------------------------
 //                              Macros and Typedefs
@@ -103,6 +126,24 @@ void emberAfInitCallback(void)
 #if defined(EMBER_AF_PLUGIN_BLE)
   bleConnectionInfoTableInit();
 #endif
+
+  //Initialization of Security Library using key
+  app_log_info("Security Init\n");
+  ccm_init(key);
+
+  //First authenticate only our test vector
+  app_log_info("Starting test vector encr authentication\n");
+  ccmStatus = ccm_secure(originalData, initVector, NULL, 33, 0, 0x01, AES_DIR_ENCRYPT);
+  app_log_info("CCM authentication vector test status: 0x%X\n", ccmStatus);
+  if(!ccmStatus)
+  {
+    app_log_info("Generated MIC is 0x%4x LSByte first\n", *((uint32_t *)(&originalData[33])));
+  }
+
+  app_log_info("Starting test vector decr authentication\n");
+  ccmStatus = ccm_secure(originalData, initVector, NULL, 33, 0, 0x01, AES_DIR_DECRYPT);
+  app_log_info("CCM vector test status: 0x%x\n", ccmStatus);
+
 }
 
 // -----------------------------------------------------------------------------
