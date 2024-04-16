@@ -74,8 +74,12 @@ typedef struct {
   bool init_success;
   /// This flag indicates if network forming has requested
   bool form_network_request;
+  /// This flag indicates if network joining has requested
+  bool join_network_request;
   /// This flag indicates if network is formed properly
   bool network_formed;
+  /// This flag indicates if network is joined properly
+  bool network_joined;
   /// This flag indicates if the node wants to leave the a network
   bool leave_request;
   /// This flag indicates if error occurred during any process

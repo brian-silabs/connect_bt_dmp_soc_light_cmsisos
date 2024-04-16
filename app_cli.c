@@ -71,6 +71,16 @@ extern light_application_flags_t state_machine_flags;
 //-----------------------------------------------------------------------------
 
 /******************************************************************************
+ * CLI - Join a local network
+ *****************************************************************************/
+void cli_join(sl_cli_command_arg_t *arguments)
+{
+  (void) arguments;
+  state_machine_flags.join_network_request = true;
+}
+
+
+/******************************************************************************
  * CLI - Form a local network
  *****************************************************************************/
 void cli_form(sl_cli_command_arg_t *arguments)

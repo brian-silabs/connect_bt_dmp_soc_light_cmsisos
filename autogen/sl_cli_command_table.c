@@ -130,6 +130,7 @@ void connect_ble_cli_open_connection_command(sl_cli_command_arg_t *arguments);
 void connect_ble_cli_close_connection_command(sl_cli_command_arg_t *arguments);
 void connect_ble_cli_set_connection_params_command(sl_cli_command_arg_t *arguments);
 void cli_form(sl_cli_command_arg_t *arguments);
+void cli_join(sl_cli_command_arg_t *arguments);
 void cli_leave(sl_cli_command_arg_t *arguments);
 void cli_reset(sl_cli_command_arg_t *arguments);
 void cli_info(sl_cli_command_arg_t *arguments);
@@ -187,6 +188,12 @@ static const sl_cli_command_info_t cli_cmd__ble_set_connection_params = \
 static const sl_cli_command_info_t cli_cmd__form = \
   SL_CLI_COMMAND(cli_form,
                  "Forms a network with a default address",
+                  "",
+                 {SL_CLI_ARG_END, });
+
+static const sl_cli_command_info_t cli_cmd__join = \
+  SL_CLI_COMMAND(cli_join,
+                 "Joins a network with a default address as Sleepy",
                   "",
                  {SL_CLI_ARG_END, });
 
@@ -252,6 +259,7 @@ const sl_cli_command_entry_t sl_cli_default_command_table[] = {
   { "ble_close_connection", &cli_cmd__ble_close_connection, false },
   { "ble_set_connection_params", &cli_cmd__ble_set_connection_params, false },
   { "form", &cli_cmd__form, false },
+  { "join", &cli_cmd__join, false },
   { "leave", &cli_cmd__leave, false },
   { "reset", &cli_cmd__reset, false },
   { "info", &cli_cmd__info, false },

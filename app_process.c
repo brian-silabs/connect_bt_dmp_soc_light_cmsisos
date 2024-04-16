@@ -54,6 +54,14 @@
 // -----------------------------------------------------------------------------
 
 /**************************************************************************//**
+ * Handle the network joining related tasks
+ *
+ * @param None
+ * @returns None
+ *****************************************************************************/
+static void handle_network_join(void);
+
+/**************************************************************************//**
  * Handle the network forming related tasks
  *
  * @param None
@@ -203,7 +211,12 @@ void state_machine_handler(void)
         state = S_OPERATE;
         sl_set_light_state(DEMO_LIGHT_OFF);
         app_log_info("After powerup, start to operate\n");
-      } else if (state_machine_flags.error_detected) {
+      } else if (state_machine_flags.join_network_request == true) {
+        state_machine_flags.join_network_request = false;
+        // Start the network connection process
+        handle_network_join();
+        state = S_NETWORK;
+      }else if (state_machine_flags.error_detected) {
         state_machine_flags.error_detected = false;
         state = S_ERROR;
       }
@@ -213,6 +226,9 @@ void state_machine_handler(void)
       // Wait until the device is manage to connect to the network
       if (state_machine_flags.network_formed) {
         state_machine_flags.network_formed = false;
+        state = S_OPERATE;
+      } else if (state_machine_flags.network_joined) {
+        state_machine_flags.network_joined = false;
         state = S_OPERATE;
       } else if (state_machine_flags.error_detected) {
         state_machine_flags.error_detected = false;
@@ -306,6 +322,25 @@ bool set_security_key(uint8_t* key, size_t key_length)
 // -----------------------------------------------------------------------------
 //                          Static Function Definitions
 // -----------------------------------------------------------------------------s
+
+/**************************************************************************//**
+ * Handle the tasks in relation with connecting to a network
+ *****************************************************************************/
+static void handle_network_join(void)
+{
+  EmberStatus status;
+  EmberNetworkParameters parameters;
+
+  parameters.radioTxPower = LIGHT_SWITCH_TX_POWER;
+  parameters.radioChannel = sl_get_channel();
+  parameters.panId = sl_get_pan_id();
+  status = emberJoinNetwork(EMBER_STAR_SLEEPY_END_DEVICE, &parameters);
+  if (status == EMBER_SUCCESS) {
+    app_log_info("join sleepy to the network on channel: %d, PAN ID: 0x%04X \n", parameters.radioChannel, parameters.panId);
+  } else {
+    app_log_error("Error during join, error code:0x%02X\n", status);
+  }
+}
 
 /**************************************************************************//**
  * Handle the tasks in relation with connecting to a network
