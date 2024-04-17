@@ -44,6 +44,48 @@
 #include "sl_bt_api.h"
 #include "em_gpio.h"
 
+// FreeRTOS includes
+#include "FreeRTOS.h"
+#include "FreeRTOSConfig.h"
+#include "task.h"
+#include "event_groups.h"
+
+// -----------------------------------------------------------------------------
+//                              Macros and Typedefs
+// -----------------------------------------------------------------------------
+
+/// Start Task Parameters
+#define APP_START_TASK_NAME         "Startup_Task"
+#define APP_START_TASK_STACK_SIZE   200
+#define APP_START_TASK_PRIO         8u
+
+#define APP_START_EVENT_FLAG        (1 << 0)
+
+// -----------------------------------------------------------------------------
+//                          Static Function Declarations
+// -----------------------------------------------------------------------------
+static void startup_task(void *p_arg);
+
+// -----------------------------------------------------------------------------
+//                                Global Variables
+// -----------------------------------------------------------------------------
+/// The event handler signal of the state machine
+extern EmberEventControl *state_machine_event;
+///This structure contains all the flags used in the state machine
+extern light_application_flags_t state_machine_flags;
+
+// -----------------------------------------------------------------------------
+//                                Static Variables
+// -----------------------------------------------------------------------------
+
+StackType_t app_start_task_stack[APP_START_TASK_STACK_SIZE] = { 0 };
+StaticTask_t app_start_task_buffer;
+TaskHandle_t app_start_task_handle;
+
+/// OS event group to prevent cyclic execution of the task main loop.
+EventGroupHandle_t app_start_event_group_handle;
+StaticEventGroup_t app_start_event_group_buffer;
+
 Status ccmStatus = 0x00;
 
 // Current security key : default init with GP group key default
@@ -63,31 +105,31 @@ uint8_t initVector[16] = {
     0x00,  0x93,  0x00,  0x00,  0x00,  0x01,  0xff,  0xff,
     0xff,  0xff,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00
 };
-
-
-// -----------------------------------------------------------------------------
-//                              Macros and Typedefs
-// -----------------------------------------------------------------------------
-
-// -----------------------------------------------------------------------------
-//                          Static Function Declarations
-// -----------------------------------------------------------------------------
-
-// -----------------------------------------------------------------------------
-//                                Global Variables
-// -----------------------------------------------------------------------------
-/// The event handler signal of the state machine
-extern EmberEventControl *state_machine_event;
-///This structure contains all the flags used in the state machine
-extern light_application_flags_t state_machine_flags;
-
-// -----------------------------------------------------------------------------
-//                                Static Variables
-// -----------------------------------------------------------------------------
-
 // -----------------------------------------------------------------------------
 //                          Public Function Definitions
 // -----------------------------------------------------------------------------
+
+
+/**************************************************************************//**
+ * Startup task init.
+ *****************************************************************************/
+void start_task_init()
+{
+  // Create the Proprietary Application task.
+  app_start_task_handle = xTaskCreateStatic(startup_task,
+                                            APP_START_TASK_NAME,
+                                            APP_START_TASK_STACK_SIZE,
+                                            NULL,
+                                            APP_START_TASK_PRIO,
+                                            app_start_task_stack,
+                                            &app_start_task_buffer);
+
+  // Initialize the flag group for the proprietary task.
+  app_start_event_group_handle =
+    xEventGroupCreateStatic(&app_start_event_group_buffer);
+
+}
+
 /******************************************************************************
  * The function is used for some basic initialization relates to the app.
  *****************************************************************************/
@@ -97,8 +139,35 @@ void app_init(void)
   // Put your application init code here!                                    //
   // This is called once during start-up.                                    //
   /////////////////////////////////////////////////////////////////////////////
-  GPIO_PinModeSet(gpioPortB, 0, gpioModePushPull, 1);
+
+  // Hardware Init is safe to be done here
+  GPIO_PinModeSet(gpioPortB, 0, gpioModePushPull, 1); // Enable VCOM on Silicon Labs devkits
+
+  // Kernel Init is safe to be done here
+  start_task_init();
+
+  // Networking API calls must be performed under RTOS execution context
+  // See start task
+}
+
+static void startup_task(void *p_arg){
+  (void)p_arg;
+  EventBits_t event_bits;
+
+  // Start task init
   sl_bt_system_start_bluetooth();
+
+  app_log_info("Start Task Init Done \n");
+
+  // Start task main loop.
+  while (1) {
+    // Wait for the event bit to be set. Waiting forever in this context
+    event_bits = xEventGroupWaitBits(app_start_event_group_handle,
+                                     APP_START_EVENT_FLAG,
+                                     pdTRUE,
+                                     pdFALSE,
+                                     portMAX_DELAY);
+  }
 }
 
 /******************************************************************************

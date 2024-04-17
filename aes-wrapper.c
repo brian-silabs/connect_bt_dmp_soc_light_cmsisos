@@ -47,7 +47,7 @@ Status ccm_init(uint8_t *securityKey)
 
   device_instance = 0;
   mbedtls_ccm_init(&mbedtls_device_ctx[device_instance]);
-  //mbedtls_ccm_set_device_instance(&mbedtls_device_ctx[device_instance],0);
+  //mbedtls_ccm_set_device_instance(&mbedtls_device_ctx[device_instance],0); -- Safe to remove
 
   if(securityKey != NULL)
   {
