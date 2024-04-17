@@ -674,6 +674,7 @@
           <file name="libconnect-aes-security-library-efr32xg2x-iar.a" linked="false" uri="studio:/sdk/protocol/flex/libs/libconnect-aes-security-library-efr32xg2x-iar.a"/>
           <file name="libconnect-packet-queue-library-efr32xg2x-iar.a" linked="false" uri="studio:/sdk/protocol/flex/libs/libconnect-packet-queue-library-efr32xg2x-iar.a"/>
           <file name="libconnect-parent-support-library-efr32xg2x-iar.a" linked="false" uri="studio:/sdk/protocol/flex/libs/libconnect-parent-support-library-efr32xg2x-iar.a"/>
+          <file name="libconnect-radio-stream-library-efr32xg2x-iar.a" linked="false" uri="studio:/sdk/protocol/flex/libs/libconnect-radio-stream-library-efr32xg2x-iar.a"/>
           <file name="libconnect-stack-common-library-efr32xg2x-iar.a" linked="false" uri="studio:/sdk/protocol/flex/libs/libconnect-stack-common-library-efr32xg2x-iar.a"/>
           <file name="libconnect-stack-counters-library-efr32xg2x-iar.a" linked="false" uri="studio:/sdk/protocol/flex/libs/libconnect-stack-counters-library-efr32xg2x-iar.a"/>
         </folder>
@@ -718,6 +719,9 @@
         <folder name="poll">
           <file name="poll.c" linked="false" uri="studio:/sdk/protocol/flex/poll/poll.c"/>
           <file name="poll.h" linked="false" uri="studio:/sdk/protocol/flex/poll/poll.h"/>
+        </folder>
+        <folder name="stack-cli">
+          <file name="radio-stream-cli.c" linked="false" uri="studio:/sdk/protocol/flex/stack-cli/radio-stream-cli.c"/>
         </folder>
         <folder name="stack">
           <folder name="config">
@@ -1093,6 +1097,7 @@
   <libraryFile uri="studio:/project/gecko_sdk_4.3.1/protocol/flex/libs/libconnect-aes-security-library-efr32xg2x-iar.a"/>
   <libraryFile uri="studio:/project/gecko_sdk_4.3.1/protocol/flex/libs/libconnect-packet-queue-library-efr32xg2x-iar.a"/>
   <libraryFile uri="studio:/project/gecko_sdk_4.3.1/protocol/flex/libs/libconnect-parent-support-library-efr32xg2x-iar.a"/>
+  <libraryFile uri="studio:/project/gecko_sdk_4.3.1/protocol/flex/libs/libconnect-radio-stream-library-efr32xg2x-iar.a"/>
   <libraryFile uri="studio:/project/gecko_sdk_4.3.1/protocol/flex/libs/libconnect-stack-common-library-efr32xg2x-iar.a"/>
   <libraryFile uri="studio:/project/gecko_sdk_4.3.1/protocol/flex/libs/libconnect-stack-counters-library-efr32xg2x-iar.a"/>
   <libraryFile uri="studio:/project/gecko_sdk_4.3.1/platform/emdrv/nvm3/lib/libnvm3_CM33_iar.a"/>

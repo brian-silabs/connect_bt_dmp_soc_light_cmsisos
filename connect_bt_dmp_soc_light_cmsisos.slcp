@@ -53,6 +53,7 @@ component:
 - {id: connect_mac_queue}
 - {id: connect_parent_support}
 - {id: connect_poll}
+- {id: connect_radio_stream_cli}
 - {id: connect_stack_common}
 - {id: connect_stack_counters}
 - {id: device_init}

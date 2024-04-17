@@ -143,6 +143,9 @@ void app_init(void)
   // Hardware Init is safe to be done here
   GPIO_PinModeSet(gpioPortB, 0, gpioModePushPull, 1); // Enable VCOM on Silicon Labs devkits
 
+  //Software Services as well
+  rfTestCliInit();
+
   // Kernel Init is safe to be done here
   start_task_init();
 

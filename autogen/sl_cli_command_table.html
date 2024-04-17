@@ -379,6 +379,50 @@ Example syntax (.slcc or .slcp) for populating this file:
   <div class="command">
     <div class="command-header-bar"></div>
     <div class="command-header">
+      <span class="command-name">start_tx_stream</span>
+        <span class="command-argument">u8</span>
+        <span class="command-argument">u16</span>
+      <span class="command-handler">start_tx_stream_command</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Start RAIL TX stream mode</div>
+      
+      
+      <div class="argument-list">
+      <div class="arguments-title">Arguments</div>
+      <ul>
+        <li>
+        <span class="argument-name">u8</span>mode. 0 = PN9, 1 = CW
+        </li>
+        <li>
+        <span class="argument-name">u16</span>Channel
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name">stop_tx_stream</span>
+      <span class="command-handler">stop_tx_stream_command</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Stop RAIL TX stream mode</div>
+      
+      
+    </div>
+  </div>
+
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
       <span class="command-name">form</span>
       <span class="command-handler">cli_form</span>
     </div>
