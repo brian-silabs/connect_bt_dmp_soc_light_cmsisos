@@ -76,6 +76,8 @@ typedef struct {
   bool form_network_request;
   /// This flag indicates if network joining has requested
   bool join_network_request;
+  /// This flag indicates if network joining has requested
+  bool join_commissioned_network_request;
   /// This flag indicates if network is formed properly
   bool network_formed;
   /// This flag indicates if network is joined properly

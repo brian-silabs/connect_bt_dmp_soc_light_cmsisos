@@ -67,6 +67,14 @@ static void toggle_light(void);
  * @param None
  * @returns None
  *****************************************************************************/
+static void handle_network_join_commissioned(void);
+
+/**************************************************************************//**
+ * Handle the network joining related tasks
+ *
+ * @param None
+ * @returns None
+ *****************************************************************************/
 static void handle_network_join(void);
 
 /**************************************************************************//**
@@ -228,6 +236,11 @@ void state_machine_handler(void)
         // Start the network connection process
         handle_network_join();
         state = S_NETWORK;
+      } else if (state_machine_flags.join_commissioned_network_request == true) {
+        state_machine_flags.join_commissioned_network_request = false;
+        // Start the network connection process
+        handle_network_join_commissioned();
+        state = S_NETWORK;
       }else if (state_machine_flags.error_detected) {
         state_machine_flags.error_detected = false;
         state = S_ERROR;
@@ -343,6 +356,27 @@ bool set_security_key(uint8_t* key, size_t key_length)
 /**************************************************************************//**
  * Handle the tasks in relation with connecting to a network
  *****************************************************************************/
+static void handle_network_join_commissioned(void)
+{
+  EmberStatus status;
+  EmberNetworkParameters parameters;
+  EmberNodeId nodeId = (uint16_t)(SYSTEM_GetUnique() & 0x000000000000FFFF );
+
+  parameters.radioTxPower = LIGHT_SWITCH_TX_POWER;
+  parameters.radioChannel = sl_get_channel();
+  parameters.panId = sl_get_pan_id();
+  status = emberJoinCommissioned(EMBER_MAC_MODE_DEVICE, nodeId, &parameters);
+  if (status == EMBER_SUCCESS) {
+    app_log_info("join to the network on channel: %d, PAN ID: 0x%04X as node 0x%04X\n", parameters.radioChannel, parameters.panId, nodeId);
+  } else {
+    app_log_error("Error during join, error code:0x%02X\n", status);
+  }
+}
+
+
+/**************************************************************************//**
+ * Handle the tasks in relation with connecting to a network
+ *****************************************************************************/
 static void handle_network_join(void)
 {
   EmberStatus status;
@@ -423,4 +457,51 @@ static void toggle_light(void)
   if (status == EMBER_SUCCESS) {
     app_log_info("TX: Data to 0x%04X:\n", light_node_id);
   }
+}
+
+/******************************************************************************
+ * This function is called if a message is sent (MAC mode)
+ *****************************************************************************/
+void emberAfMacMessageSentCallback(EmberStatus status,
+                                   EmberOutgoingMacMessage *message)
+{
+  (void) message;
+  if ( status != EMBER_SUCCESS ) {
+    app_log_info("MAC TX: 0x%02X\n", status);
+  }
+}
+
+/******************************************************************************
+ * This function is called if a message is received (MAC mode)
+ *****************************************************************************/
+void emberAfIncomingMacMessageCallback(EmberIncomingMacMessage *message)
+{
+  uint8_t i;
+  if (message->options & EMBER_OPTIONS_SECURITY_ENABLED) {
+    app_log_info("secured, ");
+  } else {
+    app_log_info("unsecured, ");
+  }
+  if (message->options & EMBER_OPTIONS_ACK_REQUESTED) {
+    app_log_info("acked\n");
+  } else {
+    app_log_info("not acked\n");
+  }
+
+  if (message->macFrame.srcAddress.mode == EMBER_MAC_ADDRESS_MODE_SHORT) {
+    app_log_info("MAC RX: Data from 0x%04X:{", message->macFrame.srcAddress.addr.shortAddress);
+  } else if (message->macFrame.srcAddress.mode == EMBER_MAC_ADDRESS_MODE_NONE) {
+    app_log_info("MAC RX: Data from unspecified address: {");
+  } else {
+    // print long address
+    app_log_info("MAC RX: Data from ");
+    for ( i = 0; i < EUI64_SIZE; i++ ) {
+      app_log_info("%2X", message->macFrame.srcAddress.addr.longAddress[i]);
+    }
+    app_log_info(":{");
+  }
+  for ( i = 0; i < message->length; i++ ) {
+    app_log_info(" %2X", message->payload[i]);
+  }
+  app_log_info("}\n");
 }

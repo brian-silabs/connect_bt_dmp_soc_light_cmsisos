@@ -52,7 +52,7 @@
 // <o SL_CLI_MAX_INPUT_ARGUMENTS> Max number of input arguments <0-32>
 // <i> Default: 8
 // <i> Define the number of input arguments the application needs.
-#define SL_CLI_MAX_INPUT_ARGUMENTS         8
+#define SL_CLI_MAX_INPUT_ARGUMENTS         9
 
 // <o SL_CLI_INPUT_BUFFER_SIZE> Size of input buffer <8-256>
 // <i> Default: 128

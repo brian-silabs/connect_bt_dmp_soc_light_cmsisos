@@ -77,6 +77,15 @@ extern light_application_flags_t state_machine_flags;
 //-----------------------------------------------------------------------------
 
 /******************************************************************************
+ * CLI - Join a local network as MAC Mode device
+ *****************************************************************************/
+void cli_join_commissioned(sl_cli_command_arg_t *arguments)
+{
+  (void) arguments;
+  state_machine_flags.join_commissioned_network_request = true;
+}
+
+/******************************************************************************
  * CLI - Join a local network
  *****************************************************************************/
 void cli_join(sl_cli_command_arg_t *arguments)
@@ -218,5 +227,99 @@ void cli_toggle_light(sl_cli_command_arg_t *arguments)
   if (state == S_OPERATE) {
     light_node_id = destinationShortId;
     light_toggle_required = true;
+  }
+}
+
+/******************************************************************************
+ * CLI - send message: Send message
+ * Params:
+ * 0: a "nibble mask" indicating which fields are specified, specifically:
+ *    0x000F - source ID mode (0x00 = none, 0x02 = short, 0x03 = long)
+ *    0x00F0 - destination ID mode (0x00 = none, 0x02 = short, 0x03 = long)
+ *    0x0F00 - the source pan ID is specified (0x01) or not (0x00).
+ *    0xF000 - the destination pan ID is specified (0x01) or not (0x00).
+ * 1: the source short ID (if specified)
+ * 2: the source long ID (if specified)
+ * 3: the destination short ID (if specified)
+ * 4: the destination long ID (if specified)
+ * 5: the source PAN ID (if specified)
+ * 6: the destination PAN ID (if specified)
+ * 7: MAC payload length
+ *****************************************************************************/
+void cli_send(sl_cli_command_arg_t *arguments)
+{
+  EmberStatus status;
+  EmberMacFrame mac_frame;
+  size_t length;
+  uint16_t mac_frame_info = sl_cli_get_argument_uint16(arguments, 0);
+  EmberNodeId short_src_id = sl_cli_get_argument_uint16(arguments, 1);
+  EmberNodeId short_dest_id = sl_cli_get_argument_uint16(arguments, 3);
+  EmberPanId src_pan_id = sl_cli_get_argument_uint16(arguments, 5);
+  EmberPanId dst_pan_id = sl_cli_get_argument_uint16(arguments, 6);
+  uint8_t *message = sl_cli_get_argument_hex(arguments, 7, &length);
+
+  if ((mac_frame_info & 0x000F) == EMBER_MAC_ADDRESS_MODE_SHORT) {
+    mac_frame.srcAddress.addr.shortAddress = short_src_id;
+    mac_frame.srcAddress.mode = EMBER_MAC_ADDRESS_MODE_SHORT;
+  } else if ((mac_frame_info & 0x000F) == EMBER_MAC_ADDRESS_MODE_LONG) {
+    uint8_t *hex_value = 0;
+    size_t hex_length = 0;
+    hex_value = sl_cli_get_argument_hex(arguments, 2, &hex_length);
+    if (EUI64_SIZE != hex_length) {
+      app_log_error("Source MAC address set failed, not correct length\n");
+      return;
+    }
+    for (uint8_t i = 0; i < EUI64_SIZE; i++) {
+      mac_frame.srcAddress.addr.longAddress[i] = hex_value[i];
+    }
+    mac_frame.srcAddress.mode = EMBER_MAC_ADDRESS_MODE_LONG;
+  } else {
+    mac_frame.srcAddress.mode = EMBER_MAC_ADDRESS_MODE_NONE;
+  }
+
+  if (((mac_frame_info & 0x00F0) >> 4) == EMBER_MAC_ADDRESS_MODE_SHORT) {
+    mac_frame.dstAddress.addr.shortAddress = short_dest_id;
+    mac_frame.dstAddress.mode = EMBER_MAC_ADDRESS_MODE_SHORT;
+  } else if (((mac_frame_info & 0x00F0) >> 4) == EMBER_MAC_ADDRESS_MODE_LONG) {
+    uint8_t *hex_value = 0;
+    size_t hex_length = 0;
+    hex_value = sl_cli_get_argument_hex(arguments, 4, &hex_length);
+    if (EUI64_SIZE != hex_length) {
+      app_log_error("Destination MAC address set failed, not correct length\n");
+      return;
+    }
+    for (uint8_t i = 0; i < EUI64_SIZE; i++) {
+      mac_frame.dstAddress.addr.longAddress[i] = hex_value[i];
+    }
+    mac_frame.dstAddress.mode = EMBER_MAC_ADDRESS_MODE_LONG;
+  } else {
+    mac_frame.dstAddress.mode = EMBER_MAC_ADDRESS_MODE_NONE;
+  }
+
+  if (mac_frame_info & 0x0F00) {
+    mac_frame.srcPanId = src_pan_id;
+    mac_frame.srcPanIdSpecified = true;
+  } else {
+    mac_frame.srcPanIdSpecified = false;
+  }
+
+  if (mac_frame_info & 0xF000) {
+    mac_frame.dstPanId = dst_pan_id;
+    mac_frame.dstPanIdSpecified = true;
+  } else {
+    mac_frame.dstPanIdSpecified = false;
+  }
+
+  status = emberMacMessageSend(&mac_frame,
+                               0x00, // messageTag
+                               length,
+                               message,
+                               tx_options);
+
+  if (status == EMBER_SUCCESS) {
+    app_log_info("MAC frame submitted\n");
+  } else {
+    app_log_error("MAC frame submission failed, status=0x%02X\n",
+                  status);
   }
 }
