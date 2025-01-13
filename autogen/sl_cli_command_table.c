@@ -129,11 +129,7 @@ void connect_ble_cli_start_adv_command(sl_cli_command_arg_t *arguments);
 void connect_ble_cli_open_connection_command(sl_cli_command_arg_t *arguments);
 void connect_ble_cli_close_connection_command(sl_cli_command_arg_t *arguments);
 void connect_ble_cli_set_connection_params_command(sl_cli_command_arg_t *arguments);
-void start_tx_stream_command(sl_cli_command_arg_t *arguments);
-void stop_tx_stream_command(sl_cli_command_arg_t *arguments);
 void cli_form(sl_cli_command_arg_t *arguments);
-void cli_join(sl_cli_command_arg_t *arguments);
-void cli_join_commissioned(sl_cli_command_arg_t *arguments);
 void cli_leave(sl_cli_command_arg_t *arguments);
 void cli_reset(sl_cli_command_arg_t *arguments);
 void cli_info(sl_cli_command_arg_t *arguments);
@@ -142,8 +138,6 @@ void cli_set_channel(sl_cli_command_arg_t *arguments);
 void cli_set_tx_option(sl_cli_command_arg_t *arguments);
 void cli_set_security_key(sl_cli_command_arg_t *arguments);
 void cli_unset_security_key(sl_cli_command_arg_t *arguments);
-void cli_toggle_light(sl_cli_command_arg_t *arguments);
-void cli_send(sl_cli_command_arg_t *arguments);
 
 // Command structs. Names are in the format : cli_cmd_{command group name}_{command name}
 // In order to support hyphen in command and group name, every occurence of it while
@@ -190,33 +184,9 @@ static const sl_cli_command_info_t cli_cmd__ble_set_connection_params = \
                   "Minimum interval" SL_CLI_UNIT_SEPARATOR "Maximum interval" SL_CLI_UNIT_SEPARATOR "Slave latency" SL_CLI_UNIT_SEPARATOR "Supervision timeout" SL_CLI_UNIT_SEPARATOR,
                  {SL_CLI_ARG_UINT16, SL_CLI_ARG_UINT16, SL_CLI_ARG_UINT16, SL_CLI_ARG_UINT16, SL_CLI_ARG_END, });
 
-static const sl_cli_command_info_t cli_cmd__start_tx_stream = \
-  SL_CLI_COMMAND(start_tx_stream_command,
-                 "Start RAIL TX stream mode",
-                  "mode. 0 = PN9, 1 = CW" SL_CLI_UNIT_SEPARATOR "Channel" SL_CLI_UNIT_SEPARATOR,
-                 {SL_CLI_ARG_UINT8, SL_CLI_ARG_UINT16, SL_CLI_ARG_END, });
-
-static const sl_cli_command_info_t cli_cmd__stop_tx_stream = \
-  SL_CLI_COMMAND(stop_tx_stream_command,
-                 "Stop RAIL TX stream mode",
-                  "",
-                 {SL_CLI_ARG_END, });
-
 static const sl_cli_command_info_t cli_cmd__form = \
   SL_CLI_COMMAND(cli_form,
                  "Forms a network with a default address",
-                  "",
-                 {SL_CLI_ARG_END, });
-
-static const sl_cli_command_info_t cli_cmd__join = \
-  SL_CLI_COMMAND(cli_join,
-                 "Joins a network with a default address as Device",
-                  "",
-                 {SL_CLI_ARG_END, });
-
-static const sl_cli_command_info_t cli_cmd__join_comm = \
-  SL_CLI_COMMAND(cli_join_commissioned,
-                 "Joins a network with a default address as MAC Mode device",
                   "",
                  {SL_CLI_ARG_END, });
 
@@ -268,17 +238,6 @@ static const sl_cli_command_info_t cli_cmd__unset_key = \
                   "",
                  {SL_CLI_ARG_END, });
 
-static const sl_cli_command_info_t cli_cmd__toggle_light = \
-  SL_CLI_COMMAND(cli_toggle_light,
-                 "Toggle the light on the Light node",
-                  "2 byte short ID of destination",
-                  {SL_CLI_ARG_UINT16, SL_CLI_ARG_END, });
-
-static const sl_cli_command_info_t cli_cmd__send = \
-  SL_CLI_COMMAND(cli_send,
-                 "Send message",
-                  "MAC frame info" SL_CLI_UNIT_SEPARATOR "Short Source id" SL_CLI_UNIT_SEPARATOR "Source long address" SL_CLI_UNIT_SEPARATOR "Short Destination id" SL_CLI_UNIT_SEPARATOR "Destination long address" SL_CLI_UNIT_SEPARATOR "Source pan id" SL_CLI_UNIT_SEPARATOR "Destination pan id" SL_CLI_UNIT_SEPARATOR "Message" SL_CLI_UNIT_SEPARATOR,
-                 {SL_CLI_ARG_UINT16, SL_CLI_ARG_UINT16, SL_CLI_ARG_HEX, SL_CLI_ARG_UINT16, SL_CLI_ARG_HEX, SL_CLI_ARG_UINT16, SL_CLI_ARG_UINT16, SL_CLI_ARG_HEX, SL_CLI_ARG_END, });
 
 // Create group command tables and structs if cli_groups given
 // in template. Group name is suffixed with _group_table for tables
@@ -292,11 +251,7 @@ const sl_cli_command_entry_t sl_cli_default_command_table[] = {
   { "ble_open_connection", &cli_cmd__ble_open_connection, false },
   { "ble_close_connection", &cli_cmd__ble_close_connection, false },
   { "ble_set_connection_params", &cli_cmd__ble_set_connection_params, false },
-  { "start_tx_stream", &cli_cmd__start_tx_stream, false },
-  { "stop_tx_stream", &cli_cmd__stop_tx_stream, false },
   { "form", &cli_cmd__form, false },
-{ "join", &cli_cmd__join, false },
-  { "join_comm", &cli_cmd__join_comm, false },
   { "leave", &cli_cmd__leave, false },
   { "reset", &cli_cmd__reset, false },
   { "info", &cli_cmd__info, false },
@@ -305,8 +260,6 @@ const sl_cli_command_entry_t sl_cli_default_command_table[] = {
   { "set_tx_options", &cli_cmd__set_tx_options, false },
   { "set_key", &cli_cmd__set_key, false },
   { "unset_key", &cli_cmd__unset_key, false },
-{ "toggle_light", &cli_cmd__toggle_light, false },
-  { "send", &cli_cmd__send, false },
   { NULL, NULL, false },
 };
 

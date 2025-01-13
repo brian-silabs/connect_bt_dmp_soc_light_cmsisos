@@ -52,6 +52,10 @@
 // <i> This table is only used for EMBER_MAC_MODE_DEVICE and EMBER_MAC_MODE_SLEEPY_DEVICE, but the memory will be allocated on all device types.
 #define EMBER_SECURITY_SHORT_TO_LONG_MAPPING_TABLE_SIZE (10)
 
+// <o EMBER_DEFAULT_TX_POWER_DECI_DBM> Default PA Power (deci-dBm, 100 = 10.0 dBm)
+// <i> Default: 0
+#define EMBER_DEFAULT_TX_POWER_DECI_DBM   (0)
+
 // </h>
 
 // <<< end of configuration section >>>

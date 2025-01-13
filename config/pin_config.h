@@ -116,22 +116,6 @@
 // [I2C0]$
 
 // $[EUSART0]
-// EUSART0 CTS on PA10
-#ifndef EUSART0_CTS_PORT                        
-#define EUSART0_CTS_PORT                         gpioPortA
-#endif
-#ifndef EUSART0_CTS_PIN                         
-#define EUSART0_CTS_PIN                          10
-#endif
-
-// EUSART0 RTS on PA00
-#ifndef EUSART0_RTS_PORT                        
-#define EUSART0_RTS_PORT                         gpioPortA
-#endif
-#ifndef EUSART0_RTS_PIN                         
-#define EUSART0_RTS_PIN                          0
-#endif
-
 // EUSART0 RX on PA09
 #ifndef EUSART0_RX_PORT                         
 #define EUSART0_RX_PORT                          gpioPortA
@@ -151,22 +135,6 @@
 // [EUSART0]$
 
 // $[PTI]
-// PTI DFRAME on PD05
-#ifndef PTI_DFRAME_PORT                         
-#define PTI_DFRAME_PORT                          gpioPortD
-#endif
-#ifndef PTI_DFRAME_PIN                          
-#define PTI_DFRAME_PIN                           5
-#endif
-
-// PTI DOUT on PD04
-#ifndef PTI_DOUT_PORT                           
-#define PTI_DOUT_PORT                            gpioPortD
-#endif
-#ifndef PTI_DOUT_PIN                            
-#define PTI_DOUT_PIN                             4
-#endif
-
 // [PTI]$
 
 // $[MODEM]
