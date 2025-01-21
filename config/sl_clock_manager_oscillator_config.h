@@ -38,7 +38,7 @@
 // <e SL_CLOCK_MANAGER_HFXO_EN> HFXO Settings (if High Frequency crystal is used)
 // <i> Enable to configure HFXO
 #ifndef SL_CLOCK_MANAGER_HFXO_EN
-#define SL_CLOCK_MANAGER_HFXO_EN    0
+#define SL_CLOCK_MANAGER_HFXO_EN    1
 #endif
 
 // <o SL_CLOCK_MANAGER_HFXO_MODE> Mode
@@ -145,7 +145,7 @@
 // <e> LFXO Settings (if Low Frequency crystal is used)
 // <i> Enable to configure LFXO
 #ifndef SL_CLOCK_MANAGER_LFXO_EN
-#define SL_CLOCK_MANAGER_LFXO_EN    0
+#define SL_CLOCK_MANAGER_LFXO_EN    1
 #endif
 
 // <o SL_CLOCK_MANAGER_LFXO_MODE> Mode

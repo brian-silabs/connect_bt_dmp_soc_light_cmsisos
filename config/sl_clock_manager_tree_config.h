@@ -52,7 +52,7 @@
 // <i> Selection of the high frequency clock source. HF clock branches can select this value by chosing the DEFAULT_HF value.
 // <d> SL_CLOCK_MANAGER_DEFAULT_HF_CLOCK_SOURCE_HFRCODPLL
 #ifndef SL_CLOCK_MANAGER_DEFAULT_HF_CLOCK_SOURCE
-#define SL_CLOCK_MANAGER_DEFAULT_HF_CLOCK_SOURCE    SL_CLOCK_MANAGER_DEFAULT_HF_CLOCK_SOURCE_HFRCODPLL
+#define SL_CLOCK_MANAGER_DEFAULT_HF_CLOCK_SOURCE    SL_CLOCK_MANAGER_DEFAULT_HF_CLOCK_SOURCE_HFXO
 #endif
 
 // <o SL_CLOCK_MANAGER_DEFAULT_LF_CLOCK_SOURCE> Default Clock Source Selection for LF clock branches
@@ -62,7 +62,7 @@
 // <i> Selection of the low frequency clock source. LF clock branches can select this value by chosing the DEFAULT_HF value.
 // <d> SL_CLOCK_MANAGER_DEFAULT_LF_CLOCK_SOURCE_LFRCO
 #ifndef SL_CLOCK_MANAGER_DEFAULT_LF_CLOCK_SOURCE
-#define SL_CLOCK_MANAGER_DEFAULT_LF_CLOCK_SOURCE    SL_CLOCK_MANAGER_DEFAULT_LF_CLOCK_SOURCE_LFRCO
+#define SL_CLOCK_MANAGER_DEFAULT_LF_CLOCK_SOURCE    SL_CLOCK_MANAGER_DEFAULT_LF_CLOCK_SOURCE_LFXO
 #endif
 
 // <h> System Clock Branch Settings
