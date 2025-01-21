@@ -36,6 +36,7 @@ component:
 - {id: EFR32FG28B322F1024IM68}
 - {id: app_assert}
 - {id: app_log}
+- {id: bluetooth_on_demand_start}
 - instance: [example]
   id: cli
 - {id: clock_manager}

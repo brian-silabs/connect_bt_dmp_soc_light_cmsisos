@@ -1249,9 +1249,15 @@
             <excluded>
                 <configuration>Default</configuration>
             </excluded>
+            <excluded>
+                <configuration>Default</configuration>
+            </excluded>
         </file>
         <file>
             <name>$PROJ_DIR$\connect_create_gbl_image.sh</name>
+            <excluded>
+                <configuration>Default</configuration>
+            </excluded>
             <excluded>
                 <configuration>Default</configuration>
             </excluded>
@@ -1266,6 +1272,9 @@
                         <name>api</name>
                         <file>
                             <name>$PROJ_DIR$\simplicity_sdk_2024.6.2\protocol\bluetooth\api\sl_bt.xapi</name>
+                            <excluded>
+                                <configuration>Default</configuration>
+                            </excluded>
                             <excluded>
                                 <configuration>Default</configuration>
                             </excluded>

@@ -21,6 +21,8 @@
     <file name="parent-support-config.h" generated="true" linked="false"/>
     <file name="poll-config.h" generated="true" linked="false"/>
     <file name="stack-common-config.h" generated="true" linked="false"/>
+    <file name="FreeRTOSConfig.h" generated="true" linked="false"/>
+    <file name="sl_iostream_eusart_inst0_config.h" generated="true" linked="false"/>
     <file name="sl_rail_util_pti_config.h" generated="true" linked="false"/>
     <file name="sl_simple_led_led0_config.h" generated="true" linked="false"/>
     <file name="sl_token_manager_config.h" generated="true" linked="false"/>
@@ -31,8 +33,10 @@
     <file name="psa_crypto_config.h" generated="true" linked="false"/>
     <file name="sl_device_init_dcdc_config.h" generated="true" linked="false"/>
     <file name="sl_memory_manager_config.h" generated="true" linked="false"/>
+    <file name="sl_bt_rtos_config.h" generated="true" linked="false"/>
     <file name="sl_bluetooth_config.h" generated="true" linked="false"/>
     <file name="sl_hfxo_manager_config.h" generated="true" linked="false"/>
+    <file name="dmadrv_config.h" generated="true" linked="false"/>
     <file name="sl_interrupt_manager_s2_config.h" generated="true" linked="false"/>
     <file name="sl_cli_config.h" generated="true" linked="false"/>
     <file name="sl_bluetooth_connection_config.h" generated="true" linked="false"/>
@@ -46,10 +50,6 @@
     <file name="sl_sleeptimer_config.h" generated="true" linked="false"/>
     <file name="sl_mbedtls_config.h" generated="true" linked="false"/>
     <file name="sl_mbedtls_device_config.h" generated="true" linked="false"/>
-    <file name="dmadrv_config.h" generated="true" linked="false"/>
-    <file name="sl_iostream_eusart_inst0_config.h" generated="true" linked="false"/>
-    <file name="FreeRTOSConfig.h" generated="true" linked="false"/>
-    <file name="sl_bt_rtos_config.h" generated="true" linked="false"/>
   </folder>
   <includePath uri="studio:/project/config"/>
   <includePath uri="studio:/project/config/rail"/>
