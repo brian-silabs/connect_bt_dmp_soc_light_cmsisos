@@ -6,91 +6,186 @@ description: |
 category: Connect Examples
 filter:
 - name: Capability
-  value: [Multiprotocol]
+  value:
+  - Multiprotocol
 - name: Device Type
-  value: [SoC]
+  value:
+  - SoC
 - name: Project Difficulty
-  value: [Advanced]
+  value:
+  - Advanced
 - name: Wireless Technology
-  value: [Bluetooth, Connect]
+  value:
+  - Bluetooth
+  - Connect
 package: Flex
 quality: production
 readme:
-- {path: readme.md}
-- {path: readme.md}
+- path: readme.md
+- path: readme.md
 source:
-- {path: main.c}
-- {path: app_cli.c}
-- {path: app_init.c}
-- {path: app_process.c}
-- {path: app_bluetooth.c}
+- path: main.c
+- path: app_cli.c
+- path: app_init.c
+- path: app_process.c
+- path: app_bluetooth.c
 include:
 - path: .
   file_list:
-  - {path: app_init.h}
-  - {path: app_process.h}
-sdk: {id: simplicity_sdk, version: 2024.6.2}
+  - path: app_init.h
+  - path: app_process.h
+sdk:
+  vendor: silabs
+  id: simplicity_sdk
+  version: 2025.12.2
 toolchain_settings:
-- {value: debug, option: optimize}
+- value: debug
+  option: optimize
 component:
-- {id: EFR32FG28B322F1024IM68}
-- {id: app_assert}
-- {id: app_log}
-- {id: bluetooth_on_demand_start}
-- instance: [example]
+- package: simplicity_sdk
+  vendor: silabs
+  id: EFR32FG28B322F1024IM68
+- package: simplicity_sdk
+  vendor: silabs
+  id: app_assert
+- package: simplicity_sdk
+  vendor: silabs
+  id: app_log
+- package: simplicity_sdk
+  vendor: silabs
+  id: bluetooth_on_demand_start
+- package: simplicity_sdk
+  instance:
+  - example
+  vendor: silabs
   id: cli
-- {id: clock_manager}
-- {id: connect_aes_security}
-- {id: connect_app_framework_common}
-- {id: connect_ble_cli}
-- {id: connect_cmsis_stack_ipc}
-- {id: connect_debug_print}
-- {id: connect_frequency_hopping}
-- {id: connect_mac_queue}
-- {id: connect_parent_support}
-- {id: connect_poll}
-- {id: connect_stack_common}
-- {id: connect_stack_counters}
-- {id: device_init}
-- {id: freertos}
-- instance: [inst0]
+- package: simplicity_sdk
+  vendor: silabs
+  id: clock_manager
+- package: simplicity_sdk
+  vendor: silabs
+  id: connect_aes_security
+- package: simplicity_sdk
+  vendor: silabs
+  id: connect_app_framework_common
+- package: simplicity_sdk
+  vendor: silabs
+  id: connect_ble_cli
+- package: simplicity_sdk
+  vendor: silabs
+  id: connect_cmsis_stack_ipc
+- package: simplicity_sdk
+  vendor: silabs
+  id: connect_debug_print
+- package: simplicity_sdk
+  vendor: silabs
+  id: connect_frequency_hopping
+- package: simplicity_sdk
+  vendor: silabs
+  id: connect_mac_queue
+- package: simplicity_sdk
+  vendor: silabs
+  id: connect_parent_support
+- package: simplicity_sdk
+  vendor: silabs
+  id: connect_poll
+- package: simplicity_sdk
+  vendor: silabs
+  id: connect_stack_common
+- package: simplicity_sdk
+  vendor: silabs
+  id: connect_stack_counters
+- package: simplicity_sdk
+  vendor: silabs
+  id: device_init
+- package: simplicity_sdk
+  vendor: silabs
+  id: emlib_chip
+- package: simplicity_sdk
+  vendor: silabs
+  id: freertos
+- package: simplicity_sdk
+  instance:
+  - inst0
+  vendor: silabs
   id: iostream_eusart
-- {id: iostream_eusart_core}
-- {id: iostream_recommended_stream}
-- {id: iostream_retarget_stdio}
-- {id: mpu}
-- {id: nvm3_lib}
-- {id: printf}
-- {id: radio_config_simple_connect_singlephy}
-- {id: rail_util_pti}
-- {id: restrictions_profile_connect}
-- {id: restrictions_profile_connect_ofdm}
-- {id: restrictions_profile_long_range}
-- instance: [led0]
+- package: simplicity_sdk
+  vendor: silabs
+  id: iostream_eusart_core
+- package: simplicity_sdk
+  vendor: silabs
+  id: iostream_recommended_console
+- package: simplicity_sdk
+  vendor: silabs
+  id: iostream_retarget_stdio
+- package: simplicity_sdk
+  vendor: silabs
+  id: mpu
+- package: simplicity_sdk
+  vendor: silabs
+  id: nvm3_lib
+- package: simplicity_sdk
+  vendor: silabs
+  id: printf
+- package: simplicity_sdk
+  vendor: silabs
+  id: radio_config_simple_connect_singlephy
+- package: simplicity_sdk
+  vendor: silabs
+  id: rail_util_pti
+- package: simplicity_sdk
+  vendor: silabs
+  id: restrictions_profile_connect
+- package: simplicity_sdk
+  vendor: silabs
+  id: restrictions_profile_connect_ofdm
+- package: simplicity_sdk
+  vendor: silabs
+  id: restrictions_profile_long_range
+- package: simplicity_sdk
+  instance:
+  - led0
+  vendor: silabs
   id: simple_led
-- {id: sl_light_switch_core}
-- {id: sl_system}
-- {id: token_manager}
+- package: simplicity_sdk
+  vendor: silabs
+  id: sl_light_switch_core
+- package: simplicity_sdk
+  vendor: silabs
+  id: sl_system
+- package: simplicity_sdk
+  vendor: silabs
+  id: token_manager
 other_file:
-- {path: connect_create_gbl_image.bat}
-- {path: connect_create_gbl_image.sh}
+- path: connect_create_gbl_image.bat
+- path: connect_create_gbl_image.sh
 define:
-- {name: SL_CONNECT_DISABLE_WATCHDOG}
+- name: SL_CONNECT_DISABLE_WATCHDOG
 template_contribution:
 - name: cli_command
   priority: 0
-  value: {name: form, handler: cli_form, help: Forms a network with a default address}
+  value:
+    name: form
+    handler: cli_form
+    help: Forms a network with a default address
 - name: cli_command
   priority: 0
-  value: {name: leave, handler: cli_leave, help: Forget the current network and revert
-      to EMBER_NO_NETWORK}
+  value:
+    name: leave
+    handler: cli_leave
+    help: Forget the current network and revert to EMBER_NO_NETWORK
 - name: cli_command
   priority: 0
-  value: {name: reset, handler: cli_reset, help: Reset the hardware}
+  value:
+    name: reset
+    handler: cli_reset
+    help: Reset the hardware
 - name: cli_command
   priority: 0
-  value: {name: info, handler: cli_info, help: 'MCU ID, Network state, Node ID, PAN
-      ID, Channel ID, etc.'}
+  value:
+    name: info
+    handler: cli_info
+    help: MCU ID, Network state, Node ID, PAN ID, Channel ID, etc.
 - name: cli_command
   priority: 0
   value:
@@ -98,7 +193,8 @@ template_contribution:
     handler: cli_set_pan_id
     help: Set the PAN ID of the node
     argument:
-    - {type: uint16, help: 2 byte PAN ID}
+    - type: uint16
+      help: 2 byte PAN ID
 - name: cli_command
   priority: 0
   value:
@@ -106,7 +202,8 @@ template_contribution:
     handler: cli_set_channel
     help: Set the communication channel
     argument:
-    - {type: uint16, help: 2 byte channel number}
+    - type: uint16
+      help: 2 byte channel number
 - name: cli_command
   priority: 0
   value:
@@ -114,7 +211,8 @@ template_contribution:
     handler: cli_set_tx_option
     help: Set Tx options
     argument:
-    - {type: uint8, help: Security(0x01) MAC Ack(0x02) High Prio(0x04)}
+    - type: uint8
+      help: Security(0x01) MAC Ack(0x02) High Prio(0x04)
 - name: cli_command
   priority: 0
   value:
@@ -122,27 +220,41 @@ template_contribution:
     handler: cli_set_security_key
     help: Set security key
     argument:
-    - {type: hex, help: 'Security key (size:EMBER_ENCRYPTION_KEY_SIZE)'}
+    - type: hex
+      help: Security key (size:EMBER_ENCRYPTION_KEY_SIZE)
 - name: cli_command
   priority: 0
-  value: {name: unset_key, handler: cli_unset_security_key, help: Unset current security
-      key}
+  value:
+    name: unset_key
+    handler: cli_unset_security_key
+    help: Unset current security key
 configuration:
-- {name: SL_STACK_SIZE, value: '8192'}
-- {name: APP_LOG_PREFIX_ENABLE, value: '0'}
-- {name: SL_CLI_EXAMPLE_TASK_STACK_SIZE, value: '1024'}
-- condition: [device_sdid_230]
+- name: SL_STACK_SIZE
+  value: '8192'
+- name: APP_LOG_PREFIX_ENABLE
+  value: '0'
+- name: SL_CLI_EXAMPLE_TASK_STACK_SIZE
+  value: '1024'
+- condition:
+  - device_sdid_230
   name: configTOTAL_HEAP_SIZE
   value: '12288'
-- condition: [device_sdid_235]
+- condition:
+  - device_sdid_235
   name: configTOTAL_HEAP_SIZE
   value: '12288'
-- {name: SL_BOARD_ENABLE_VCOM, value: '1'}
-- {name: SL_IOSTREAM_USART_VCOM_CONVERT_BY_DEFAULT_LF_TO_CRLF, value: (1)}
-- {name: SL_IOSTREAM_USART_VCOM_FLOW_CONTROL_TYPE, value: usartHwFlowControlNone}
-- {name: SL_IOSTREAM_EUSART_VCOM_CONVERT_BY_DEFAULT_LF_TO_CRLF, value: (1)}
-- {name: SL_IOSTREAM_EUSART_VCOM_FLOW_CONTROL_TYPE, value: eusartHwFlowControlNone}
+- name: SL_BOARD_ENABLE_VCOM
+  value: '1'
+- name: SL_IOSTREAM_USART_VCOM_CONVERT_BY_DEFAULT_LF_TO_CRLF
+  value: (1)
+- name: SL_IOSTREAM_USART_VCOM_FLOW_CONTROL_TYPE
+  value: usartHwFlowControlNone
+- name: SL_IOSTREAM_EUSART_VCOM_CONVERT_BY_DEFAULT_LF_TO_CRLF
+  value: (1)
+- name: SL_IOSTREAM_EUSART_VCOM_FLOW_CONTROL_TYPE
+  value: eusartHwFlowControlNone
 ui_hints:
   highlight:
-  - {path: config/btconf/gatt_configuration.btconf, focus: true}
+  - path: config/btconf/gatt_configuration.btconf
+    focus: true
 

@@ -223,7 +223,9 @@
                     <name>CCDefines</name>
                     <state>SL_CONNECT_DISABLE_WATCHDOG=1</state>
                     <state>EFR32FG28B322F1024IM68=1</state>
+                    <state>SL_CODE_COMPONENT_SYSTEM=system</state>
                     <state>SL_CLOCK_MANAGER_AUTO_BAND_VALID=1</state>
+                    <state>SL_CODE_COMPONENT_CLOCK_MANAGER=clock_manager</state>
                     <state>configNUM_SDK_THREAD_LOCAL_STORAGE_POINTERS=2</state>
                     <state>SL_COMPONENT_CATALOG_PRESENT=1</state>
                     <state>CMSISRTOS=1</state>
@@ -231,22 +233,37 @@
                     <state>SL_CONNECT_RTOS_PRESENT=1</state>
                     <state>EMBER_STACK_CONNECT=1</state>
                     <state>PLATFORM_HEADER="platform-header.h"</state>
-                    <state>STACK_CORE_HEADER="stack/core/ember-stack.h"</state>
+                    <state>SL_RAIL_3_API=1</state>
+                    <state>STACK_CORE_HEADER="stack/include/ember.h"</state>
                     <state>STACK_HEADER="stack/include/ember.h"</state>
                     <state>STACK_TYPES_HEADER="stack/include/ember-types.h"</state>
-                    <state>SL_CODE_COMPONENT_PERIPHERAL_SYSRTC=hal_sysrtc</state>
+                    <state>SL_CODE_COMPONENT_DEVICE_PERIPHERAL=device_peripheral</state>
+                    <state>SL_CODE_COMPONENT_DMADRV=dmadrv</state>
+                    <state>SL_CODE_COMPONENT_FREERTOS_KERNEL=freertos_kernel</state>
+                    <state>SL_CODE_COMPONENT_GPIO=gpio</state>
+                    <state>SL_CODE_COMPONENT_HAL_COMMON=hal_common</state>
+                    <state>SL_CODE_COMPONENT_HAL_GPIO=hal_gpio</state>
+                    <state>SL_CODE_COMPONENT_HAL_SYSRTC=hal_sysrtc</state>
+                    <state>SL_CODE_COMPONENT_INTERRUPT_MANAGER=interrupt_manager</state>
                     <state>CMSIS_NVIC_VIRTUAL=1</state>
                     <state>CMSIS_NVIC_VIRTUAL_HEADER_FILE="cmsis_nvic_virtual.h"</state>
                     <state>MBEDTLS_CONFIG_FILE=&lt;sl_mbedtls_config.h&gt;</state>
-                    <state>SL_MEMORY_POOL_LIGHT=1</state>
+                    <state>SL_CODE_COMPONENT_MEMORY_MANAGER=memory_manager</state>
                     <state>SL_CODE_COMPONENT_POWER_MANAGER=power_manager</state>
                     <state>MBEDTLS_PSA_CRYPTO_CONFIG_FILE=&lt;psa_crypto_config.h&gt;</state>
                     <state>SL_RAIL_LIB_MULTIPROTOCOL_SUPPORT=1</state>
-                    <state>SL_RAIL_UTIL_PA_CONFIG_HEADER=&lt;sl_rail_util_pa_config.h&gt;</state>
+                    <state>SL_CODE_COMPONENT_SE_MANAGER=se_manager</state>
                     <state>SL_CODE_COMPONENT_CORE=core</state>
+                    <state>SL_RAIL_UTIL_PA_CONFIG_HEADER=&lt;sl_rail_util_pa_config.h&gt;</state>
+                    <state>SL_RAIL_UTIL_PA_PLUGIN_HEADER=&lt;sl_rail_util_pa_conversions.h&gt;</state>
+                    <state>SL_RAIL_UTIL_PA_TABLES_CONFIG_HEADER=&lt;sl_rail_util_pa_tables_config.h&gt;</state>
                     <state>SL_CODE_COMPONENT_SLEEPTIMER=sleeptimer</state>
+                    <state>SL_CODE_COMPONENT_SLI_CRYPTO=sli_crypto</state>
                     <state>SLI_RADIOAES_REQUIRES_MASKING=1</state>
+                    <state>SL_CODE_COMPONENT_SLI_PROTOCOL_CRYPTO=sli_protocol_crypto</state>
+                    <state>SL_CODE_COMPONENT_PSEC_OSAL=psec_osal</state>
                     <state>CUSTOM_TOKEN_HEADER="sl_token_manager_af_token_header.h"</state>
+                    <state>SL_TOKEN_MANAGER_BACKWARD_COMPATIBILITY=1</state>
                     <state>USE_NVM3=1</state>
                 </option>
                 <option>
@@ -378,80 +395,94 @@
                     <state>$PROJ_DIR$\config\rail</state>
                     <state>$PROJ_DIR$\config\btconf</state>
                     <state>$PROJ_DIR$\.</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\Device\SiliconLabs\EFR32FG28\Include</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\app\common\util\app_assert</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\app\common\util\app_log</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\common\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\protocol\bluetooth\bgcommon\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\protocol\bluetooth\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\protocol\bluetooth\bgstack\ll\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\service\cli\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\service\cli\src</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\service\clock_manager\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\service\clock_manager\src</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\CMSIS\Core\Include</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\CMSIS\RTOS2\Include</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\protocol\flex\app-framework-common</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\protocol\flex\cmsis-stack-ipc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\protocol\flex\csp</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\protocol\flex\ncp</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\protocol\flex\debug-print</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\protocol\flex\poll</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\protocol\flex</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\protocol\flex\stack</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\protocol\flex\stack\include</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\protocol\flex\stack\framework</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\protocol\flex\stack\core</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\service\legacy_hal\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\service\device_manager\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\service\device_init\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\emdrv\dmadrv\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\emdrv\dmadrv\inc\s2_signals</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\emdrv\common\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\emlib\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\util\third_party\freertos\cmsis\Include</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\util\third_party\freertos\kernel\include</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\util\third_party\freertos\kernel\portable\IAR\ARM_CM33_NTZ\non_secure</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\peripheral\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\service\hfxo_manager\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\service\interrupt_manager\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\service\interrupt_manager\inc\arm</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\service\iostream\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\driver\leddrv\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\security\sl_component\sl_mbedtls_support\config</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\security\sl_component\sl_mbedtls_support\config\preset</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\security\sl_component\sl_mbedtls_support\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\util\third_party\mbedtls\include</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\util\third_party\mbedtls\library</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\service\memory_manager\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\service\memory_manager\src</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\service\memory_manager\profiler\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\service\mpu\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\emdrv\nvm3\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\service\power_manager\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\util\third_party\printf</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\util\third_party\printf\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\security\sl_component\sl_psa_driver\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\radio\rail_lib\common</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\radio\rail_lib\protocol\ble</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\radio\rail_lib\protocol\ieee802154</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\radio\rail_lib\protocol\wmbus</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\radio\rail_lib\protocol\zwave</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\radio\rail_lib\chip\efr32\efr32xg2x</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\radio\rail_lib\protocol\sidewalk</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\radio\rail_lib\plugin\pa-conversions</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\radio\rail_lib\plugin\pa-conversions\efr32xg28</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\radio\rail_lib\plugin\rail_util_power_manager_init</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\radio\rail_lib\plugin\rail_util_pti</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\security\sl_component\se_manager\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\security\sl_component\se_manager\src</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\app\flex\component\connect\sl_light_switch</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\common\toolchain\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\service\system\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\service\sleeptimer\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\security\sl_component\sl_protocol_crypto\src</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\service\token_manager\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\service\udelay\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\devices\platform\Device\SiliconLabs\EFR32FG28\Include</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_common_apps\app\common\util\app_assert</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_common_apps\app\common\util\app_log</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_common\platform\common\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\bgapi_protocol\protocol\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\bgapi_protocol\rtos_adaptation\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\bluetooth_common\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\bluetooth_le_host\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\bluetooth_le_controller\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\cli\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\cli\src</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\clock_manager\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\clock_manager\src</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\cmsis_common\platform\common\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\cmsis\Core\Include</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\cmsis\RTOS2\Include</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\connect_stack\app-framework-common</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\connect_stack\cmsis-stack-ipc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\connect_stack\csp</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\connect_stack\ncp</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\connect_stack\debug-print</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\connect_stack\poll</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\connect_stack</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\connect_stack\stack</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\connect_stack\stack\include</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\connect_stack\stack\framework</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\connect_stack\stack\core</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\device_manager\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\device_init\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\emdrv\dmadrv\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\emdrv\dmadrv\inc\s2_signals</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\emdrv\common\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\emlib\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\common\errno_error_codes\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\freertos\kernel\include</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\freertos\cmsis\Include</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\freertos\kernel\portable\IAR\ARM_CM33_NTZ\non_secure</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\driver\gpio\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\peripheral\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\hfxo_manager\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\hfxo_manager\src</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\interrupt_manager\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\interrupt_manager\src</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\interrupt_manager\inc\arm</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\iostream\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\driver\leddrv\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\security_mbedtls\platform\security\sl_component\sl_mbedtls_support\config</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\security_mbedtls\platform\security\sl_component\sl_mbedtls_support\config\preset</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\security_mbedtls_source\include</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\security_mbedtls\platform\security\sl_component\sl_mbedtls_support\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\security_mbedtls_source\library</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\memory_manager\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\memory_manager\src</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\memory_manager\profiler\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\mpu\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\emdrv\nvm3\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\emdrv\nvm3\config</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\common\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\power_manager\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\power_manager\src\common</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\power_manager\src\sleep_loop</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\printf</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\printf\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\security_mbedtls\platform\security\sl_component\sl_psa_driver\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\rail_library\common</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\rail_library\protocol\ble</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\rail_library\protocol\ieee802154</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\rail_library\protocol\wmbus</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\rail_library\protocol\zwave</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\rail_library\chip\efr32\efr32xg2x</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\rail_library\protocol\sidewalk</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\security_se_manager\platform\security\sl_component\se_manager\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\common_15_4\util\silicon_labs\silabs_core\buffer_manager</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\connect_sdk\component\sl_light_switch</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\rail_library\plugin\sl_rail_util_compatible_pa</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\rail_library\plugin\sl_rail_util_pa_conversions</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\rail_library\plugin\sl_rail_util_pa_tables</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\rail_library\plugin\sl_rail_util_pa_tables\efr32xg28</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\rail_library\plugin\sl_rail_util_power_manager_init</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\rail_library\plugin\sl_rail_util_pti</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\system\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\sleeptimer\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\sleeptimer\src</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\security_mbedtls\platform\security\sl_component\sli_crypto\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\security_mbedtls\platform\security\sl_component\sl_protocol_crypto\src</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\security_se_manager\platform\security\sl_component\sli_psec_osal\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\token_manager\legacy\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\udelay\inc</state>
                 </option>
                 <option>
                     <name>CCStdIncCheck</name>
@@ -627,7 +658,9 @@
                     <name>ADefines</name>
                     <state>SL_CONNECT_DISABLE_WATCHDOG=1</state>
                     <state>EFR32FG28B322F1024IM68=1</state>
+                    <state>SL_CODE_COMPONENT_SYSTEM=system</state>
                     <state>SL_CLOCK_MANAGER_AUTO_BAND_VALID=1</state>
+                    <state>SL_CODE_COMPONENT_CLOCK_MANAGER=clock_manager</state>
                     <state>configNUM_SDK_THREAD_LOCAL_STORAGE_POINTERS=2</state>
                     <state>SL_COMPONENT_CATALOG_PRESENT=1</state>
                     <state>CMSISRTOS=1</state>
@@ -635,22 +668,37 @@
                     <state>SL_CONNECT_RTOS_PRESENT=1</state>
                     <state>EMBER_STACK_CONNECT=1</state>
                     <state>PLATFORM_HEADER="platform-header.h"</state>
-                    <state>STACK_CORE_HEADER="stack/core/ember-stack.h"</state>
+                    <state>SL_RAIL_3_API=1</state>
+                    <state>STACK_CORE_HEADER="stack/include/ember.h"</state>
                     <state>STACK_HEADER="stack/include/ember.h"</state>
                     <state>STACK_TYPES_HEADER="stack/include/ember-types.h"</state>
-                    <state>SL_CODE_COMPONENT_PERIPHERAL_SYSRTC=hal_sysrtc</state>
+                    <state>SL_CODE_COMPONENT_DEVICE_PERIPHERAL=device_peripheral</state>
+                    <state>SL_CODE_COMPONENT_DMADRV=dmadrv</state>
+                    <state>SL_CODE_COMPONENT_FREERTOS_KERNEL=freertos_kernel</state>
+                    <state>SL_CODE_COMPONENT_GPIO=gpio</state>
+                    <state>SL_CODE_COMPONENT_HAL_COMMON=hal_common</state>
+                    <state>SL_CODE_COMPONENT_HAL_GPIO=hal_gpio</state>
+                    <state>SL_CODE_COMPONENT_HAL_SYSRTC=hal_sysrtc</state>
+                    <state>SL_CODE_COMPONENT_INTERRUPT_MANAGER=interrupt_manager</state>
                     <state>CMSIS_NVIC_VIRTUAL=1</state>
                     <state>CMSIS_NVIC_VIRTUAL_HEADER_FILE="cmsis_nvic_virtual.h"</state>
                     <state>MBEDTLS_CONFIG_FILE=&lt;sl_mbedtls_config.h&gt;</state>
-                    <state>SL_MEMORY_POOL_LIGHT=1</state>
+                    <state>SL_CODE_COMPONENT_MEMORY_MANAGER=memory_manager</state>
                     <state>SL_CODE_COMPONENT_POWER_MANAGER=power_manager</state>
                     <state>MBEDTLS_PSA_CRYPTO_CONFIG_FILE=&lt;psa_crypto_config.h&gt;</state>
                     <state>SL_RAIL_LIB_MULTIPROTOCOL_SUPPORT=1</state>
-                    <state>SL_RAIL_UTIL_PA_CONFIG_HEADER=&lt;sl_rail_util_pa_config.h&gt;</state>
+                    <state>SL_CODE_COMPONENT_SE_MANAGER=se_manager</state>
                     <state>SL_CODE_COMPONENT_CORE=core</state>
+                    <state>SL_RAIL_UTIL_PA_CONFIG_HEADER=&lt;sl_rail_util_pa_config.h&gt;</state>
+                    <state>SL_RAIL_UTIL_PA_PLUGIN_HEADER=&lt;sl_rail_util_pa_conversions.h&gt;</state>
+                    <state>SL_RAIL_UTIL_PA_TABLES_CONFIG_HEADER=&lt;sl_rail_util_pa_tables_config.h&gt;</state>
                     <state>SL_CODE_COMPONENT_SLEEPTIMER=sleeptimer</state>
+                    <state>SL_CODE_COMPONENT_SLI_CRYPTO=sli_crypto</state>
                     <state>SLI_RADIOAES_REQUIRES_MASKING=1</state>
+                    <state>SL_CODE_COMPONENT_SLI_PROTOCOL_CRYPTO=sli_protocol_crypto</state>
+                    <state>SL_CODE_COMPONENT_PSEC_OSAL=psec_osal</state>
                     <state>CUSTOM_TOKEN_HEADER="sl_token_manager_af_token_header.h"</state>
+                    <state>SL_TOKEN_MANAGER_BACKWARD_COMPATIBILITY=1</state>
                     <state>USE_NVM3=1</state>
                 </option>
                 <option>
@@ -749,80 +797,94 @@
                     <state>$PROJ_DIR$\config\rail</state>
                     <state>$PROJ_DIR$\config\btconf</state>
                     <state>$PROJ_DIR$\.</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\Device\SiliconLabs\EFR32FG28\Include</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\app\common\util\app_assert</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\app\common\util\app_log</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\common\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\protocol\bluetooth\bgcommon\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\protocol\bluetooth\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\protocol\bluetooth\bgstack\ll\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\service\cli\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\service\cli\src</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\service\clock_manager\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\service\clock_manager\src</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\CMSIS\Core\Include</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\CMSIS\RTOS2\Include</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\protocol\flex\app-framework-common</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\protocol\flex\cmsis-stack-ipc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\protocol\flex\csp</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\protocol\flex\ncp</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\protocol\flex\debug-print</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\protocol\flex\poll</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\protocol\flex</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\protocol\flex\stack</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\protocol\flex\stack\include</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\protocol\flex\stack\framework</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\protocol\flex\stack\core</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\service\legacy_hal\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\service\device_manager\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\service\device_init\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\emdrv\dmadrv\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\emdrv\dmadrv\inc\s2_signals</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\emdrv\common\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\emlib\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\util\third_party\freertos\cmsis\Include</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\util\third_party\freertos\kernel\include</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\util\third_party\freertos\kernel\portable\IAR\ARM_CM33_NTZ\non_secure</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\peripheral\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\service\hfxo_manager\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\service\interrupt_manager\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\service\interrupt_manager\inc\arm</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\service\iostream\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\driver\leddrv\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\security\sl_component\sl_mbedtls_support\config</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\security\sl_component\sl_mbedtls_support\config\preset</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\security\sl_component\sl_mbedtls_support\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\util\third_party\mbedtls\include</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\util\third_party\mbedtls\library</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\service\memory_manager\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\service\memory_manager\src</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\service\memory_manager\profiler\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\service\mpu\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\emdrv\nvm3\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\service\power_manager\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\util\third_party\printf</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\util\third_party\printf\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\security\sl_component\sl_psa_driver\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\radio\rail_lib\common</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\radio\rail_lib\protocol\ble</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\radio\rail_lib\protocol\ieee802154</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\radio\rail_lib\protocol\wmbus</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\radio\rail_lib\protocol\zwave</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\radio\rail_lib\chip\efr32\efr32xg2x</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\radio\rail_lib\protocol\sidewalk</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\radio\rail_lib\plugin\pa-conversions</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\radio\rail_lib\plugin\pa-conversions\efr32xg28</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\radio\rail_lib\plugin\rail_util_power_manager_init</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\radio\rail_lib\plugin\rail_util_pti</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\security\sl_component\se_manager\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\security\sl_component\se_manager\src</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\app\flex\component\connect\sl_light_switch</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\common\toolchain\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\service\system\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\service\sleeptimer\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\security\sl_component\sl_protocol_crypto\src</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\service\token_manager\inc</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2024.6.2\platform\service\udelay\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\devices\platform\Device\SiliconLabs\EFR32FG28\Include</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_common_apps\app\common\util\app_assert</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_common_apps\app\common\util\app_log</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_common\platform\common\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\bgapi_protocol\protocol\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\bgapi_protocol\rtos_adaptation\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\bluetooth_common\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\bluetooth_le_host\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\bluetooth_le_controller\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\cli\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\cli\src</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\clock_manager\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\clock_manager\src</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\cmsis_common\platform\common\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\cmsis\Core\Include</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\cmsis\RTOS2\Include</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\connect_stack\app-framework-common</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\connect_stack\cmsis-stack-ipc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\connect_stack\csp</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\connect_stack\ncp</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\connect_stack\debug-print</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\connect_stack\poll</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\connect_stack</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\connect_stack\stack</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\connect_stack\stack\include</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\connect_stack\stack\framework</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\connect_stack\stack\core</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\device_manager\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\device_init\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\emdrv\dmadrv\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\emdrv\dmadrv\inc\s2_signals</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\emdrv\common\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\emlib\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\common\errno_error_codes\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\freertos\kernel\include</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\freertos\cmsis\Include</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\freertos\kernel\portable\IAR\ARM_CM33_NTZ\non_secure</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\driver\gpio\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\peripheral\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\hfxo_manager\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\hfxo_manager\src</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\interrupt_manager\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\interrupt_manager\src</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\interrupt_manager\inc\arm</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\iostream\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\driver\leddrv\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\security_mbedtls\platform\security\sl_component\sl_mbedtls_support\config</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\security_mbedtls\platform\security\sl_component\sl_mbedtls_support\config\preset</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\security_mbedtls_source\include</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\security_mbedtls\platform\security\sl_component\sl_mbedtls_support\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\security_mbedtls_source\library</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\memory_manager\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\memory_manager\src</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\memory_manager\profiler\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\mpu\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\emdrv\nvm3\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\emdrv\nvm3\config</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\common\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\power_manager\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\power_manager\src\common</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\power_manager\src\sleep_loop</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\printf</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\printf\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\security_mbedtls\platform\security\sl_component\sl_psa_driver\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\rail_library\common</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\rail_library\protocol\ble</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\rail_library\protocol\ieee802154</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\rail_library\protocol\wmbus</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\rail_library\protocol\zwave</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\rail_library\chip\efr32\efr32xg2x</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\rail_library\protocol\sidewalk</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\security_se_manager\platform\security\sl_component\se_manager\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\common_15_4\util\silicon_labs\silabs_core\buffer_manager</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\connect_sdk\component\sl_light_switch</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\rail_library\plugin\sl_rail_util_compatible_pa</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\rail_library\plugin\sl_rail_util_pa_conversions</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\rail_library\plugin\sl_rail_util_pa_tables</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\rail_library\plugin\sl_rail_util_pa_tables\efr32xg28</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\rail_library\plugin\sl_rail_util_power_manager_init</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\rail_library\plugin\sl_rail_util_pti</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\system\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\sleeptimer\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\sleeptimer\src</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\security_mbedtls\platform\security\sl_component\sli_crypto\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\security_mbedtls\platform\security\sl_component\sl_protocol_crypto\src</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\security_se_manager\platform\security\sl_component\sli_psec_osal\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\token_manager\legacy\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.2\platform_core\platform\service\udelay\inc</state>
                 </option>
                 <option>
                     <name>AExtraOptionsCheckV2</name>
@@ -1255,9 +1317,21 @@
             <excluded>
                 <configuration>Default</configuration>
             </excluded>
+            <excluded>
+                <configuration>Default</configuration>
+            </excluded>
+            <excluded>
+                <configuration>Default</configuration>
+            </excluded>
         </file>
         <file>
             <name>$PROJ_DIR$\connect_create_gbl_image.sh</name>
+            <excluded>
+                <configuration>Default</configuration>
+            </excluded>
+            <excluded>
+                <configuration>Default</configuration>
+            </excluded>
             <excluded>
                 <configuration>Default</configuration>
             </excluded>
@@ -1289,6 +1363,33 @@
                             </excluded>
                         </file>
                     </group>
+                </group>
+            </group>
+        </group>
+        <file>
+            <name>$PROJ_DIR$\AGENTS.md</name>
+            <excluded>
+                <configuration>Default</configuration>
+            </excluded>
+            <excluded>
+                <configuration>Default</configuration>
+            </excluded>
+        </file>
+        <group>
+            <name>simplicity_sdk_2025.12.2</name>
+            <group>
+                <name>bluetooth_le_host</name>
+                <group>
+                    <name>api</name>
+                    <file>
+                        <name>$PROJ_DIR$\simplicity_sdk_2025.12.2\bluetooth_le_host\api\sl_bt.xapi</name>
+                        <excluded>
+                            <configuration>Default</configuration>
+                        </excluded>
+                        <excluded>
+                            <configuration>Default</configuration>
+                        </excluded>
+                    </file>
                 </group>
             </group>
         </group>

@@ -118,7 +118,7 @@
 // $[EUSART0]
 // EUSART0 RX on PA09
 #ifndef EUSART0_RX_PORT                         
-#define EUSART0_RX_PORT                          gpioPortA
+#define EUSART0_RX_PORT                          SL_GPIO_PORT_A
 #endif
 #ifndef EUSART0_RX_PIN                          
 #define EUSART0_RX_PIN                           9
@@ -126,7 +126,7 @@
 
 // EUSART0 TX on PA08
 #ifndef EUSART0_TX_PORT                         
-#define EUSART0_TX_PORT                          gpioPortA
+#define EUSART0_TX_PORT                          SL_GPIO_PORT_A
 #endif
 #ifndef EUSART0_TX_PIN                          
 #define EUSART0_TX_PIN                           8
@@ -141,13 +141,6 @@
 // [MODEM]$
 
 // $[CUSTOM_PIN_NAME]
-#ifndef _PORT                                   
-#define _PORT                                    gpioPortA
-#endif
-#ifndef _PIN                                    
-#define _PIN                                     0
-#endif
-
 // [CUSTOM_PIN_NAME]$
 
 #endif // PIN_CONFIG_H

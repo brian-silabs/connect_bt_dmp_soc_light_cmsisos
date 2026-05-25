@@ -8,6 +8,7 @@
 #if defined(SL_CATALOG_KERNEL_PRESENT) && SL_CLI_TICK_ENABLE
 #include "cmsis_os2.h"
 #include "sl_cmsis_os2_common.h"
+#include "sl_assert.h"
 #endif // defined(SL_CATALOG_KERNEL_PRESENT)
 
 #include "sl_cli_config_example.h"

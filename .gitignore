@@ -3,3 +3,11 @@ IAR\ ARM\ -\ Default/
 settings/
 Default/
 ewarm-iar/
+*.bak
+.pdm/
+.settings/
+.uceditor/
+.vscode/
+.project
+.cproject
+.projectlinkstore

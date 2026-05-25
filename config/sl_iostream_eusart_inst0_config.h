@@ -97,7 +97,7 @@
 
 // EUSART0 TX on PA08
 #ifndef SL_IOSTREAM_EUSART_INST0_TX_PORT        
-#define SL_IOSTREAM_EUSART_INST0_TX_PORT         gpioPortA
+#define SL_IOSTREAM_EUSART_INST0_TX_PORT         SL_GPIO_PORT_A
 #endif
 #ifndef SL_IOSTREAM_EUSART_INST0_TX_PIN         
 #define SL_IOSTREAM_EUSART_INST0_TX_PIN          8
@@ -105,11 +105,12 @@
 
 // EUSART0 RX on PA09
 #ifndef SL_IOSTREAM_EUSART_INST0_RX_PORT        
-#define SL_IOSTREAM_EUSART_INST0_RX_PORT         gpioPortA
+#define SL_IOSTREAM_EUSART_INST0_RX_PORT         SL_GPIO_PORT_A
 #endif
 #ifndef SL_IOSTREAM_EUSART_INST0_RX_PIN         
 #define SL_IOSTREAM_EUSART_INST0_RX_PIN          9
 #endif
+
 
 // [EUSART_SL_IOSTREAM_EUSART_INST0]$
 // <<< sl:end pin_tool >>>

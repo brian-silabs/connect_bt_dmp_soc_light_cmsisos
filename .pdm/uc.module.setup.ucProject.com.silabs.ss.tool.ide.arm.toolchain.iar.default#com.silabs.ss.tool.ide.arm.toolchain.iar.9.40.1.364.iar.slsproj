@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project name="uc.module.setup.ucProject.com.silabs.ss.tool.ide.arm.toolchain.iar.default#com.silabs.ss.tool.ide.arm.toolchain.iar:9.40.1.364.iar" propertyScope="project">
-  <folder name="autogen">
-    <folder name=".slc_state">
-      <file name=".crc_config.crc" builtin="true" generated="true"/>
-    </folder>
-  </folder>
-</project>
