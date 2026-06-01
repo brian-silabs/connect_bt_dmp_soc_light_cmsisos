@@ -1427,6 +1427,21 @@
         </settings>
     </configuration>
     <group>
+        <name>custom_code</name>
+        <file>
+            <name>$PROJ_DIR$\custom_code\aes-wrapper.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\custom_code\aes-wrapper.h</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\custom_code\rf-test_cli.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\custom_code\rf-test_cli.h</name>
+        </file>
+    </group>
+    <group>
         <name>Simplicity Configurator</name>
         <group>
             <name>autogen</name>
@@ -1693,21 +1708,6 @@
             </file>
             <file>
                 <name>$PROJ_DIR$\config\stack-common-config.h</name>
-            </file>
-        </group>
-        <group>
-            <name>custom_code</name>
-            <file>
-                <name>$PROJ_DIR$\custom_code\aes-wrapper.c</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\custom_code\aes-wrapper.h</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\custom_code\rf-test_cli.c</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\custom_code\rf-test_cli.h</name>
             </file>
         </group>
         <group>
