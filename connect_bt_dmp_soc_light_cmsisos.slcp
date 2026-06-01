@@ -37,7 +37,7 @@ include:
 sdk:
   vendor: silabs
   id: simplicity_sdk
-  version: 2025.12.2
+  version: 2025.12.3
 toolchain_settings:
 - value: debug
   option: optimize

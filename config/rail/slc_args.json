@@ -1,6 +1,6 @@
 {
-  "sdkRoot" : "/Users/brian/.silabs/slt/installs/conan/p/simpl965e19baece23/p/",
-  "apackRoot" : "/Users/brian/.silabs/slt/installs/conan/p/simpl965e19baece23/p/radio_config_generator",
+  "sdkRoot" : "C:/Users/brrodrig/.silabs/slt/installs/conan/p/simpl35774a752829c/p/",
+  "apackRoot" : "C:\\Users\\brrodrig\\.silabs\\slt\\installs\\conan\\p\\simpl35774a752829c\\p\\radio_config_generator",
   "partOpn" : "efr32fg28b322f1024im68",
   "boards" : "none"
 }
