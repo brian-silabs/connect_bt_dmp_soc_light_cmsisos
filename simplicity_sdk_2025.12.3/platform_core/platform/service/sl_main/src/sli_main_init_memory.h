@@ -1,6 +1,6 @@
 /***************************************************************************//**
  * @file
- * @brief System Initialization.
+ * @brief Main memory Initialization.
  *******************************************************************************
  * # License
  * <b>Copyright 2025 Silicon Laboratories Inc. www.silabs.com</b>
@@ -27,13 +27,22 @@
  * 3. This notice may not be removed or altered from any source distribution.
  *
  ******************************************************************************/
-#include "sl_event_handler.h"
+#ifndef SLI_MAIN_INIT_MEMORY_H
+#define SLI_MAIN_INIT_MEMORY_H
 
-void sl_system_init(void)
-{
-  sl_platform_init();
-  sl_driver_init();
-  sl_service_init();
-  sl_stack_init();
-  sl_internal_app_init();
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+/******************************************************************************
+ * @brief Template function called during the system initialization process when
+ *        the memory layout is established and permanent memory allocation can
+ *        take place.
+ *****************************************************************************/
+void sli_allocate_permanent_memory(void);
+
+#ifdef __cplusplus
 }
+#endif
+
+#endif // SLI_MAIN_INIT_MEMORY_H

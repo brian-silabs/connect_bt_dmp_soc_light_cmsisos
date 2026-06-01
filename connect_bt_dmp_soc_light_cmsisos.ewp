@@ -230,6 +230,8 @@
                     <state>SL_CONNECT_DISABLE_WATCHDOG=1</state>
                     <state>EFR32FG28B322F1024IM68=1</state>
                     <state>SL_CODE_COMPONENT_SYSTEM=system</state>
+                    <state>SL_APP_PROPERTIES=1</state>
+                    <state>BOOTLOADER_APPLOADER=1</state>
                     <state>SL_CLOCK_MANAGER_AUTO_BAND_VALID=1</state>
                     <state>SL_CODE_COMPONENT_CLOCK_MANAGER=clock_manager</state>
                     <state>configNUM_SDK_THREAD_LOCAL_STORAGE_POINTERS=2</state>
@@ -400,12 +402,16 @@
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\devices\platform\Device\SiliconLabs\EFR32FG28\Include</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\platform_common_apps\app\common\util\app_assert</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\platform_common_apps\app\common\util\app_log</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\bluetooth_apploader\inc</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\platform_common\platform\common\inc</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\bgapi_protocol\protocol\inc</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\bgapi_protocol\rtos_adaptation\inc</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\bluetooth_common\inc</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\bluetooth_le_host\inc</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\bluetooth_le_controller\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\bootloader_interface\platform\bootloader</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\bootloader_interface\platform\bootloader\api</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\bootloader_interface\platform\bootloader\core\flash</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\platform_core\platform\service\cli\inc</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\platform_core\platform\service\cli\src</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\platform_core\platform\service\clock_manager\inc</state>
@@ -471,13 +477,14 @@
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\security_se_manager\platform\security\sl_component\se_manager\inc</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\common_15_4\util\silicon_labs\silabs_core\buffer_manager</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\connect_sdk\component\sl_light_switch</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\platform_core\platform\service\sl_main\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\platform_core\platform\service\sl_main\src</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\rail_library\plugin\sl_rail_util_compatible_pa</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\rail_library\plugin\sl_rail_util_pa_conversions</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\rail_library\plugin\sl_rail_util_pa_tables</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\rail_library\plugin\sl_rail_util_pa_tables\efr32xg28</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\rail_library\plugin\sl_rail_util_power_manager_init</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\rail_library\plugin\sl_rail_util_pti</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\platform_core\platform\service\system\inc</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\platform_core\platform\service\sleeptimer\inc</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\platform_core\platform\service\sleeptimer\src</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\security_mbedtls\platform\security\sl_component\sli_crypto\inc</state>
@@ -667,6 +674,8 @@
                     <state>SL_CONNECT_DISABLE_WATCHDOG=1</state>
                     <state>EFR32FG28B322F1024IM68=1</state>
                     <state>SL_CODE_COMPONENT_SYSTEM=system</state>
+                    <state>SL_APP_PROPERTIES=1</state>
+                    <state>BOOTLOADER_APPLOADER=1</state>
                     <state>SL_CLOCK_MANAGER_AUTO_BAND_VALID=1</state>
                     <state>SL_CODE_COMPONENT_CLOCK_MANAGER=clock_manager</state>
                     <state>configNUM_SDK_THREAD_LOCAL_STORAGE_POINTERS=2</state>
@@ -808,12 +817,16 @@
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\devices\platform\Device\SiliconLabs\EFR32FG28\Include</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\platform_common_apps\app\common\util\app_assert</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\platform_common_apps\app\common\util\app_log</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\bluetooth_apploader\inc</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\platform_common\platform\common\inc</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\bgapi_protocol\protocol\inc</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\bgapi_protocol\rtos_adaptation\inc</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\bluetooth_common\inc</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\bluetooth_le_host\inc</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\bluetooth_le_controller\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\bootloader_interface\platform\bootloader</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\bootloader_interface\platform\bootloader\api</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\bootloader_interface\platform\bootloader\core\flash</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\platform_core\platform\service\cli\inc</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\platform_core\platform\service\cli\src</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\platform_core\platform\service\clock_manager\inc</state>
@@ -879,13 +892,14 @@
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\security_se_manager\platform\security\sl_component\se_manager\inc</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\common_15_4\util\silicon_labs\silabs_core\buffer_manager</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\connect_sdk\component\sl_light_switch</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\platform_core\platform\service\sl_main\inc</state>
+                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\platform_core\platform\service\sl_main\src</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\rail_library\plugin\sl_rail_util_compatible_pa</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\rail_library\plugin\sl_rail_util_pa_conversions</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\rail_library\plugin\sl_rail_util_pa_tables</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\rail_library\plugin\sl_rail_util_pa_tables\efr32xg28</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\rail_library\plugin\sl_rail_util_power_manager_init</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\rail_library\plugin\sl_rail_util_pti</state>
-                    <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\platform_core\platform\service\system\inc</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\platform_core\platform\service\sleeptimer\inc</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\platform_core\platform\service\sleeptimer\src</state>
                     <state>$PROJ_DIR$\simplicity_sdk_2025.12.3\security_mbedtls\platform\security\sl_component\sli_crypto\inc</state>
@@ -1354,7 +1368,10 @@
         <settings>
             <name>BUILDACTION</name>
             <archiveVersion>2</archiveVersion>
-            <data />
+            <data>
+                <prebuild></prebuild>
+                <postbuild></postbuild>
+            </data>
         </settings>
     </configuration>
     <group>
@@ -1817,6 +1834,18 @@
                     <name>api</name>
                     <file>
                         <name>$PROJ_DIR$\simplicity_sdk_2025.12.3\bluetooth_le_host\api\sl_bt.xapi</name>
+                        <excluded>
+                            <configuration>Default</configuration>
+                        </excluded>
+                        <excluded>
+                            <configuration>Default</configuration>
+                        </excluded>
+                        <excluded>
+                            <configuration>Default</configuration>
+                        </excluded>
+                        <excluded>
+                            <configuration>Default</configuration>
+                        </excluded>
                         <excluded>
                             <configuration>Default</configuration>
                         </excluded>
@@ -4823,6 +4852,18 @@
             <excluded>
                 <configuration>Default</configuration>
             </excluded>
+            <excluded>
+                <configuration>Default</configuration>
+            </excluded>
+            <excluded>
+                <configuration>Default</configuration>
+            </excluded>
+            <excluded>
+                <configuration>Default</configuration>
+            </excluded>
+            <excluded>
+                <configuration>Default</configuration>
+            </excluded>
         </file>
         <file>
             <name>$PROJ_DIR$\app_bluetooth.c</name>
@@ -4847,9 +4888,33 @@
             <excluded>
                 <configuration>Default</configuration>
             </excluded>
+            <excluded>
+                <configuration>Default</configuration>
+            </excluded>
+            <excluded>
+                <configuration>Default</configuration>
+            </excluded>
+            <excluded>
+                <configuration>Default</configuration>
+            </excluded>
+            <excluded>
+                <configuration>Default</configuration>
+            </excluded>
         </file>
         <file>
             <name>$PROJ_DIR$\connect_create_gbl_image.sh</name>
+            <excluded>
+                <configuration>Default</configuration>
+            </excluded>
+            <excluded>
+                <configuration>Default</configuration>
+            </excluded>
+            <excluded>
+                <configuration>Default</configuration>
+            </excluded>
+            <excluded>
+                <configuration>Default</configuration>
+            </excluded>
             <excluded>
                 <configuration>Default</configuration>
             </excluded>

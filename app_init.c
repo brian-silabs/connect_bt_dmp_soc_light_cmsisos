@@ -40,6 +40,7 @@
 #include "psa/crypto.h"
 
 #include "custom_code/aes-wrapper.h"
+#include "custom_code/rf-test_cli.h"
 
 #include "sl_bt_api.h"
 #include "em_gpio.h"

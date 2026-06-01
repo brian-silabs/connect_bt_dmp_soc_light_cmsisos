@@ -1,9 +1,9 @@
 /***************************************************************************//**
- * @file main.c
- * @brief main() function.
+ * @file
+ * @brief Application Properties Source File
  *******************************************************************************
  * # License
- * <b>Copyright 2025 Silicon Laboratories Inc. www.silabs.com</b>
+ * <b>Copyright 2021 Silicon Laboratories Inc. www.silabs.com</b>
  *******************************************************************************
  *
  * SPDX-License-Identifier: Zlib
@@ -27,17 +27,23 @@
  * 3. This notice may not be removed or altered from any source distribution.
  *
  ******************************************************************************/
-#include "sl_main_init.h"
-#include "sl_main_kernel.h"
+#ifdef APP_PROPERTIES_CONFIG_FILE
+#include APP_PROPERTIES_CONFIG_FILE
+#else
+#include "app_properties_config.h"
+#endif
 
-int main(void)
-{
-  // Initialize Silicon Labs device, system, service(s) and protocol stack(s).
-  sl_main_second_stage_init();
-
-  app_init();
-
-  while (sl_main_start_task_should_continue()) {
-    app_process_action();
-  }
-}
+const ApplicationProperties_t sl_app_properties = {
+  .magic = APPLICATION_PROPERTIES_MAGIC,
+  .structVersion = APPLICATION_PROPERTIES_VERSION,
+  .signatureType = SL_APPLICATION_SIGNATURE,
+  .signatureLocation = SL_APPLICATION_SIGNATURE_LOCATION,
+  .app = {
+    .type = SL_APPLICATION_TYPE,
+    .version = SL_APPLICATION_VERSION,
+    .capabilities = SL_APPLICATION_CAPABILITIES,
+    .productId = SL_APPLICATION_PRODUCT_ID
+  },
+  .cert = 0,
+  .longTokenSectionAddress = 0
+};

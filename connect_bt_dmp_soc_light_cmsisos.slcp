@@ -53,6 +53,12 @@ component:
   id: app_log
 - package: simplicity_sdk
   vendor: silabs
+  id: apploader
+- package: simplicity_sdk
+  vendor: silabs
+  id: apploader_util
+- package: simplicity_sdk
+  vendor: silabs
   id: bluetooth_on_demand_start
 - package: simplicity_sdk
   instance:
@@ -152,7 +158,7 @@ component:
   id: sl_light_switch_core
 - package: simplicity_sdk
   vendor: silabs
-  id: sl_system
+  id: sl_main
 - package: simplicity_sdk
   vendor: silabs
   id: token_manager

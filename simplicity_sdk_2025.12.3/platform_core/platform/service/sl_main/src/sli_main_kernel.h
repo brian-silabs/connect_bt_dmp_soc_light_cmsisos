@@ -1,6 +1,6 @@
 /***************************************************************************//**
- * @file main.c
- * @brief main() function.
+ * @file
+ * @brief Main - Kernel Start Task Functions (Internal)
  *******************************************************************************
  * # License
  * <b>Copyright 2025 Silicon Laboratories Inc. www.silabs.com</b>
@@ -27,17 +27,31 @@
  * 3. This notice may not be removed or altered from any source distribution.
  *
  ******************************************************************************/
-#include "sl_main_init.h"
-#include "sl_main_kernel.h"
+#ifndef _SLI_MAIN_KERNEL_H
+#define _SLI_MAIN_KERNEL_H
 
-int main(void)
-{
-  // Initialize Silicon Labs device, system, service(s) and protocol stack(s).
-  sl_main_second_stage_init();
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-  app_init();
+/******************************************************************************
+ * @brief Start task allocation function.
+ *
+ * @details Stack and Task Control block are allocated by the memory manager
+ *          as long term / short term allocation depending on the user selected
+ *          configuration.
+ *****************************************************************************/
+void sli_main_allocate_start_task_memory(void);
 
-  while (sl_main_start_task_should_continue()) {
-    app_process_action();
-  }
+/******************************************************************************
+ * @brief Initialize the start task.
+ *
+ * @details This function initializes the start task with the highest priority.
+ *****************************************************************************/
+void sli_main_kernel_start_task_initialize(void);
+
+#ifdef __cplusplus
 }
+#endif
+
+#endif // _SLI_MAIN_KERNEL_H

@@ -1,9 +1,9 @@
 /***************************************************************************//**
  * @file
- * @brief System Kernel Initialization.
+ * @brief Application Properties Header File
  *******************************************************************************
  * # License
- * <b>Copyright 2025 Silicon Laboratories Inc. www.silabs.com</b>
+ * <b>Copyright 2021 Silicon Laboratories Inc. www.silabs.com</b>
  *******************************************************************************
  *
  * SPDX-License-Identifier: Zlib
@@ -27,33 +27,40 @@
  * 3. This notice may not be removed or altered from any source distribution.
  *
  ******************************************************************************/
-#ifndef SL_SYSTEM_KERNEL_H
-#define SL_SYSTEM_KERNEL_H
 
-#include "sl_common.h"
+#ifndef APP_PROPERTIES_CONFIG_H
+#define APP_PROPERTIES_CONFIG_H
 
-/***************************************************************************//**
- * @addtogroup system System Setup (sl_system) (deprecated)
- * @{
- ******************************************************************************/
+#include "sl_application_type.h"
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+// <<< Use Configuration Wizard in Context Menu >>>
 
-/**
- * Start the kernel
- *
- * API was deprecated in version 2025.6. Please migrate to the new sl_main API.
- * See the sl_main migration guide: https://docs.silabs.com/gecko-platform/latest/platform-service-sl-system-to-sl-main-migration-guide/
- */
-SL_DEPRECATED_API_SDK_2025_6
-void sl_system_kernel_start(void);
+// <h>App Properties settings
 
-#ifdef __cplusplus
-}
-#endif
+// Type of signature this application is signed with
+// Default: APPLICATION_SIGNATURE_NONE(0)
+#define SL_APPLICATION_SIGNATURE               0
 
-/** @} (end addtogroup system) */
+// Location of the signature
+// Default: 0xFFFFFFFF
+#define SL_APPLICATION_SIGNATURE_LOCATION      0xFFFFFFFF
 
-#endif // SL_SYSTEM_KERNEL_H
+// Bitfield representing type of application
+#define SL_APPLICATION_TYPE                    APPLICATION_TYPE
+
+// <o SL_APPLICATION_VERSION> Version number for this application
+// <0-4294967295:1>
+// <i> Default: 1 [0-4294967295]
+#define SL_APPLICATION_VERSION                 1
+
+// Capabilities of this application
+// Default: 0
+#define SL_APPLICATION_CAPABILITIES            0
+
+//Product ID of the device for which the application is built
+#define SL_APPLICATION_PRODUCT_ID             { 0 }
+
+// </h>
+
+#endif // APP_PROPERTIES_CONFIG_H
+

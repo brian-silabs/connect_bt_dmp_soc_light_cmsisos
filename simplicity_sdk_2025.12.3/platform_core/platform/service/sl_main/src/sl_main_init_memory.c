@@ -1,6 +1,6 @@
 /***************************************************************************//**
- * @file main.c
- * @brief main() function.
+ * @file
+ * @brief Main Initialization.
  *******************************************************************************
  * # License
  * <b>Copyright 2025 Silicon Laboratories Inc. www.silabs.com</b>
@@ -27,17 +27,34 @@
  * 3. This notice may not be removed or altered from any source distribution.
  *
  ******************************************************************************/
-#include "sl_main_init.h"
-#include "sl_main_kernel.h"
+#include "sli_main_init_memory.h"
 
-int main(void)
+#include "sl_main_init_memory.h"
+
+#include "sl_event_handler.h"
+
+#include "sl_common.h"
+
+/******************************************************************************
+ * @brief User-defined function to initialize application memory allocations.
+ *
+ * @note Will be automatically called after silicon labs platform
+ *       and stacks components are initialized.
+ *****************************************************************************/
+SL_WEAK void app_permanent_memory_alloc(void)
 {
-  // Initialize Silicon Labs device, system, service(s) and protocol stack(s).
-  sl_main_second_stage_init();
+  // User defined.
+}
 
-  app_init();
-
-  while (sl_main_start_task_should_continue()) {
-    app_process_action();
-  }
+/******************************************************************************
+ * Template function called during the system initialization process when the
+ * memory layout is established and permanent memory allocation can take place.
+ *****************************************************************************/
+void sli_allocate_permanent_memory(void)
+{
+  sli_driver_permanent_allocation();
+  sli_service_permanent_allocation();
+  sli_stack_permanent_allocation();
+  sli_internal_permanent_allocation();
+  app_permanent_memory_alloc();
 }

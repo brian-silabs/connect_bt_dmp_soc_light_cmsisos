@@ -5,28 +5,12 @@
     "sdkId" : "com.silabs.sdk.stack.sisdk:2025.12.3",
     "generatorIds" : [ "com.silabs.framework.project.ewp" ],
     "fileStates" : {
-      "config\\rail\\profile_long_range.restriction.bak" : {
-        "hash" : -1822114054,
-        "exists" : true
-      },
       "config\\rail\\radio_settings.radioconf" : {
         "hash" : 849215991,
         "exists" : true
       },
       "config\\rail\\profile_connect.restriction" : {
         "hash" : 171520101,
-        "exists" : true
-      },
-      "config\\rail\\radio_settings.radioconf.bak" : {
-        "hash" : 849215991,
-        "exists" : true
-      },
-      "config\\rail\\profile_connect.restriction.bak" : {
-        "hash" : 171520101,
-        "exists" : true
-      },
-      "config\\rail\\slc_args.json.bak" : {
-        "hash" : 2137961965,
         "exists" : true
       },
       "config\\rail\\profile_long_range.restriction" : {

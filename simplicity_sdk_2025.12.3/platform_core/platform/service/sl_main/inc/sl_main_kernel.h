@@ -1,6 +1,6 @@
 /***************************************************************************//**
- * @file main.c
- * @brief main() function.
+ * @file
+ * @brief Main - Kernel Start Task Functions
  *******************************************************************************
  * # License
  * <b>Copyright 2025 Silicon Laboratories Inc. www.silabs.com</b>
@@ -27,17 +27,39 @@
  * 3. This notice may not be removed or altered from any source distribution.
  *
  ******************************************************************************/
-#include "sl_main_init.h"
-#include "sl_main_kernel.h"
+#ifndef _SL_MAIN_KERNEL_H
+#define _SL_MAIN_KERNEL_H
 
-int main(void)
-{
-  // Initialize Silicon Labs device, system, service(s) and protocol stack(s).
-  sl_main_second_stage_init();
+#include <stdbool.h>
 
-  app_init();
+/***************************************************************************//**
+ * @addtogroup sl_main System Setup (sl_main)
+ * @{
+ ******************************************************************************/
 
-  while (sl_main_start_task_should_continue()) {
-    app_process_action();
-  }
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+/***************************************************************************//**
+ * @brief Start the kernel.
+ ******************************************************************************/
+void sl_main_kernel_start(void);
+
+/***************************************************************************//**
+ * @brief User-defined function to determine if the start task should continue.
+ *
+ * @return  true if the start task should continue, false otherwise.
+ *
+ * @note By default the start task should not continue, but this function can be
+ *       re-implemented to force the start task to continue running.
+ ******************************************************************************/
+bool sl_main_start_task_should_continue(void);
+
+#ifdef __cplusplus
 }
+#endif
+
+/** @} (end addtogroup sl_main) */
+
+#endif // _SL_MAIN_KERNEL_H
