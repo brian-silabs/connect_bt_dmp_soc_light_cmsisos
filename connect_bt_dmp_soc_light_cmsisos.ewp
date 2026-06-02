@@ -1368,10 +1368,7 @@
         <settings>
             <name>BUILDACTION</name>
             <archiveVersion>2</archiveVersion>
-            <data>
-                <prebuild></prebuild>
-                <postbuild></postbuild>
-            </data>
+            <data />
         </settings>
     </configuration>
     <group>
@@ -1437,6 +1434,9 @@
             </file>
             <file>
                 <name>$PROJ_DIR$\autogen\RTE_Components.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\autogen\sl_application_type.h</name>
             </file>
             <file>
                 <name>$PROJ_DIR$\autogen\sl_bluetooth.c</name>
@@ -1532,6 +1532,12 @@
                 <name>$PROJ_DIR$\config\app_log_config.h</name>
             </file>
             <file>
+                <name>$PROJ_DIR$\config\app_properties_config.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\config\btl_interface_cfg.h</name>
+            </file>
+            <file>
                 <name>$PROJ_DIR$\config\cmsis-rtos-ipc-config.h</name>
             </file>
             <file>
@@ -1617,6 +1623,9 @@
             </file>
             <file>
                 <name>$PROJ_DIR$\config\sl_iostream_eusart_inst0_config.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\config\sl_main_start_task_config.h</name>
             </file>
             <file>
                 <name>$PROJ_DIR$\config\sl_mbedtls_config.h</name>
@@ -1748,6 +1757,21 @@
                 </group>
             </group>
             <group>
+                <name>bluetooth_apploader</name>
+                <group>
+                    <name>inc</name>
+                    <file>
+                        <name>$PROJ_DIR$\simplicity_sdk_2025.12.3\bluetooth_apploader\inc\sl_apploader_util.h</name>
+                    </file>
+                </group>
+                <group>
+                    <name>src</name>
+                    <file>
+                        <name>$PROJ_DIR$\simplicity_sdk_2025.12.3\bluetooth_apploader\src\sl_apploader_util.c</name>
+                    </file>
+                </group>
+            </group>
+            <group>
                 <name>bluetooth_common</name>
                 <group>
                     <name>inc</name>
@@ -1834,18 +1858,6 @@
                     <name>api</name>
                     <file>
                         <name>$PROJ_DIR$\simplicity_sdk_2025.12.3\bluetooth_le_host\api\sl_bt.xapi</name>
-                        <excluded>
-                            <configuration>Default</configuration>
-                        </excluded>
-                        <excluded>
-                            <configuration>Default</configuration>
-                        </excluded>
-                        <excluded>
-                            <configuration>Default</configuration>
-                        </excluded>
-                        <excluded>
-                            <configuration>Default</configuration>
-                        </excluded>
                         <excluded>
                             <configuration>Default</configuration>
                         </excluded>
@@ -2060,6 +2072,75 @@
                     <file>
                         <name>$PROJ_DIR$\simplicity_sdk_2025.12.3\bluetooth_le_host\src\sli_bt_sync_config.c</name>
                     </file>
+                </group>
+            </group>
+            <group>
+                <name>bootloader_interface</name>
+                <group>
+                    <name>platform</name>
+                    <group>
+                        <name>bootloader</name>
+                        <group>
+                            <name>api</name>
+                            <file>
+                                <name>$PROJ_DIR$\simplicity_sdk_2025.12.3\bootloader_interface\platform\bootloader\api\application_properties.h</name>
+                            </file>
+                            <file>
+                                <name>$PROJ_DIR$\simplicity_sdk_2025.12.3\bootloader_interface\platform\bootloader\api\btl_errorcode.h</name>
+                            </file>
+                            <file>
+                                <name>$PROJ_DIR$\simplicity_sdk_2025.12.3\bootloader_interface\platform\bootloader\api\btl_interface.c</name>
+                            </file>
+                            <file>
+                                <name>$PROJ_DIR$\simplicity_sdk_2025.12.3\bootloader_interface\platform\bootloader\api\btl_interface.h</name>
+                            </file>
+                            <file>
+                                <name>$PROJ_DIR$\simplicity_sdk_2025.12.3\bootloader_interface\platform\bootloader\api\btl_interface_parser.h</name>
+                            </file>
+                            <file>
+                                <name>$PROJ_DIR$\simplicity_sdk_2025.12.3\bootloader_interface\platform\bootloader\api\btl_interface_storage.c</name>
+                            </file>
+                            <file>
+                                <name>$PROJ_DIR$\simplicity_sdk_2025.12.3\bootloader_interface\platform\bootloader\api\btl_interface_storage.h</name>
+                            </file>
+                            <file>
+                                <name>$PROJ_DIR$\simplicity_sdk_2025.12.3\bootloader_interface\platform\bootloader\api\btl_reset_info.h</name>
+                            </file>
+                        </group>
+                        <group>
+                            <name>app_properties</name>
+                            <file>
+                                <name>$PROJ_DIR$\simplicity_sdk_2025.12.3\bootloader_interface\platform\bootloader\app_properties\app_properties.c</name>
+                            </file>
+                        </group>
+                        <group>
+                            <name>core</name>
+                            <group>
+                                <name>flash</name>
+                                <file>
+                                    <name>$PROJ_DIR$\simplicity_sdk_2025.12.3\bootloader_interface\platform\bootloader\core\flash\btl_internal_flash.c</name>
+                                </file>
+                                <file>
+                                    <name>$PROJ_DIR$\simplicity_sdk_2025.12.3\bootloader_interface\platform\bootloader\core\flash\btl_internal_flash.h</name>
+                                </file>
+                                <file>
+                                    <name>$PROJ_DIR$\simplicity_sdk_2025.12.3\bootloader_interface\platform\bootloader\core\flash\btl_internal_flash_raw.h</name>
+                                </file>
+                            </group>
+                            <file>
+                                <name>$PROJ_DIR$\simplicity_sdk_2025.12.3\bootloader_interface\platform\bootloader\core\btl_util.h</name>
+                            </file>
+                        </group>
+                        <group>
+                            <name>storage</name>
+                            <group>
+                                <name>internal_flash</name>
+                                <file>
+                                    <name>$PROJ_DIR$\simplicity_sdk_2025.12.3\bootloader_interface\platform\bootloader\storage\internal_flash\btl_storage_internal_flash_raw.c</name>
+                                </file>
+                            </group>
+                        </group>
+                    </group>
                 </group>
             </group>
             <group>
@@ -3578,6 +3659,45 @@
                             </group>
                         </group>
                         <group>
+                            <name>sl_main</name>
+                            <group>
+                                <name>inc</name>
+                                <file>
+                                    <name>$PROJ_DIR$\simplicity_sdk_2025.12.3\platform_core\platform\service\sl_main\inc\sl_main_init.h</name>
+                                </file>
+                                <file>
+                                    <name>$PROJ_DIR$\simplicity_sdk_2025.12.3\platform_core\platform\service\sl_main\inc\sl_main_init_memory.h</name>
+                                </file>
+                                <file>
+                                    <name>$PROJ_DIR$\simplicity_sdk_2025.12.3\platform_core\platform\service\sl_main\inc\sl_main_kernel.h</name>
+                                </file>
+                            </group>
+                            <group>
+                                <name>src</name>
+                                <group>
+                                    <name>rtos</name>
+                                    <file>
+                                        <name>$PROJ_DIR$\simplicity_sdk_2025.12.3\platform_core\platform\service\sl_main\src\rtos\main_retarget.c</name>
+                                    </file>
+                                </group>
+                                <file>
+                                    <name>$PROJ_DIR$\simplicity_sdk_2025.12.3\platform_core\platform\service\sl_main\src\sl_main_init.c</name>
+                                </file>
+                                <file>
+                                    <name>$PROJ_DIR$\simplicity_sdk_2025.12.3\platform_core\platform\service\sl_main\src\sl_main_init_memory.c</name>
+                                </file>
+                                <file>
+                                    <name>$PROJ_DIR$\simplicity_sdk_2025.12.3\platform_core\platform\service\sl_main\src\sl_main_kernel.c</name>
+                                </file>
+                                <file>
+                                    <name>$PROJ_DIR$\simplicity_sdk_2025.12.3\platform_core\platform\service\sl_main\src\sli_main_init_memory.h</name>
+                                </file>
+                                <file>
+                                    <name>$PROJ_DIR$\simplicity_sdk_2025.12.3\platform_core\platform\service\sl_main\src\sli_main_kernel.h</name>
+                                </file>
+                            </group>
+                        </group>
+                        <group>
                             <name>sleeptimer</name>
                             <group>
                                 <name>inc</name>
@@ -3604,27 +3724,6 @@
                                 </file>
                                 <file>
                                     <name>$PROJ_DIR$\simplicity_sdk_2025.12.3\platform_core\platform\service\sleeptimer\src\sli_sleeptimer_hal.h</name>
-                                </file>
-                            </group>
-                        </group>
-                        <group>
-                            <name>system</name>
-                            <group>
-                                <name>inc</name>
-                                <file>
-                                    <name>$PROJ_DIR$\simplicity_sdk_2025.12.3\platform_core\platform\service\system\inc\sl_system_init.h</name>
-                                </file>
-                                <file>
-                                    <name>$PROJ_DIR$\simplicity_sdk_2025.12.3\platform_core\platform\service\system\inc\sl_system_kernel.h</name>
-                                </file>
-                            </group>
-                            <group>
-                                <name>src</name>
-                                <file>
-                                    <name>$PROJ_DIR$\simplicity_sdk_2025.12.3\platform_core\platform\service\system\src\sl_system_init.c</name>
-                                </file>
-                                <file>
-                                    <name>$PROJ_DIR$\simplicity_sdk_2025.12.3\platform_core\platform\service\system\src\sl_system_kernel.c</name>
                                 </file>
                             </group>
                         </group>
@@ -4852,18 +4951,6 @@
             <excluded>
                 <configuration>Default</configuration>
             </excluded>
-            <excluded>
-                <configuration>Default</configuration>
-            </excluded>
-            <excluded>
-                <configuration>Default</configuration>
-            </excluded>
-            <excluded>
-                <configuration>Default</configuration>
-            </excluded>
-            <excluded>
-                <configuration>Default</configuration>
-            </excluded>
         </file>
         <file>
             <name>$PROJ_DIR$\app_bluetooth.c</name>
@@ -4888,33 +4975,9 @@
             <excluded>
                 <configuration>Default</configuration>
             </excluded>
-            <excluded>
-                <configuration>Default</configuration>
-            </excluded>
-            <excluded>
-                <configuration>Default</configuration>
-            </excluded>
-            <excluded>
-                <configuration>Default</configuration>
-            </excluded>
-            <excluded>
-                <configuration>Default</configuration>
-            </excluded>
         </file>
         <file>
             <name>$PROJ_DIR$\connect_create_gbl_image.sh</name>
-            <excluded>
-                <configuration>Default</configuration>
-            </excluded>
-            <excluded>
-                <configuration>Default</configuration>
-            </excluded>
-            <excluded>
-                <configuration>Default</configuration>
-            </excluded>
-            <excluded>
-                <configuration>Default</configuration>
-            </excluded>
             <excluded>
                 <configuration>Default</configuration>
             </excluded>
