@@ -1368,7 +1368,10 @@
         <settings>
             <name>BUILDACTION</name>
             <archiveVersion>2</archiveVersion>
-            <data />
+            <data>
+                <prebuild></prebuild>
+                <postbuild></postbuild>
+            </data>
         </settings>
     </configuration>
     <group>
@@ -1858,6 +1861,12 @@
                     <name>api</name>
                     <file>
                         <name>$PROJ_DIR$\simplicity_sdk_2025.12.3\bluetooth_le_host\api\sl_bt.xapi</name>
+                        <excluded>
+                            <configuration>Default</configuration>
+                        </excluded>
+                        <excluded>
+                            <configuration>Default</configuration>
+                        </excluded>
                         <excluded>
                             <configuration>Default</configuration>
                         </excluded>
@@ -4951,6 +4960,12 @@
             <excluded>
                 <configuration>Default</configuration>
             </excluded>
+            <excluded>
+                <configuration>Default</configuration>
+            </excluded>
+            <excluded>
+                <configuration>Default</configuration>
+            </excluded>
         </file>
         <file>
             <name>$PROJ_DIR$\app_bluetooth.c</name>
@@ -4975,9 +4990,21 @@
             <excluded>
                 <configuration>Default</configuration>
             </excluded>
+            <excluded>
+                <configuration>Default</configuration>
+            </excluded>
+            <excluded>
+                <configuration>Default</configuration>
+            </excluded>
         </file>
         <file>
             <name>$PROJ_DIR$\connect_create_gbl_image.sh</name>
+            <excluded>
+                <configuration>Default</configuration>
+            </excluded>
+            <excluded>
+                <configuration>Default</configuration>
+            </excluded>
             <excluded>
                 <configuration>Default</configuration>
             </excluded>

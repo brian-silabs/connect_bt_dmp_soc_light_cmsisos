@@ -38,13 +38,13 @@
 #include <stdint.h>
 #include "rail_types.h"
 
-#define PROTOCOL_ACCELERATION_BUFFER protocolAccelerationBuffer
-extern uint32_t protocolAccelerationBuffer[];
+#define PHY_ACCELERATION_BUFFER phyAccelerationBuffer
+extern uint32_t phyAccelerationBuffer[];
 
 #define RADIO_CONFIG_XTAL_FREQUENCY 39000000UL
 
-#define RAIL0_CHANNEL_GROUP_1_PHY_STUDIO_868M_GMSK_500KBPS
-#define RAIL0_CHANNEL_GROUP_1_PROFILE_BASE
+#define RAIL0_PHY_IEEE802154_868MHZ_OQPSK_100K_PHY_IEEE802154_868MHZ_OQPSK
+#define RAIL0_PHY_IEEE802154_868MHZ_OQPSK_100K_PROFILE_BASE
 extern const RAIL_ChannelConfig_t *channelConfigs[];
 
 #endif // __RAIL_CONFIG_H__

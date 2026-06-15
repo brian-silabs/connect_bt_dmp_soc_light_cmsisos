@@ -6,15 +6,15 @@
     "generatorIds" : [ "com.silabs.framework.project.ewp" ],
     "fileStates" : {
       "config\\rail\\radio_settings.radioconf" : {
-        "hash" : 849215991,
+        "hash" : 1035187400,
         "exists" : true
       },
       "config\\rail\\profile_connect.restriction" : {
-        "hash" : 171520101,
+        "hash" : 493020707,
         "exists" : true
       },
       "config\\rail\\profile_long_range.restriction" : {
-        "hash" : -1822114054,
+        "hash" : 342997300,
         "exists" : true
       }
     },

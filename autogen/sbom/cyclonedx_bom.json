@@ -3,7 +3,7 @@
   "specVersion" : "1.6",
   "version" : 1,
   "metadata" : {
-    "timestamp" : "2026-06-01T15:16:06Z",
+    "timestamp" : "2026-06-15T09:25:55Z",
     "authors" : [ {
       "name" : "Silicon Laboratories, Inc."
     } ],
@@ -56,6 +56,30 @@
       },
       "licenses" : [ {
         "expression" : "Zlib"
+      } ]
+    }, {
+      "scope" : "required",
+      "type" : "library",
+      "bom-ref" : "silabs.simplicity_sdk:2025.12.3:apploader",
+      "name" : "AppLoader Support for Applications",
+      "version" : "2025.12.3",
+      "supplier" : {
+        "name" : "Silicon Laboratories, Inc."
+      },
+      "licenses" : [ {
+        "expression" : "MSLA"
+      } ]
+    }, {
+      "scope" : "required",
+      "type" : "library",
+      "bom-ref" : "silabs.simplicity_sdk:2025.12.3:apploader_util",
+      "name" : "AppLoader Utility",
+      "version" : "2025.12.3",
+      "supplier" : {
+        "name" : "Silicon Laboratories, Inc."
+      },
+      "licenses" : [ {
+        "expression" : "MSLA"
       } ]
     }, {
       "scope" : "required",
@@ -442,6 +466,18 @@
       "type" : "library",
       "bom-ref" : "silabs.simplicity_sdk:2025.12.3:sl_light_switch_core",
       "name" : "Light/Switch Core",
+      "version" : "2025.12.3",
+      "supplier" : {
+        "name" : "Silicon Laboratories, Inc."
+      },
+      "licenses" : [ {
+        "expression" : "Zlib"
+      } ]
+    }, {
+      "scope" : "required",
+      "type" : "library",
+      "bom-ref" : "silabs.simplicity_sdk:2025.12.3:sl_main",
+      "name" : "System Setup (sl_main)",
       "version" : "2025.12.3",
       "supplier" : {
         "name" : "Silicon Laboratories, Inc."
@@ -988,6 +1024,18 @@
     }, {
       "scope" : "required",
       "type" : "library",
+      "bom-ref" : "silabs.simplicity_sdk:2025.12.3:sl_main_memory_init",
+      "name" : "sl_main Setup",
+      "version" : "2025.12.3",
+      "supplier" : {
+        "name" : "Silicon Laboratories, Inc."
+      },
+      "licenses" : [ {
+        "expression" : "Zlib"
+      } ]
+    }, {
+      "scope" : "required",
+      "type" : "library",
       "bom-ref" : "silabs.simplicity_sdk:2025.12.3:bluetooth_gattdb_definition",
       "name" : "Bluetooth GATT database structure definition",
       "version" : "2025.12.3",
@@ -1026,6 +1074,18 @@
       "type" : "library",
       "bom-ref" : "silabs.simplicity_sdk:2025.12.3:connect_frequency_hopping_library",
       "name" : "Frequency Hopping (Library)",
+      "version" : "2025.12.3",
+      "supplier" : {
+        "name" : "Silicon Laboratories, Inc."
+      },
+      "licenses" : [ {
+        "expression" : "Zlib"
+      } ]
+    }, {
+      "scope" : "required",
+      "type" : "library",
+      "bom-ref" : "silabs.simplicity_sdk:2025.12.3:sl_main_kernel",
+      "name" : "SL Main Kernel",
       "version" : "2025.12.3",
       "supplier" : {
         "name" : "Silicon Laboratories, Inc."
@@ -1788,6 +1848,18 @@
     }, {
       "scope" : "required",
       "type" : "library",
+      "bom-ref" : "silabs.simplicity_sdk:2025.12.3:event_handler",
+      "name" : "Event Handler",
+      "version" : "2025.12.3",
+      "supplier" : {
+        "name" : "Silicon Laboratories, Inc."
+      },
+      "licenses" : [ {
+        "expression" : "Zlib"
+      } ]
+    }, {
+      "scope" : "required",
+      "type" : "library",
       "bom-ref" : "silabs.simplicity_sdk:2025.12.3:hal_sysrtc_subsystem_host",
       "name" : "SYSRTC for Host Sub-System",
       "version" : "2025.12.3",
@@ -1832,6 +1904,30 @@
       },
       "licenses" : [ {
         "expression" : "Zlib"
+      } ]
+    }, {
+      "scope" : "required",
+      "type" : "library",
+      "bom-ref" : "silabs.simplicity_sdk:2025.12.3:bootloader_app_properties",
+      "name" : "App Properties",
+      "version" : "2025.12.3",
+      "supplier" : {
+        "name" : "Silicon Laboratories, Inc."
+      },
+      "licenses" : [ {
+        "expression" : "Zlib"
+      } ]
+    }, {
+      "scope" : "required",
+      "type" : "library",
+      "bom-ref" : "silabs.simplicity_sdk:2025.12.3:bootloader_interface_s2",
+      "name" : "Bootloader Application Interface Series 2",
+      "version" : "2025.12.3",
+      "supplier" : {
+        "name" : "Silicon Laboratories, Inc."
+      },
+      "licenses" : [ {
+        "expression" : "MSLA"
       } ]
     }, {
       "scope" : "required",
@@ -2212,8 +2308,8 @@
     }, {
       "scope" : "required",
       "type" : "library",
-      "bom-ref" : "silabs.simplicity_sdk:2025.12.3:clock_manager_runtime_hal_s2",
-      "name" : "Clock Manager Runtime HAL Series 2",
+      "bom-ref" : "silabs.simplicity_sdk:2025.12.3:emlib_burtc",
+      "name" : "BURTC",
       "version" : "2025.12.3",
       "supplier" : {
         "name" : "Silicon Laboratories, Inc."
@@ -2224,8 +2320,8 @@
     }, {
       "scope" : "required",
       "type" : "library",
-      "bom-ref" : "silabs.simplicity_sdk:2025.12.3:emlib_burtc",
-      "name" : "BURTC",
+      "bom-ref" : "silabs.simplicity_sdk:2025.12.3:clock_manager_runtime_hal_s2",
+      "name" : "Clock Manager Runtime HAL Series 2",
       "version" : "2025.12.3",
       "supplier" : {
         "name" : "Silicon Laboratories, Inc."
@@ -2316,6 +2412,18 @@
       },
       "licenses" : [ {
         "expression" : "Zlib"
+      } ]
+    }, {
+      "scope" : "required",
+      "type" : "library",
+      "bom-ref" : "silabs.simplicity_sdk:2025.12.3:bootloader_interface",
+      "name" : "Bootloader Application Interface",
+      "version" : "2025.12.3",
+      "supplier" : {
+        "name" : "Silicon Laboratories, Inc."
+      },
+      "licenses" : [ {
+        "expression" : "MSLA"
       } ]
     }, {
       "scope" : "required",
@@ -2484,66 +2592,6 @@
     }, {
       "scope" : "required",
       "type" : "library",
-      "bom-ref" : "silabs.simplicity_sdk:2025.12.3:gpio",
-      "name" : "GPIO Driver",
-      "version" : "2025.12.3",
-      "supplier" : {
-        "name" : "Silicon Laboratories, Inc."
-      },
-      "licenses" : [ {
-        "expression" : "Zlib"
-      } ]
-    }, {
-      "scope" : "required",
-      "type" : "library",
-      "bom-ref" : "silabs.simplicity_sdk:2025.12.3:sl_main",
-      "name" : "System Setup (sl_main)",
-      "version" : "2025.12.3",
-      "supplier" : {
-        "name" : "Silicon Laboratories, Inc."
-      },
-      "licenses" : [ {
-        "expression" : "Zlib"
-      } ]
-    }, {
-      "scope" : "required",
-      "type" : "library",
-      "bom-ref" : "silabs.simplicity_sdk:2025.12.3:sl_main_memory_init",
-      "name" : "sl_main Setup",
-      "version" : "2025.12.3",
-      "supplier" : {
-        "name" : "Silicon Laboratories, Inc."
-      },
-      "licenses" : [ {
-        "expression" : "Zlib"
-      } ]
-    }, {
-      "scope" : "required",
-      "type" : "library",
-      "bom-ref" : "silabs.simplicity_sdk:2025.12.3:sl_main_kernel",
-      "name" : "SL Main Kernel",
-      "version" : "2025.12.3",
-      "supplier" : {
-        "name" : "Silicon Laboratories, Inc."
-      },
-      "licenses" : [ {
-        "expression" : "Zlib"
-      } ]
-    }, {
-      "scope" : "required",
-      "type" : "library",
-      "bom-ref" : "silabs.simplicity_sdk:2025.12.3:event_handler",
-      "name" : "Event Handler",
-      "version" : "2025.12.3",
-      "supplier" : {
-        "name" : "Silicon Laboratories, Inc."
-      },
-      "licenses" : [ {
-        "expression" : "Zlib"
-      } ]
-    }, {
-      "scope" : "required",
-      "type" : "library",
       "bom-ref" : "silabs.simplicity_sdk:2025.12.3:sl_main_init",
       "name" : "sl main Init",
       "version" : "2025.12.3",
@@ -2568,62 +2616,14 @@
     }, {
       "scope" : "required",
       "type" : "library",
-      "bom-ref" : "silabs.simplicity_sdk:2025.12.3:apploader",
-      "name" : "AppLoader Support for Applications",
-      "version" : "2025.12.3",
-      "supplier" : {
-        "name" : "Silicon Laboratories, Inc."
-      },
-      "licenses" : [ {
-        "expression" : "MSLA"
-      } ]
-    }, {
-      "scope" : "required",
-      "type" : "library",
-      "bom-ref" : "silabs.simplicity_sdk:2025.12.3:apploader_util",
-      "name" : "AppLoader Utility",
-      "version" : "2025.12.3",
-      "supplier" : {
-        "name" : "Silicon Laboratories, Inc."
-      },
-      "licenses" : [ {
-        "expression" : "MSLA"
-      } ]
-    }, {
-      "scope" : "required",
-      "type" : "library",
-      "bom-ref" : "silabs.simplicity_sdk:2025.12.3:bootloader_app_properties",
-      "name" : "App Properties",
+      "bom-ref" : "silabs.simplicity_sdk:2025.12.3:gpio",
+      "name" : "GPIO Driver",
       "version" : "2025.12.3",
       "supplier" : {
         "name" : "Silicon Laboratories, Inc."
       },
       "licenses" : [ {
         "expression" : "Zlib"
-      } ]
-    }, {
-      "scope" : "required",
-      "type" : "library",
-      "bom-ref" : "silabs.simplicity_sdk:2025.12.3:bootloader_interface_s2",
-      "name" : "Bootloader Application Interface Series 2",
-      "version" : "2025.12.3",
-      "supplier" : {
-        "name" : "Silicon Laboratories, Inc."
-      },
-      "licenses" : [ {
-        "expression" : "MSLA"
-      } ]
-    }, {
-      "scope" : "required",
-      "type" : "library",
-      "bom-ref" : "silabs.simplicity_sdk:2025.12.3:bootloader_interface",
-      "name" : "Bootloader Application Interface",
-      "version" : "2025.12.3",
-      "supplier" : {
-        "name" : "Silicon Laboratories, Inc."
-      },
-      "licenses" : [ {
-        "expression" : "MSLA"
       } ]
     } ]
   } ]
