@@ -1,0 +1,206 @@
+name: RAIL autogen config diff
+
+on:
+    pull_request:
+        branches:
+            - dev
+    workflow_dispatch:
+        inputs:
+            base_branch:
+                description: "Branch to compare against"
+                required: false
+                default: "dev"
+
+permissions:
+    contents: read
+
+concurrency:
+    group: rail-autogen-diff-${{ github.event.pull_request.number || github.ref }}
+    cancel-in-progress: true
+
+jobs:
+    compare-rail-autogen:
+        name: Compare autogen RAIL config against dev
+        runs-on: ubuntu-latest
+
+        env:
+            BASE_BRANCH: ${{ inputs.base_branch || 'dev' }}
+
+        steps:
+            - name: Check out current branch
+              uses: actions/checkout@v4
+              with:
+                  # For PRs, compare the actual PR HEAD, not GitHub's synthetic merge commit.
+                  ref: ${{ github.event.pull_request.head.sha || github.sha }}
+                  fetch-depth: 1
+
+            - name: Fetch base branch
+              run: |
+                  set -euo pipefail
+                  git fetch --no-tags --depth=1 origin "${BASE_BRANCH}:refs/remotes/origin/${BASE_BRANCH}"
+
+            - name: Generate RAIL autogen diff report
+              id: rail_diff
+              shell: bash
+              run: |
+                  set -euo pipefail
+
+                  files=(
+                    "autogen/rail_config.c"
+                    "autogen/rail_config.h"
+                  )
+
+                  report_dir="rail-autogen-diff-report"
+                  mkdir -p "${report_dir}/dev" "${report_dir}/current"
+
+                  report_md="${report_dir}/RAIL_AUTOGEN_DIFF_REPORT.md"
+                  report_diff="${report_dir}/rail-autogen.diff"
+
+                  has_diff=0
+                  has_error=0
+
+                  {
+                    echo "# RAIL autogen diff report"
+                    echo
+                    echo "This report compares the current branch against \`origin/${BASE_BRANCH}\`."
+                    echo
+                    echo "## Context"
+                    echo
+                    echo "- Repository: \`${GITHUB_REPOSITORY}\`"
+                    echo "- Workflow: \`${GITHUB_WORKFLOW}\`"
+                    echo "- Run ID: \`${GITHUB_RUN_ID}\`"
+                    echo "- Current ref: \`${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}\`"
+                    echo "- Current commit: \`${GITHUB_SHA}\`"
+                    echo "- Base branch: \`${BASE_BRANCH}\`"
+                    echo "- Compared files:"
+                    for f in "${files[@]}"; do
+                      echo "  - \`${f}\`"
+                    done
+                    echo
+                    echo "## Result"
+                    echo
+                  } > "${report_md}"
+
+                  : > "${report_diff}"
+
+                  for f in "${files[@]}"; do
+                    echo "Checking ${f}"
+
+                    dev_file="${report_dir}/dev/${f}"
+                    current_file="${report_dir}/current/${f}"
+
+                    mkdir -p "$(dirname "${dev_file}")" "$(dirname "${current_file}")"
+
+                    if ! git cat-file -e "origin/${BASE_BRANCH}:${f}" 2>/dev/null; then
+                      {
+                        echo "## Missing from base branch"
+                        echo
+                        echo "- \`${f}\` does not exist on \`origin/${BASE_BRANCH}\`."
+                        echo
+                      } >> "${report_md}"
+
+                      {
+                        echo "================================================================================"
+                        echo "ERROR: ${f} does not exist on origin/${BASE_BRANCH}"
+                        echo "================================================================================"
+                        echo
+                      } >> "${report_diff}"
+
+                      has_error=1
+                      continue
+                    fi
+
+                    if [ ! -f "${f}" ]; then
+                      {
+                        echo "## Missing from current branch"
+                        echo
+                        echo "- \`${f}\` does not exist on the current branch."
+                        echo
+                      } >> "${report_md}"
+
+                      {
+                        echo "================================================================================"
+                        echo "ERROR: ${f} does not exist on current branch"
+                        echo "================================================================================"
+                        echo
+                      } >> "${report_diff}"
+
+                      has_error=1
+                      continue
+                    fi
+
+                    git show "origin/${BASE_BRANCH}:${f}" > "${dev_file}"
+                    cp "${f}" "${current_file}"
+
+                    if ! git diff --no-index \
+                      --src-prefix="dev/" \
+                      --dst-prefix="current/" \
+                      "${dev_file}" \
+                      "${current_file}" >> "${report_diff}"; then
+                      has_diff=1
+                    fi
+                  done
+
+                  if [ "${has_error}" -eq 1 ]; then
+                    {
+                      echo "One or more required RAIL autogen files were missing."
+                      echo
+                      echo "See \`rail-autogen.diff\` in the uploaded artifact."
+                    } >> "${report_md}"
+                  elif [ "${has_diff}" -eq 1 ]; then
+                    {
+                      echo "Differences were found between the current branch and \`origin/${BASE_BRANCH}\`."
+                      echo
+                      echo "This check intentionally fails so the PR cannot be merged until the differences are reviewed or resolved."
+                      echo
+                      echo "Attach the uploaded artifact \`rail-autogen-diff-report\` when asking Silicon Labs radio experts to review."
+                    } >> "${report_md}"
+                  else
+                    {
+                      echo "No differences were found in the checked RAIL autogen files."
+                    } >> "${report_md}"
+                  fi
+
+                  {
+                    echo
+                    echo "## Diff preview"
+                    echo
+                    echo '```diff'
+                    if [ -s "${report_diff}" ]; then
+                      sed -n '1,300p' "${report_diff}"
+                      total_lines="$(wc -l < "${report_diff}")"
+                      if [ "${total_lines}" -gt 300 ]; then
+                        echo
+                        echo "... diff truncated in job summary; see uploaded artifact for full diff ..."
+                      fi
+                    else
+                      echo "No diff."
+                    fi
+                    echo '```'
+                  } >> "${report_md}"
+
+                  cat "${report_md}" >> "${GITHUB_STEP_SUMMARY}"
+
+                  if [ "${has_error}" -eq 1 ]; then
+                    echo "has_diff=true" >> "${GITHUB_OUTPUT}"
+                    echo "failure_reason=missing_required_file" >> "${GITHUB_OUTPUT}"
+                  elif [ "${has_diff}" -eq 1 ]; then
+                    echo "has_diff=true" >> "${GITHUB_OUTPUT}"
+                    echo "failure_reason=rail_autogen_diff" >> "${GITHUB_OUTPUT}"
+                  else
+                    echo "has_diff=false" >> "${GITHUB_OUTPUT}"
+                    echo "failure_reason=none" >> "${GITHUB_OUTPUT}"
+                  fi
+
+            - name: Upload RAIL autogen diff report
+              uses: actions/upload-artifact@v4
+              with:
+                  name: rail-autogen-diff-report
+                  path: rail-autogen-diff-report/
+                  if-no-files-found: error
+
+            - name: Fail when RAIL autogen files differ from dev
+              if: steps.rail_diff.outputs.has_diff == 'true'
+              run: |
+                  echo "::error::autogen/rail_config.c or autogen/rail_config.h differs from dev. Review the uploaded rail-autogen-diff-report artifact."
+                  exit 1
