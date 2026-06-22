@@ -38,6 +38,7 @@
 #include "app_assert.h"
 #include "app_log.h"
 #include "sl_light_switch.h"
+#include "sl_apploader_util.h"
 
 // -----------------------------------------------------------------------------
 //                              Macros and Typedefs
@@ -226,14 +227,14 @@ sl_bt_on_event(sl_bt_msg_t *evt)
     // This event indicates that a connection was closed.                    //
     ///////////////////////////////////////////////////////////////////////////
     case sl_bt_evt_connection_closed_id:
-      // Check if need to boot to OTA DFU mode
+      // Check if need to boot to OTA DFU mode.
       if (boot_to_dfu) {
-        // Enter to OTA DFU mode
-        sl_bt_system_reset(2);
+        sl_apploader_util_reset_to_ota_dfu();
       } else {
         // Restart advertising after client has disconnected
-        bt_status = sl_bt_legacy_advertiser_start(0,
-                                                  sl_bt_legacy_advertiser_connectable);
+        bt_status = sl_bt_legacy_advertiser_start(advertising_set_handle,
+                                          sl_bt_legacy_advertiser_connectable);
+        app_assert_status(bt_status);
       }
       break;
 

@@ -2,12 +2,12 @@
  * @brief RAIL Configuration
  * @details
  *   WARNING: Auto-Generated Radio Config  -  DO NOT EDIT
- *   Radio Configurator Version: x.y.z
- *   RAIL Adapter Version: x.y.z
- *   RAIL Compatibility: x.y
+ *   Radio Configurator Version: 2504.6.0
+ *   RAIL Adapter Version: 2.4.33
+ *   RAIL Compatibility: 2.x
  *******************************************************************************
  * # License
- * <b>Copyright 2019 Silicon Laboratories Inc. www.silabs.com</b>
+ * <b>Copyright 2025 Silicon Laboratories Inc. www.silabs.com</b>
  *******************************************************************************
  *
  * SPDX-License-Identifier: Zlib
@@ -58,12 +58,16 @@ static const uint8_t irCalConfig[] = {
 };
 
 static const int32_t timingConfig[] = {
-  10647, 10647, 2812, 0
+  10647, 10647, 2500, 0
 };
 
-static const uint8_t hfxoRetimingConfigEntries[] = {
+__ALIGNED(4) static const uint8_t hfxoRetimingConfigEntries[] = {
   1, 0, 0, 0, 0xc0, 0x17, 0x53, 0x02, 4, 12, 0, 0, 0xe0, 0x02, 0, 0, 0, 0, 0x3c, 0x03, 1, 2, 5, 4, 0x98, 0x03, 1, 2, 5, 5, 0xf4, 0x03, 1, 2, 6, 5
 };
+
+#ifdef RADIO_CONFIG_ENABLE_STACK_INFO
+__ALIGNED(4) static const uint8_t stackInfo_0[2] = { 0x00, 0x00 };
+#endif // RADIO_CONFIG_ENABLE_STACK_INFO
 
 static RAIL_ChannelConfigEntryAttr_t channelConfigEntryAttr = {
 #if RAIL_SUPPORTS_OFDM_PA
@@ -85,7 +89,7 @@ static RAIL_ChannelConfigEntryAttr_t channelConfigEntryAttr = {
 };
 
 static const uint32_t phyInfo[] = {
-  17UL,
+  20UL,
   0x00888888UL, // 136.53333333333333
   (uint32_t) NULL,
   (uint32_t) irCalConfig,
@@ -101,13 +105,14 @@ static const uint32_t phyInfo[] = {
   (uint32_t) NULL,
   0UL,
   0UL,
-  400007UL,
+  400008UL,
   (uint32_t) NULL,
   (uint32_t) NULL,
   (uint32_t) NULL,
+  (uint32_t) 0UL,
 };
 
-const uint32_t PHY_IEEE802154_868MHz_OQPSK_100k_RC_0p2_modemConfigBase[] = {
+const uint32_t PHY_IEEE802154_868MHz_OQPSK_100k_modemConfigBase[] = {
   0x0002400CUL, 0x00158001UL,
   /*    4010 */ 0x0000407FUL,
   0x00024020UL, 0x00000000UL,
@@ -178,7 +183,7 @@ const uint32_t PHY_IEEE802154_868MHz_OQPSK_100k_RC_0p2_modemConfigBase[] = {
   0x01264040UL, 0x00000000UL,
   /*    4044 */ 0x00000000UL,
   /*    4048 */ 0x00000010UL,
-  /*    404C */ 0x02127920UL,
+  /*    404C */ 0x04127920UL,
   /*    4050 */ 0x0052C007UL,
   /*    4054 */ 0x00000000UL,
   /*    4058 */ 0x00000000UL,
@@ -193,12 +198,12 @@ const uint32_t PHY_IEEE802154_868MHz_OQPSK_100k_RC_0p2_modemConfigBase[] = {
   /*    407C */ 0x00000000UL,
   /*    4080 */ 0x08A02123UL,
   /*    4084 */ 0x0000A47CUL,
-  /*    4088 */ 0x000F0013UL,
+  /*    4088 */ 0x000F0018UL,
   /*    408C */ 0x60000000UL,
   /*    4090 */ 0x00000000UL,
-  /*    4094 */ 0x3B251100UL,
-  /*    4098 */ 0x7C726350UL,
-  /*    409C */ 0x0000007FUL,
+  /*    4094 */ 0x30100101UL,
+  /*    4098 */ 0x7F7F7050UL,
+  /*    409C */ 0x00000000UL,
   /*    40A0 */ 0x00000000UL,
   /*    40A4 */ 0x00000000UL,
   /*    40A8 */ 0x00000000UL,
@@ -217,11 +222,10 @@ const uint32_t PHY_IEEE802154_868MHz_OQPSK_100k_RC_0p2_modemConfigBase[] = {
   0x310140E0UL, 0x00000201UL,
   0x01024110UL, 0x00051E33UL,
   /*    4114 */ 0x00000000UL,
-  0x010E411CUL, 0x8C555000UL,
+  0x0103411CUL, 0x8C555000UL,
   /*    4120 */ 0x00000000UL,
   /*    4124 */ 0x078304FFUL,
-  /*    4128 */ 0x3AC81388UL,
-  /*    412C */ 0x0C6606FFUL,
+  0x010A412CUL, 0x0C6606FFUL,
   /*    4130 */ 0x078304FFUL,
   /*    4134 */ 0x03FF1388UL,
   /*    4138 */ 0xF00A20BCUL,
@@ -281,9 +285,8 @@ const uint32_t PHY_IEEE802154_868MHz_OQPSK_100k_RC_0p2_modemConfigBase[] = {
   /*    4230 */ 0x00000000UL,
   /*    4234 */ 0x00000000UL,
   0x0101423CUL, 0x00000000UL,
-  0x01034244UL, 0x00000014UL,
-  /*    4248 */ 0x00000000UL,
-  /*    424C */ 0x04000008UL,
+  0x01014244UL, 0x00000014UL,
+  0x0101424CUL, 0x04000008UL,
   0x01014254UL, 0x00000086UL,
   0x010F4330UL, 0x00000000UL,
   /*    4334 */ 0x00000000UL,
@@ -303,8 +306,7 @@ const uint32_t PHY_IEEE802154_868MHz_OQPSK_100k_RC_0p2_modemConfigBase[] = {
   0x01018010UL, 0x00000003UL,
   0x01028038UL, 0x00102FA6UL,
   /*    803C */ 0x00000003UL,
-  0x0103809CUL, 0x00000000UL,
-  /*    80A0 */ 0x0003B870UL,
+  0x010280A0UL, 0x0003B870UL,
   /*    80A4 */ 0x000000D0UL,
   0x110180A8UL, 0x000001F6UL,
   0x310180A8UL, 0x01014201UL,
@@ -347,7 +349,7 @@ const uint32_t PHY_IEEE802154_868MHz_OQPSK_100k_RC_0p2_modemConfigBase[] = {
   0xFFFFFFFFUL,
 };
 
-const RAIL_ChannelConfigEntry_t PHY_IEEE802154_868MHz_OQPSK_100k_RC_0p2_channels[] = {
+const RAIL_ChannelConfigEntry_t PHY_IEEE802154_868MHz_OQPSK_100k_channels[] = {
   {
     .phyConfigDeltaAdd = NULL,
     .baseFrequency = 868300000,
@@ -361,24 +363,24 @@ const RAIL_ChannelConfigEntry_t PHY_IEEE802154_868MHz_OQPSK_100k_RC_0p2_channels
     .entryType = 0,
 #endif
 #ifdef RADIO_CONFIG_ENABLE_STACK_INFO
-    .stackInfo = NULL,
+    .stackInfo = stackInfo_0,
 #endif
     .alternatePhy = NULL,
   },
 };
 
-const RAIL_ChannelConfig_t PHY_IEEE802154_868MHz_OQPSK_100k_RC_0p2_channelConfig = {
-  .phyConfigBase = PHY_IEEE802154_868MHz_OQPSK_100k_RC_0p2_modemConfigBase,
+const RAIL_ChannelConfig_t PHY_IEEE802154_868MHz_OQPSK_100k_channelConfig = {
+  .phyConfigBase = PHY_IEEE802154_868MHz_OQPSK_100k_modemConfigBase,
   .phyConfigDeltaSubtract = NULL,
-  .configs = PHY_IEEE802154_868MHz_OQPSK_100k_RC_0p2_channels,
+  .configs = PHY_IEEE802154_868MHz_OQPSK_100k_channels,
   .length = 1U,
   .signature = 0UL,
   .xtalFrequencyHz = 39000000UL,
 };
 
 const RAIL_ChannelConfig_t *channelConfigs[] = {
-  &PHY_IEEE802154_868MHz_OQPSK_100k_RC_0p2_channelConfig,
+  &PHY_IEEE802154_868MHz_OQPSK_100k_channelConfig,
   NULL
 };
 
-uint32_t phyAccelerationBuffer[473];
+uint32_t phyAccelerationBuffer[467];

@@ -1,6 +1,6 @@
 [
   {
-    "channel_name": "Protocol_Configuration-Channel_Group_1",
+    "channel_name": "PHY_IEEE802154_868MHz_OQPSK_100k-PHY_IEEE802154_868MHz_OQPSK_100k",
     "result_code": "0",
     "error_message": "",
     "logs": [],
@@ -15,7 +15,7 @@
       },
       {
         "name": "Preamble Detection Length",
-        "value": 40
+        "value": 32
       },
       {
         "name": "Injection Side",
@@ -27,11 +27,11 @@
       },
       {
         "name": "Acquisition Channel Bandwidth",
-        "value": 750000
+        "value": 504960
       },
       {
         "name": "IF Frequency",
-        "value": 425000
+        "value": 302480
       },
       {
         "name": "RSSI Measurement Period",
@@ -59,23 +59,23 @@
       },
       {
         "name": "Preamble Binary Pattern",
-        "value": "0101010101010101010101010101010101010101"
+        "value": "00000000000000000000000000000000"
       },
       {
         "name": "Syncword Binary Pattern",
-        "value": "1111011010001101"
+        "value": "11100101"
       },
       {
         "name": "Pre Signal Lock RX Bandwidth [Hz]",
-        "value": 750000
+        "value": 504960
       },
       {
         "name": "Desired Bitrate [bps]",
-        "value": 500000
+        "value": 400000
       },
       {
         "name": "Actual TX Baudrate [baud]",
-        "value": 500000.0
+        "value": 400000.0
       },
       {
         "name": "Calculated RSSI Offset [dB]",
@@ -83,23 +83,31 @@
       },
       {
         "name": "Actual Carrier Frequency [Hz]",
-        "value": 867999989
+        "value": 868299990
       },
       {
         "name": "Actual Intermediate Frequency [Hz]",
-        "value": 424995
+        "value": 302455
       },
       {
         "name": "Synthesizer Resolution [Hz]",
         "value": 24.7955322265625
       },
       {
+        "name": "Synthesizer RX Tuning Step Size [Hz]",
+        "value": 49.591064453125
+      },
+      {
+        "name": "Synthesizer TX Tuning Step Size [Hz]",
+        "value": 24.7955322265625
+      },
+      {
         "name": "Actual RX Baudrate [baud]",
-        "value": 500009.3902003869
+        "value": 400007.5121603095
       },
       {
         "name": "Actual Deviation [Hz]",
-        "value": 126426.34101212025
+        "value": 0.0
       },
       {
         "name": "Target Modulation Index",
@@ -107,35 +115,35 @@
       },
       {
         "name": "Actual Modulation Index",
-        "value": 0.505705364048481
+        "value": 0.0
       },
       {
         "name": "Selected Demodulator",
-        "value": "DemodSelectEnum.TRECS_VITERBI"
+        "value": "DemodSelectEnum.LEGACY"
       },
       {
         "name": "Carson Bandwidth [Hz]",
-        "value": 750000
+        "value": 600000
       },
       {
         "name": "Theoretical Required Demodulator Bandwidth [Hz]",
-        "value": 550000
+        "value": 500000
       },
       {
         "name": "RX Crystal Accuracy [ppm]",
-        "value": 10
+        "value": 25
       },
       {
         "name": "TX Crystal Accuracy [ppm]",
-        "value": 10
+        "value": 25
       },
       {
         "name": "Post Signal Lock RX Bandwidth [Hz]",
-        "value": 550000
+        "value": 504960
       },
       {
         "name": "Actual Demodulator Oversampling Rate",
-        "value": 4.0
+        "value": 5.0
       },
       {
         "name": "Raw Data Sampling Rate [sps]",
@@ -143,23 +151,7 @@
       },
       {
         "name": "Signal Propagation Delay [symbol]",
-        "value": 11
-      },
-      {
-        "name": "Effective Syncword Length",
-        "value": 24
-      },
-      {
-        "name": "Effective Preamble Length",
-        "value": 32
-      },
-      {
-        "name": "Number of Bits Used from Preamble to Syncword [bits]",
-        "value": 8
-      },
-      {
-        "name": "TRECS syncword timeout [us]",
-        "value": 128.0
+        "value": 10
       },
       {
         "name": "RSSI Update Period [symbol]",
@@ -167,7 +159,7 @@
       },
       {
         "name": "RSSI Access Time After RX Start [us]",
-        "value": 48.01198495452724
+        "value": 55.51184410416666
       }
     ]
   }

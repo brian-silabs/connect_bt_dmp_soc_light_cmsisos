@@ -50,7 +50,7 @@
 
 // <o SL_DEVICE_INIT_DCDC_PFMX_IPKVAL> DCDC PFMX Mode Peak Current Setting <0-15>
 // <i>
-// <i> Default: DCDC_PFMXCTRL_IPKVAL_DEFAULT
+// <i> Default: DCDC_PFMXCTRL_IPKVAL_LOAD100MA
 #define SL_DEVICE_INIT_DCDC_PFMX_IPKVAL    6
 
 // <<< end of configuration section >>>

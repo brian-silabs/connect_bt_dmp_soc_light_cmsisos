@@ -42,8 +42,26 @@
 // <i> Default: 32
 #define SL_MEMORY_MANAGER_BLOCK_ALLOCATION_MIN_SIZE   (32)
 
+// <q SL_MEMORY_MANAGER_STATISTICS_API_ENABLE> Enables the statistics API.
+// <i> Setting this configuration to 0 will make all the statistics API return 0.
+// <i> Default: 1
+#define SL_MEMORY_MANAGER_STATISTICS_API_ENABLE  1
+
+// <q SL_MEMORY_MANAGER_POOL_DOUBLE_FREE_PROTECTION_ENABLE> Enables the double free protection for the pool.
+// <i> Setting this configuration to 0 will disable the double free protection for the memory pool. saving ~100 bytes of code.
+// <i> This setting has no effect on the memory pools power aware version.
+// <i> Default: 1
+#define SL_MEMORY_MANAGER_POOL_DOUBLE_FREE_PROTECTION_ENABLE 1
+
 // </h>
 
 // <<< end of configuration section >>>
+
+// Keep this configuration outside the configuration section until the feature is ready for release.
+// <q SL_MEMORY_MANAGER_HEAP_FALLBACK_EN> Enables the heap fallback mechanism.
+// <i> Setting this configuration to 0 will disable the fallback mechanism on DTCM and PSRAM.
+// <i> If this configuration is disabled, the memory manager will not attempt to use alternative memory regions for allocations even if using the fallback parameters.
+// <i> Default: 1
+#define SL_MEMORY_MANAGER_HEAP_FALLBACK_EN 1
 
 #endif /* SL_MEMORY_MANAGER_CONFIG_H */

@@ -6,8 +6,8 @@
 /* Version 4.1.1 */
 
 /*-Memory Regions*/
-  define symbol __ICFEDIT_region_ROM_start__ = 0x8000000;
-  define symbol __ICFEDIT_region_ROM_end__   = (0x8000000+0xfe000-1);
+  define symbol __ICFEDIT_region_ROM_start__ = 0x8012000;
+  define symbol __ICFEDIT_region_ROM_end__   = (0x8012000+0xec000-1);
   define symbol __ICFEDIT_region_RAM_start__ = 0x20000000;
   define symbol __ICFEDIT_region_RAM_end__   = (0x20000000+0x40000-1);
 
@@ -15,7 +15,16 @@
 define memory mem with size = 4G;
 define region ROM_region   = mem:[from __ICFEDIT_region_ROM_start__   to __ICFEDIT_region_ROM_end__];
 define region RAM_region   = mem:[from __ICFEDIT_region_RAM_start__   to __ICFEDIT_region_RAM_end__];
-define region MAIN_FLASH_region   = mem:[from 0x8000000   to (0x8000000+0xfe000-1)];
+define region MAIN_FLASH_region   = mem:[from 0x8012000   to (0x8012000+0xec000-1)];
+
+/* Symbol exported to the application. */
+define exported symbol __ram_end__ = (__ICFEDIT_region_RAM_end__ + 1);
+
+/* Symbol used internally by the linker script. */
+define block BOOTLOADER_RESET_REASON with size = 4, alignment = 4
+{
+  section .reset_reason
+};
 
 define block CSTACK with alignment = 8
 {
@@ -74,6 +83,7 @@ initialize manually
 
 define block application_ram with fixed order
 {
+  block BOOTLOADER_RESET_REASON,
   block CSTACK,
   readwrite,
 };
@@ -87,6 +97,7 @@ define block application_heap with fixed order
 
 do not initialize
 {
+  section .reset_reason,
  section .noinit,
  section .stack,
   section .memory_manager_heap
